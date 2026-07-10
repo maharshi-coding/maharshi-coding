@@ -14,7 +14,7 @@
 
 ## Profile
 
-I build software where applied AI meets product engineering: mobile assistants, automation pipelines, real-time systems, and APIs that are designed to survive real users. My work blends React Native, Firebase, OpenAI APIs, Python/FastAPI, and clean product thinking.
+I build software where applied AI meets product engineering: mobile assistants, automation pipelines, real-time systems, and APIs that are designed to hold up with real users. My work blends React Native, Firebase, OpenAI APIs, Python/FastAPI, and clean product thinking.
 
 - M.S. in Computer and Information Science at Texas A&M University-Corpus Christi
 - B.Tech in Computer Science and Engineering from Pandit Deendayal Energy University
@@ -108,12 +108,12 @@ I build software where applied AI meets product engineering: mobile assistants, 
 - I care about documentation because good handoff is part of good engineering.
 - I like projects that combine intelligence, interface quality, and backend discipline.
 
-## GitHub at a Glance
+## Current Focus
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=maharshi-coding&show_icons=true&hide_border=true&theme=transparent&rank_icon=github" alt="Maharshi's GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=maharshi-coding&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" />
-</p>
+- Building mobile-first AI experiences with React Native, Firebase, and OpenAI APIs.
+- Improving LLM output reliability through prompt iteration, evaluation, and clear documentation.
+- Expanding backend depth across FastAPI, Django, Node.js/Express, and .NET 8.
+- Creating portfolio projects that are useful, inspectable, and easy to explain.
 
 ---
 
