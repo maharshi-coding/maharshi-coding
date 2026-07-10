@@ -1,124 +1,154 @@
+<p align="center">
+  <img src="assets/signal-core.svg" width="100%" alt="Maharshi Barot AI systems profile banner" />
+</p>
+
 <div align="center">
 
-# Maharshi Barot
-
-### AI and full-stack engineer building practical LLM products, mobile apps, and backend systems
-
-[![GitHub](https://img.shields.io/badge/GitHub-maharshi--coding-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/maharshi-coding)
-[![Email](https://img.shields.io/badge/Email-barotmaharshi393%40gmail.com-0A66C2?style=flat-square&logo=gmail&logoColor=white)](mailto:barotmaharshi393@gmail.com)
-[![Focus](https://img.shields.io/badge/Focus-AI%20Products%20%7C%20Mobile%20%7C%20APIs-2563EB?style=flat-square)](#builders-map)
+[![GitHub](https://img.shields.io/badge/GitHub-maharshi--coding-0F172A?style=flat-square&logo=github&logoColor=white)](https://github.com/maharshi-coding)
+[![Email](https://img.shields.io/badge/Email-barotmaharshi393%40gmail.com-2563EB?style=flat-square&logo=gmail&logoColor=white)](mailto:barotmaharshi393@gmail.com)
+[![Mode](https://img.shields.io/badge/Mode-AI%20Product%20Builder-16A34A?style=flat-square)](#system-map)
+[![Location](https://img.shields.io/badge/Base-Texas%20A%26M%20Corpus%20Christi-F59E0B?style=flat-square)](#origin)
 
 </div>
 
----
+```txt
+> boot maharshi.profile
+> identity: AI + full-stack engineer
+> pattern: rough idea -> prototype -> evaluation -> usable product
+> current build: mobile-first AI systems, real-time apps, backend APIs
+> output format: software that can be demoed, shipped, explained, and handed off
+```
 
-## Profile
+## The Non-Template Version
 
-I build software where applied AI meets product engineering: mobile assistants, automation pipelines, real-time systems, and APIs that are designed to hold up with real users. My work blends React Native, Firebase, OpenAI APIs, Python/FastAPI, and clean product thinking.
+I am Maharshi Barot. I build at the place where AI stops being a prompt and becomes a working product: a mobile interface, a backend API, a database model, a route-aware map, a realtime chat, a payment flow, a liveness check, a dashboard, or a workflow someone can actually use.
 
-- M.S. in Computer and Information Science at Texas A&M University-Corpus Christi
-- B.Tech in Computer Science and Engineering from Pandit Deendayal Energy University
-- Independent AI solutions developer focused on LLM apps, workflow automation, evaluation, and handoff-ready documentation
+My favorite work is turning an unclear sentence like "can this be automated?" into a real system with UX, data, reliability, and documentation around it.
 
-## Builder's Map
+## System Map
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>AI Product Engineering</h3>
-      <p>LLM-powered apps, prompt engineering, RAG-oriented workflows, output evaluation, and domain-specific assistants that stay usable beyond a demo.</p>
+    <td width="25%" valign="top">
+      <b>01. Intelligence Layer</b><br />
+      OpenAI APIs, prompt engineering, RAG thinking, LLM evaluation, NLP, workflow automation.
     </td>
-    <td width="50%" valign="top">
-      <h3>Mobile and Real-Time Systems</h3>
-      <p>React Native apps with Firebase Auth, Firestore, Cloud Functions, chat, live data, maps, payments, and practical user flows.</p>
+    <td width="25%" valign="top">
+      <b>02. Product Layer</b><br />
+      React Native, React, Next.js, TypeScript, Tailwind CSS, Bootstrap, usable frontend flows.
     </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Backend APIs</h3>
-      <p>REST APIs with Node.js, Express, Django, FastAPI, and .NET 8, backed by PostgreSQL, MongoDB, Firebase Firestore, or SQLite.</p>
+    <td width="25%" valign="top">
+      <b>03. Systems Layer</b><br />
+      Firebase, Node.js, Express, Django, FastAPI, .NET 8, REST APIs, auth, RBAC, CI/CD.
     </td>
-    <td width="50%" valign="top">
-      <h3>Computer Vision and Data Tools</h3>
-      <p>Face recognition, liveness checks, analytics dashboards, CSV/XLSX export, market-data pipelines, and interactive React visualizations.</p>
+    <td width="25%" valign="top">
+      <b>04. Reality Layer</b><br />
+      PostgreSQL, MongoDB, Firestore, SQLite, Mapbox, Stripe, OpenCV, Docker, GitHub Actions.
     </td>
   </tr>
 </table>
 
-## Selected Work
+## How I Think About Building
 
-| Project | Stack | What it shows |
+```mermaid
+flowchart LR
+    A["Messy idea"] --> B["Product shape"]
+    B --> C["Data model"]
+    C --> D["API contract"]
+    D --> E["Interface"]
+    E --> F["AI or automation loop"]
+    F --> G["Evaluation"]
+    G --> H["Demo-ready system"]
+    H --> I["Documentation and handoff"]
+
+    R["React Native / React"] --> E
+    P["Python / Node / .NET"] --> D
+    L["OpenAI APIs / RAG / NLP"] --> F
+    DB["Firebase / PostgreSQL / MongoDB"] --> C
+```
+
+## Mission Board
+
+| Mission | What I built | System texture |
 | --- | --- | --- |
-| [AI Tutor Mobile App](https://github.com/maharshi-coding/ai-tutor-app) | React Native, OpenAI APIs, TypeScript | Mobile AI tutoring flows with LLM-backed assistance and iterative prompt improvement. |
-| RamayanaGPT | LLM APIs, prompt engineering | A domain-focused conversational assistant built around clear answers and reliable interaction. |
-| Campus Ride Pooling Mobile App | React Native, Firebase, Node.js, Mapbox, Stripe | Real-time ride creation, chat, auth, payments, identity checks, and route-aware matching for campus mobility. |
-| [Face Recognition Attendance System](https://github.com/maharshi-coding/face-attendance-app) | Python, FastAPI, OpenCV | 128-d face embeddings, blink-based liveness detection, JWT auth, RBAC, analytics, and CSV/XLSX export. |
-| AI-Powered Retail Investor Dashboard | Python, React, SQL | Market-data aggregation, REST APIs, real-time insights, and interactive React visualizations. |
+| [AI Tutor Mobile App](https://github.com/maharshi-coding/ai-tutor-app) | A mobile AI tutoring experience powered by LLM APIs | React Native, TypeScript, OpenAI APIs, prompt iteration |
+| RamayanaGPT | A domain-focused conversational assistant | LLM APIs, answer quality, prompt design, user-facing AI behavior |
+| Campus Ride Pooling Mobile App | Campus ride creation, chat, auth, payments, identity, and route-aware matching | React Native, Firebase, Node.js, Mapbox, Stripe |
+| [Face Recognition Attendance System](https://github.com/maharshi-coding/face-attendance-app) | Attendance platform with face embeddings and liveness detection | Python, FastAPI, OpenCV, JWT auth, RBAC, analytics, CSV/XLSX export |
+| AI-Powered Retail Investor Dashboard | Market-data dashboard with realtime insights and interactive visuals | Python, React, SQL, REST APIs, data aggregation |
 
-## Open Repositories Worth Visiting
+## Public Portals
 
-| Repository | Why visit |
-| --- | --- |
-| [ai-tutor-app](https://github.com/maharshi-coding/ai-tutor-app) | TypeScript-first AI mobile application work. |
-| [face-attendance-app](https://github.com/maharshi-coding/face-attendance-app) | Applied computer vision and FastAPI backend engineering. |
-| [KAN-ODEs](https://github.com/maharshi-coding/KAN-ODEs) | Research-oriented machine learning and numerical experimentation. |
-| [reinforcement-learning](https://github.com/maharshi-coding/reinforcement-learning) | Reinforcement learning experiments and applied AI practice. |
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/maharshi-coding/ai-tutor-app"><b>ai-tutor-app</b></a><br />
+      TypeScript-first mobile AI work. Useful if you want to see how I shape AI into a product surface.
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/maharshi-coding/face-attendance-app"><b>face-attendance-app</b></a><br />
+      Applied computer vision, backend auth, liveness checks, dashboards, and export workflows.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/maharshi-coding/KAN-ODEs"><b>KAN-ODEs</b></a><br />
+      Research-oriented machine learning and numerical experimentation.
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/maharshi-coding/reinforcement-learning"><b>reinforcement-learning</b></a><br />
+      Reinforcement learning experiments and applied AI practice.
+    </td>
+  </tr>
+</table>
 
-## Core Stack
+## Skill Deck
 
-### AI / LLM
+| Signal | Tools I use | What I use them for |
+| --- | --- | --- |
+| AI / LLM | OpenAI API, prompt engineering, RAG, LLM evaluation, NLP | Assistants, tutoring flows, automation loops, quality tuning |
+| Mobile | React Native, Firebase, Mapbox, Stripe | Cross-platform product flows, realtime features, maps, payments |
+| Frontend | React, Next.js, TypeScript, Tailwind CSS, Bootstrap | Dashboards, app screens, interactive visual systems |
+| Backend | Node.js, Express, Django, FastAPI, .NET 8 | REST APIs, auth, service integration, data pipelines |
+| Data | PostgreSQL, MongoDB, Firestore, SQLite, SQL | Product data models, analytics, storage, search, exports |
+| Vision | Python, OpenCV, embeddings, liveness checks | Face recognition, attendance systems, verification workflows |
+| Dev Tools | Docker, Git, GitHub Actions, JWT, CI/CD | Deployment readiness, automation, reproducible engineering |
 
-![OpenAI](https://img.shields.io/badge/OpenAI%20API-111827?style=for-the-badge&logo=openai&logoColor=white)
-![Prompt Engineering](https://img.shields.io/badge/Prompt%20Engineering-7C3AED?style=for-the-badge)
-![RAG](https://img.shields.io/badge/RAG-0F766E?style=for-the-badge)
-![LLM Evaluation](https://img.shields.io/badge/LLM%20Evaluation-B45309?style=for-the-badge)
-![NLP](https://img.shields.io/badge/NLP-1D4ED8?style=for-the-badge)
+## Origin
 
-### Languages and Frontend
+- M.S. in Computer and Information Science at Texas A&M University-Corpus Christi
+- B.Tech in Computer Science and Engineering from Pandit Deendayal Energy University
+- Diploma in Computer Engineering from Government Polytechnic, Ahmedabad
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![C%23](https://img.shields.io/badge/C%23-68217A?style=for-the-badge&logo=csharp&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![React Native](https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-111827?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+## I Am Usually The Person For
 
-### Backend, Data, and Tools
+- turning an AI demo into an actual product flow
+- connecting mobile apps to Firebase, APIs, maps, payments, and realtime data
+- building backend services that frontend teams can understand and use
+- explaining technical systems to non-technical users without losing the important details
+- documenting the build so the next person is not trapped inside my head
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-111827?style=for-the-badge&logo=express&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![.NET 8](https://img.shields.io/badge/.NET%208-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=111827)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Mapbox](https://img.shields.io/badge/Mapbox-000000?style=for-the-badge&logo=mapbox&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+<details>
+  <summary><b>Open the hidden build notes</b></summary>
+  <br />
 
-## Engineering Style
+```txt
+I do not want my work to feel like disconnected code samples.
+I want it to feel like systems with a pulse:
+- inputs are clear
+- outputs are testable
+- UX is understandable
+- APIs have contracts
+- AI behavior is evaluated
+- handoff is possible
+```
 
-- I prefer shipping useful working systems, then tightening reliability through feedback and evaluation.
-- I translate non-technical requirements into clear product flows, API contracts, and maintainable implementation plans.
-- I care about documentation because good handoff is part of good engineering.
-- I like projects that combine intelligence, interface quality, and backend discipline.
-
-## Current Focus
-
-- Building mobile-first AI experiences with React Native, Firebase, and OpenAI APIs.
-- Improving LLM output reliability through prompt iteration, evaluation, and clear documentation.
-- Expanding backend depth across FastAPI, Django, Node.js/Express, and .NET 8.
-- Creating portfolio projects that are useful, inspectable, and easy to explain.
+</details>
 
 ---
 
 <div align="center">
 
-Open to AI product engineering, full-stack development, mobile apps, backend APIs, and applied ML projects.
+<b>Open to AI product engineering, full-stack development, mobile apps, backend APIs, and applied ML projects.</b>
 
 </div>
