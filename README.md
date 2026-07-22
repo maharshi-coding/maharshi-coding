@@ -5,7 +5,6 @@
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-maharshi--coding-0F172A?style=flat-square&logo=github&logoColor=white)](https://github.com/maharshi-coding)
-[![Email](https://img.shields.io/badge/Email-barotmaharshi393%40gmail.com-2563EB?style=flat-square&logo=gmail&logoColor=white)](mailto:barotmaharshi393@gmail.com)
 [![Runtime](https://img.shields.io/badge/Runtime-MaharshiOS-16A34A?style=flat-square)](#maharshios-runtime)
 [![Mode](https://img.shields.io/badge/Mode-AI%20Product%20Builder-F59E0B?style=flat-square)](#mission-board)
 
