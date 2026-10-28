@@ -608,14 +608,6 @@
         "state": "open"
       },
       {
-        "title": "Fix false negative: taint propagation through static fields (#91)",
-        "url": "https://github.com/facebook/mariana-trench/pull/277",
-        "repo": "facebook/mariana-trench",
-        "number": 277,
-        "upstream": true,
-        "state": "open"
-      },
-      {
         "title": "Preserve Unknown when narrowing missing attributes",
         "url": "https://github.com/facebook/pyrefly/pull/5346",
         "repo": "facebook/pyrefly",
@@ -743,21 +735,14 @@
           "upstream": true,
           "state": "open"
         }
-      ]
+      ],
+      "landed": []
     },
     {
       "name": "Meta",
       "url": "https://github.com/facebook",
       "merged": [],
       "open": [
-        {
-          "title": "Fix false negative: taint propagation through static fields (#91)",
-          "url": "https://github.com/facebook/mariana-trench/pull/277",
-          "repo": "facebook/mariana-trench",
-          "number": 277,
-          "upstream": true,
-          "state": "open"
-        },
         {
           "title": "Preserve Unknown when narrowing missing attributes",
           "url": "https://github.com/facebook/pyrefly/pull/5346",
@@ -774,6 +759,19 @@
           "upstream": true,
           "state": "open"
         }
+      ],
+      "landed": [
+        {
+          "repo": "facebook/mariana-trench",
+          "number": 277,
+          "title": "Fix false negative: taint propagation through static fields (#91)",
+          "url": "https://github.com/facebook/mariana-trench/pull/277",
+          "state": "landed",
+          "upstream": true,
+          "method": "Meta CodeSync",
+          "integration_commit": "81b835dff56763b871d9db8dcbf29bdb1bb35973",
+          "integration_url": "https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
+        }
       ]
     },
     {
@@ -789,7 +787,8 @@
           "upstream": true,
           "state": "open"
         }
-      ]
+      ],
+      "landed": []
     },
     {
       "name": "Waymo",
@@ -820,7 +819,21 @@
           "upstream": true,
           "state": "open"
         }
-      ]
+      ],
+      "landed": []
+    }
+  ],
+  "verified_upstream_integrations": [
+    {
+      "repo": "facebook/mariana-trench",
+      "number": 277,
+      "title": "Fix false negative: taint propagation through static fields (#91)",
+      "url": "https://github.com/facebook/mariana-trench/pull/277",
+      "state": "landed",
+      "upstream": true,
+      "method": "Meta CodeSync",
+      "integration_commit": "81b835dff56763b871d9db8dcbf29bdb1bb35973",
+      "integration_url": "https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
     }
   ]
 }
