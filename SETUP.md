@@ -1,137 +1,113 @@
-# MAHARSHI.EXE — Operator's Manual
+# GitHub Profile & Portfolio — Setup
 
-This repository powers both the [GitHub profile](https://github.com/maharshi-coding) and the RPG console at **https://maharshi-coding.github.io/maharshi-coding/**.
+This repository powers two views of the same public engineering work:
 
-The README is a Markdown-compatible console interface. The genuinely interactive game is in `docs/index.html`. Live data is represented by `docs/data/profile.json`, which is generated from GitHub. No paid hosting, Node build, database, or frontend dependencies are needed.
+- **GitHub profile README:** https://github.com/maharshi-coding
+- **Interactive portfolio explorer:** https://maharshi-coding.github.io/maharshi-coding/
 
-## What has already been committed
+The README is deliberately simple and scannable. The website offers project search, category filters, a light/dark theme toggle, a project details dialog, and merged/open PR filters. Both are backed by the same public GitHub metadata.
 
-- `README.md` — character sheet, RPG map, raid log, game shelf, achievements, skill tree, snake
-- `assets/rpg-boot.svg` — animated CRT boot sequence; reduced-motion fallback
-- `assets/covers/*.svg` — original artwork for the eight public flagship cartridges
-- `docs/index.html` — interactive mobile-ready terminal, keyboard history, command autocomplete, public project and PR explorer
-- `docs/data/profile.json` — an initial snapshot of verified **public** GitHub metadata
-- `scripts/generate_profile.py` — GitHub API generator for README sections + Pages data
-- `.github/workflows/profile-rpg-sync.yml` — public metadata refresh every eight hours, on relevant pushes, and manually
-- `.github/workflows/snake-rpg.yml` — contribution snake daily and manually; output branch
-- `.github/workflows/rpg-check.yml` — static data and Python syntax checks
+## Repository structure
 
-The old `sync-contributions.yml` workflow is retired because its markers don't match the new README.
+| File | Purpose |
+| :-- | :-- |
+| `README.md` | Developer profile, selected original projects, upstream PR history, background |
+| `assets/profile-header.svg` | Professional animated header with reduced-motion support |
+| `docs/index.html` | Accessible HTML portfolio layout |
+| `docs/assets/styles.css` | Responsive light/dark theme |
+| `docs/assets/app.js` | Search, filters, dialog, status tabs, theme preferences, and GitHub data rendering |
+| `docs/data/profile.json` | Public GitHub API snapshot powering the website |
+| `scripts/generate_profile.py` | Generates the README sections and the JSON data |
+| `.github/workflows/profile-sync.yml` | Refreshes GitHub data every 8 hours, on relevant pushes, or manually |
+| `.github/workflows/site-check.yml` | Validates source, JSON, generator, markers, and JavaScript |
 
-## Manual step 1 — enable GitHub Actions write access (REQUIRED)
+No Node build step, paid hosting, external UI framework, or JavaScript libraries are required. Python 3.10+ is needed to refresh the data locally.
 
-1. Open **Settings → Actions → General** in `maharshi-coding/maharshi-coding`.
-2. Make sure the necessary GitHub Actions are allowed. If your policy requires specific actions, permit `actions/checkout`, `actions/setup-python`, `Platane/snk`, and `crazy-max/ghaction-github-pages`.
-3. Under **Workflow permissions**, select **Read and write permissions**, then Save. The workflows explicitly request `contents: write`.
-4. If your account or organization disables Actions by default, enable them for this repository.
+## Activate GitHub Pages
 
-The profile updater commits the README and JSON snapshot back to `main`. The snake job publishes an `output` branch. A branch protection or ruleset disallowing bot pushes may require an adjustment.
+**Manual step (if it is not already enabled):**
 
-## Manual step 2 — enable GitHub Pages (REQUIRED for playable console)
+1. Open https://github.com/maharshi-coding/maharshi-coding/settings/pages
+2. Under **Build and deployment**, set **Source** to `Deploy from a branch`.
+3. Choose branch `main` and folder `/docs`, then save.
+4. Verify that the **pages build and deployment** workflow passes at https://github.com/maharshi-coding/maharshi-coding/actions.
+5. Visit https://maharshi-coding.github.io/maharshi-coding/.
 
-1. Open **Settings → Pages** for this repository.
-2. Under **Build and deployment**, set **Source: Deploy from a branch**.
-3. Choose **Branch: main**, **Folder: /docs**, and Save.
-4. Open **https://maharshi-coding.github.io/maharshi-coding/** after GitHub Pages reports a successful deployment.
+The Pages site may show a 404 until a first successful deployment. The profile README is independent of Pages activation.
 
-A public repository is required for publicly accessible Pages on supported plans. The README's LAUNCH FULL CONSOLE link is already pointed to this address, but it does **not** imply Pages has been enabled yet.
+## Enable automatic GitHub data refresh
 
-## Manual step 3 — initialize scheduled data and snake (RECOMMENDED)
+The workflow uses `contents: write` to update README sections and the JSON snapshot.
 
-In the repository **Actions** tab, locate:
+**Manual step (if repository policy prevents writing):** Open **Settings → Actions → General** and enable **Read and write permissions** for workflows. Some branch protection rules may prevent bot commits; adjust those rules for this repository if necessary.
 
-1. **Sync RPG profile data** → **Run workflow** (branch `main`). This updates the HUD, public projects, open/merged PRs, pinned loadout (when GraphQL is available), and the JSON file used by Pages. The schedule is every **8 hours**.
-2. **Snake.exe — contribution mini-game** → **Run workflow**. This creates the `output` branch and the SVG that appears in the README. The schedule is daily.
-3. Check the **RPG console quality gate** runs for syntax and snapshot checks.
+Then open **Actions → Refresh GitHub portfolio data → Run workflow**. Scheduled refreshes occur every 8 hours, and relevant source changes also trigger a refresh. The workflow retries on concurrent pushes, regenerating from the latest `main` to avoid overwriting manual changes.
 
-All GitHub-generated indicators can change. GitHub Pages deployment and scheduled GitHub Actions may take some time to appear in GitHub's UI; inspect the workflow logs rather than assuming success.
+### Optional access token
 
-## Optional PAT / token secret (NOT required for public REST data)
+Ordinary publicly searchable repositories and PRs can be retrieved using the default GitHub Actions `GITHUB_TOKEN`. If GitHub rate limits or denies GraphQL metadata, optionally create a **fine-grained personal access token** granting only the read access needed, then add it at:
 
-The workflow first checks **`GH_DATA_TOKEN`**, then **`GH_TOKEN`**, then the built-in **`GITHUB_TOKEN`**.
+**Settings → Secrets and variables → Actions → New repository secret**  
+Name: `GH_DATA_TOKEN`
 
-The built-in `GITHUB_TOKEN` should be sufficient for publicly accessible REST API repository/PR searches, but its permission scope and rate limits can vary. GraphQL pinned projects / contribution counts can also be permission-dependent.
+Never publish or commit the token. A token does **not** authorize this public portfolio to expose private repository information; the generator explicitly excludes private records.
 
-If requests fail due to rate limiting or authorization, create a **fine-grained GitHub personal access token** with the minimum necessary *read* access to the relevant profile/public repository metadata and GraphQL information. Add it via **Settings → Secrets and variables → Actions → New repository secret**:
-
-**Name:** `GH_DATA_TOKEN`  
-**Value:** your token (never paste the token into a README, issue, terminal transcript, or code file).
-
-For public REST-only use, a PAT is optional. If external PRs are not returned by the default token, an authenticated token may help. The generator is intentionally **public-only even with a more privileged token**: it rejects private repositories and PRs. Never add private data to a public GitHub profile.
-
-## Run the generator locally
-
-Prerequisite: Python **3.10 or newer**. No pip dependencies.
+## Preview locally
 
 ```bash
 git clone https://github.com/maharshi-coding/maharshi-coding.git
 cd maharshi-coding
 
-# Inspect what will be queried, without writing files
+# Preview GitHub metadata without writing:
 python3 scripts/generate_profile.py --dry-run
 
-# Generate README dynamic sections and Pages snapshot
+# Update README and website JSON using public GitHub API records:
 python3 scripts/generate_profile.py
 
-# Preview the playable website locally:
+# Start a local static server:
 python3 -m http.server 8000 --directory docs
-# Open http://localhost:8000
+# Open http://localhost:8000/
 ```
 
-If you hit unauthenticated rate limits, supply a token through the environment:
+The website will not load its JSON correctly if you open `docs/index.html` directly from the filesystem with a `file://` URL. Use the local HTTP server.
 
-```bash
-export GH_DATA_TOKEN="YOUR_TOKEN_HERE"
-python3 scripts/generate_profile.py
-unset GH_DATA_TOKEN
-```
+## Customize without breaking sync
 
-Do not commit an API token. The script uses GitHub REST endpoints for public repos, authored public PR searches, profile creation date and project metadata. It attempts GitHub GraphQL for pinned repositories and total contributions over the trailing 365 days. If those GraphQL fields can't be retrieved, they remain explicitly **unavailable** rather than being fabricated.
-
-## Customize the game without breaking auto-updates
-
-- **Player identity and current quest:** edit the narrative copy in `README.md` and `docs/index.html`.
-- **Flagship cartridges:** edit `FEATURED`, `TAGLINES`, and `EMOJI` in `scripts/generate_profile.py`. A featured repository must actually be public and must not be a fork.
-- **Static cartridge artwork:** add or replace an `assets/covers/REPO_NAME.svg`. Cover names are case-sensitive.
-- **Skill badges / game HUD frame:** change the static README design; generator only replaces content within the three marker pairs.
-- **Interactive commands:** edit the JavaScript in `docs/index.html`. Project and PR data comes from the generated snapshot.
-
-**Do not manually edit the text between these markers**, because the scheduled generator replaces it:
+Edit **outside** these generated README markers:
 
 ```text
-<!--START_SECTION:prs-->
-<!--END_SECTION:prs-->
 <!--START_SECTION:projects-->
 <!--END_SECTION:projects-->
+<!--START_SECTION:prs-->
+<!--END_SECTION:prs-->
 <!--START_SECTION:hud-->
 <!--END_SECTION:hud-->
 ```
 
-## Data and source-of-truth rules
+The generator replaces only the text between each pair. All static prose and layout outside these markers are kept.
 
-- Only public repos returned by GitHub API become public game cartridges. A fork is labeled and filed in the fork archive, not credited as an original product.
-- A **PLAY** link is shown only for a suitable repository homepage or a separately verified live demo documented in the project's README (currently OSS-Agent). A GitHub/source URL is not automatically a playable app.
-- GitHub **stars** are displayed as popularity signals, not invented review ratings.
-- Merged and open PRs come from separate GitHub Search queries. A closed-without-merge PR is not a cleared bounty.
-- The PR search is across publicly searchable repositories, not just the profile owner's repo. Private PRs are *not* published.
-- The API snapshot is not a minute-by-minute live API request from each visitor: the Action refreshes every eight hours.
-- Language inventory in the README counts primary-language labels among public, nonfork repositories. The third-party top-language image uses its own computation.
-- `RamayanaGPT` is included as previously reported project lore, without a fabricated public CODE or PLAY link.
-- `Software Developer @ Meeka` is shown because it was explicitly supplied as the current quest; it was not independently verified from GitHub metadata.
-- Third-party typing/stats/trophy/streak/graph services can go down; core content and project source links remain readable.
+- `FEATURED` and `TAGLINES` in `scripts/generate_profile.py` control what shows first.
+- The website categorization is in `docs/assets/app.js`. Updates to the featured list in Python should be mirrored in `FEATURED_ORDER` in JavaScript.
+- `docs/assets/styles.css` defines both light and dark themes.
+- `docs/index.html` controls page structure and narrative copy.
+
+### Data integrity
+
+- **Original work vs forks:** forks are distinct from original projects.
+- **PR status:** merged and open are queried independently. Closed without merging is never counted as merged.
+- **Upstream vs own:** PRs to external owners are labeled upstream; PRs in this account's own namespace appear separately.
+- **Projects:** only publicly visible repository entries are published. A private project is not linked as though it were public.
+- **Stars:** counts come from GitHub, not fabricated review ratings.
+- **Demo links:** displayed only for a suitably verified public homepage or a verified project demo URL.
+- **Pinned repos and annual contribution count:** these depend on GitHub GraphQL. Missing fields are shown as unavailable, not estimated.
+- **Snapshot recency:** the website reads a generated JSON snapshot, not live GitHub API calls from each visitor.
 
 ## Troubleshooting
 
-**Pages gives 404:** confirm Settings → Pages → Deploy from a branch → main /docs, then review the Pages deployment under Actions.
+- **Pages 404:** inspect Settings → Pages and the latest Pages workflow.
+- **Missing public project:** verify that it is public and has been refreshed through the GitHub workflow.
+- **GitHub data not loading on the website:** check whether `docs/data/profile.json` is published in the Pages build.
+- **Status tab seems outdated:** run the data refresh workflow manually and inspect any API errors.
+- **A workflow fails:** open its logs. The quality checks validate JavaScript with `node --check` and verify the JSON and README markers.
 
-**Snake graphic is empty / 404:** run the snake workflow once and confirm that its `output` branch has `github-contribution-grid-snake.svg`. Ensure Actions can write to contents.
-
-**PR generator fails with 403 or 422:** inspect API/rate-limit error in Actions logs. Retry with an authenticated `GH_DATA_TOKEN`. The generator never silently invents PR status.
-
-**A project is missing:** it may be private, forked, archived, or absent from GitHub's API. Make it public intentionally before expecting it in the library; never publish private repositories accidentally.
-
-**Pinned / annual contributions unavailable:** these depend on authenticated GitHub GraphQL. The README correctly shows an unavailable state until GraphQL provides values.
-
-**Stats widgets do not render:** their external hosted service may be rate-limited; this does not mean README or GitHub data is broken.
-
-**Local file opened directly as file:// fails:** serve `docs/` over http://localhost:8000 as shown above so that browser fetch can read `data/profile.json`.
+The previous game-console theme, RPG banner, cartridge artwork and snake animation are intentionally no longer part of the active portfolio.
