@@ -10,7 +10,7 @@
   <title>Maharshi Barot — Software Engineer</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172335'/%3E%3Ctext x='10' y='43' fill='white' font-size='28' font-weight='bold' font-family='Arial'%3EMB%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="./assets/styles.css">
-  <script src="./assets/app.js" defer></script>
+  <script src="./assets/app.js?v=20261028-prfix" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -130,9 +130,21 @@
                 <input id="prSearch" type="search" placeholder="Search PRs…" autocomplete="off">
               </label>
             </div>
-            <div id="prList" class="pr-list" aria-live="polite"></div>
+            <div id="prList" class="pr-list" aria-live="polite">
+<!-- Static GitHub-data fallback: replaced by the interactive renderer when JS loads. -->
+<section class="company-group"><div class="company-title"><div class="company-identity"><span class="company-avatar" aria-hidden="true">T</span><a class="company-link" href="https://github.com/teslamotors" target="_blank" rel="noopener noreferrer">Tesla ↗</a></div></div><div class="company-status-group"><h4 class="company-status-heading">Merged on GitHub</h4><article class="pr-row"><div><span class="pr-repo">vehicle-command · PR #524</span><strong><a href="https://github.com/teslamotors/vehicle-command/pull/524" target="_blank" rel="noopener noreferrer">tesla-http-proxy: exit 1 and report startup failures on stderr</a></strong></div><span class="pr-status">Merged</span></article></div>
+<div class="company-status-group"><h4 class="company-status-heading">Open · under review</h4><article class="pr-row"><div><span class="pr-repo">vehicle-command · PR #535</span><strong><a href="https://github.com/teslamotors/vehicle-command/pull/535" target="_blank" rel="noopener noreferrer">proxy: propagate vehicle request cancellation with startup cleanup</a></strong></div><span class="pr-status">Open</span></article>
+<article class="pr-row"><div><span class="pr-repo">react-native-camera-kit · PR #822</span><strong><a href="https://github.com/teslamotors/react-native-camera-kit/pull/822" target="_blank" rel="noopener noreferrer">fix(android): center scan frame after enabling and layout changes</a></strong></div><span class="pr-status">Open</span></article></div></section>
+<section class="company-group"><div class="company-title"><div class="company-identity"><span class="company-avatar" aria-hidden="true">M</span><a class="company-link" href="https://github.com/facebook" target="_blank" rel="noopener noreferrer">Meta ↗</a></div></div><div class="company-status-group"><h4 class="company-status-heading">Landed upstream via Meta CodeSync</h4><article class="pr-row"><div><span class="pr-repo">mariana-trench · PR #277</span><strong><a href="https://github.com/facebook/mariana-trench/pull/277" target="_blank" rel="noopener noreferrer">Fix false negative: taint propagation through static fields (#91)</a></strong><div class="integration-proof"><a href="https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973" target="_blank" rel="noopener noreferrer">View upstream commit 81b835d ↗</a></div></div><span class="pr-status">Landed upstream</span></article></div>
+<div class="company-status-group"><h4 class="company-status-heading">Open · under review</h4><article class="pr-row"><div><span class="pr-repo">pyrefly · PR #5346</span><strong><a href="https://github.com/facebook/pyrefly/pull/5346" target="_blank" rel="noopener noreferrer">Preserve Unknown when narrowing missing attributes</a></strong></div><span class="pr-status">Open</span></article>
+<article class="pr-row"><div><span class="pr-repo">ThreatExchange · PR #2026</span><strong><a href="https://github.com/facebook/ThreatExchange/pull/2026" target="_blank" rel="noopener noreferrer">[pdq][cpp] Prevent signed integer overflow in image downscaling</a></strong></div><span class="pr-status">Open</span></article></div></section>
+<section class="company-group"><div class="company-title"><div class="company-identity"><span class="company-avatar" aria-hidden="true">G</span><a class="company-link" href="https://github.com/google-deepmind" target="_blank" rel="noopener noreferrer">Google DeepMind ↗</a></div></div><div class="company-status-group"><h4 class="company-status-heading">Open · under review</h4><article class="pr-row"><div><span class="pr-repo">mujoco · PR #3697</span><strong><a href="https://github.com/google-deepmind/mujoco/pull/3697" target="_blank" rel="noopener noreferrer">Fix Studio native viewer on macOS: run the viewer on the main thread</a></strong></div><span class="pr-status">Open</span></article></div></section>
+<section class="company-group"><div class="company-title"><div class="company-identity"><span class="company-avatar" aria-hidden="true">W</span><a class="company-link" href="https://github.com/waymo-research" target="_blank" rel="noopener noreferrer">Waymo ↗</a></div></div><div class="company-status-group"><h4 class="company-status-heading">Open · under review</h4><article class="pr-row"><div><span class="pr-repo">waymax · PR #96</span><strong><a href="https://github.com/waymo-research/waymax/pull/96" target="_blank" rel="noopener noreferrer">Fix scenario ID batching in the WOSAC notebook</a></strong></div><span class="pr-status">Open</span></article>
+<article class="pr-row"><div><span class="pr-repo">waymax · PR #95</span><strong><a href="https://github.com/waymo-research/waymax/pull/95" target="_blank" rel="noopener noreferrer">Clarify that rollout actors receive the full state; add observation-based actor test</a></strong></div><span class="pr-status">Open</span></article>
+<article class="pr-row"><div><span class="pr-repo">waymax · PR #94</span><strong><a href="https://github.com/waymo-research/waymax/pull/94" target="_blank" rel="noopener noreferrer">Fix configured simulation actors in the dm_env factory</a></strong></div><span class="pr-status">Open</span></article></div></section>
+</div>
             <div class="pr-bottom">
-              <span id="prCount" aria-live="polite">Loading company pull requests…</span>
+              <span id="prCount" aria-live="polite">Company contributions (static preview; interactive filters load automatically)</span>
               <span>Statuses updated from GitHub</span>
             </div>
           </div>
