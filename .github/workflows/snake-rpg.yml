@@ -1,0 +1,38 @@
+name: Snake.exe — contribution mini-game
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/snake-rpg.yml'
+  schedule:
+    - cron: '41 5 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rpg-snake-render
+  cancel-in-progress: false
+
+jobs:
+  snake:
+    if: github.repository == 'maharshi-coding/maharshi-coding'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate pixel snake from real contribution grid
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: maharshi-coding
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=#efc27d&color_dots=#0b1511,#234b31,#397c47,#6caf76,#b4e9aa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
