@@ -38,7 +38,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for attempt in 1 2 3 4; do
+          for attempt in $(seq 1 8); do
             git fetch origin main
             git checkout -B main origin/main
             python -m py_compile scripts/generate_profile.py
@@ -54,6 +54,9 @@ jobs:
               echo "Portfolio data refreshed"
               exit 0
             fi
+            backoff=$((attempt * 3))
+            echo "Push rejected; retrying after ${backoff}s backoff (attempt ${attempt}/8)"
+            sleep "${backoff}"
           done
-          echo "Could not commit data after four retries" >&2
+          echo "Could not commit data after eight retries" >&2
           exit 1
