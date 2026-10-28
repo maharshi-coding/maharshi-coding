@@ -79,3 +79,19 @@ jobs:
         run: node --check docs/assets/app.js
       - name: Browser interaction smoke tests (no external dependencies)
         run: node --test scripts/portfolio-smoke.test.cjs
+      - name: HTTP smoke test static Pages assets
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory docs > /tmp/portfolio-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in 1 2 3 4 5; do
+            if curl -fsS -o /dev/null http://127.0.0.1:8765/; then
+              break
+            fi
+            sleep 1
+          done
+          for asset in / /assets/styles.css /assets/app.js /data/profile.json; do
+            curl --fail --silent --show-error "http://127.0.0.1:8765$asset" -o /dev/null
+            echo "HTTP 200: $asset"
+          done
