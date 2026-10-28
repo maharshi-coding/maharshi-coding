@@ -171,3 +171,13 @@ test("unavailable data shows explicit messages instead of hanging on Loading", a
   assert.match(app.text("projectsGrid"), /could not be loaded/i);
   assert.match(app.text("updated"), /Unable to load/i);
 });
+
+test("server-rendered HTML includes a usable PR fallback if scripts cannot run", () => {
+  assert.match(HTML, /Static GitHub-data fallback/);
+  for (const company of ["Tesla", "Meta", "Google DeepMind", "Waymo"]) {
+    assert.ok(HTML.includes(company), "Missing fallback company " + company);
+  }
+  assert.match(HTML, /mariana-trench\/pull\/277/);
+  assert.match(HTML, /81b835dff56763b871d9db8dcbf29bdb1bb35973/);
+  assert.match(HTML, /app\.js\?v=20261028-prfix/);
+});
