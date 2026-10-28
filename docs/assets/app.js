@@ -337,7 +337,7 @@
       state.projectSort = e.target.value;
       renderProjects();
     });
-    $("[data-pr-state]").forEach(button => button.addEventListener("click", () => {
+    $$("[data-pr-state]").forEach(button => button.addEventListener("click", () => {
       state.prState = button.dataset.prState;
       renderPRs();
     }));
