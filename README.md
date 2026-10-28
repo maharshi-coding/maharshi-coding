@@ -131,7 +131,7 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 <!--START_SECTION:prs-->
 ### [Tesla](https://github.com/teslamotors)
 
-**Merged**
+**Merged on GitHub**
 
 - **vehicle-command** · [PR #524](https://github.com/teslamotors/vehicle-command/pull/524) — tesla-http-proxy: exit 1 and report startup failures on stderr
 
@@ -165,7 +165,7 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 - **waymax** · [PR #95](https://github.com/waymo-research/waymax/pull/95) — Clarify that rollout actors receive the full state; add observation-based actor test
 - **waymax** · [PR #94](https://github.com/waymo-research/waymax/pull/94) — Fix configured simulation actors in the dm_env factory
 
-_GitHub merges and Meta CodeSync integrations are labeled separately. These are public open-source contributions—not company employment or endorsement._
+_GitHub merge and Meta CodeSync integration are labeled separately. These are public open-source contributions—not company employment or endorsement._
 <!--END_SECTION:prs-->
 
 ## Experience & focus
@@ -188,7 +188,7 @@ _GitHub merges and Meta CodeSync integrations are labeled separately. These are 
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 8 |
-| Contributions in last 365 days | 256 |
+| Contributions in last 365 days | 264 |
 
 **Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
