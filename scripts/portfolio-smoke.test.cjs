@@ -179,5 +179,5 @@ test("server-rendered HTML includes a usable PR fallback if scripts cannot run",
   }
   assert.match(HTML, /mariana-trench\/pull\/277/);
   assert.match(HTML, /81b835dff56763b871d9db8dcbf29bdb1bb35973/);
-  assert.match(HTML, /app\.js\?v=20261028-prfix/);
+  assert.match(HTML, /app\.js\?v=20261028-prfix2/);
 });
