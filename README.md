@@ -129,56 +129,40 @@ _Forks are shown separately from original projects._
 I submit fixes and improvements to established projects and maintain my own tools. The upstream list is separated by **merged** and **open** status; pull requests in my own namespace are available in expandable sections.
 
 <!--START_SECTION:prs-->
-### Merged upstream · 2
+### [Tesla](https://github.com/teslamotors)
 
-| Project | Contribution | PR |
-| :-- | :-- | :-- |
-| **teslamotors/vehicle-command** | tesla-http-proxy: exit 1 and report startup failures on stderr | [#524](https://github.com/teslamotors/vehicle-command/pull/524) |
-| **ros-navigation/navigation2** | Fix BtActionNode cancellation when halted before goal acknowledgement | [#6445](https://github.com/ros-navigation/navigation2/pull/6445) |
+**Merged**
 
-<details><summary>View 7 merged PRs in my own GitHub namespace</summary>
+- **vehicle-command** · [PR #524](https://github.com/teslamotors/vehicle-command/pull/524) — tesla-http-proxy: exit 1 and report startup failures on stderr
 
-| Repository | Change | Pull request |
-| :-- | :-- | :-- |
-| maharshi-coding/oss-agent | Interactive README + live GitHub Pages visualizer demo | [#1](https://github.com/maharshi-coding/oss-agent/pull/1) |
-| maharshi-coding/agent-pixel-visualizer | perf: fix 60fps rendering bottlenecks and event-listener leak in webview | [#1](https://github.com/maharshi-coding/agent-pixel-visualizer/pull/1) |
-| maharshi-coding/reinforcement-learning | Implement RL-Based Autonomous Intrusion Response System (AIRS) | [#1](https://github.com/maharshi-coding/reinforcement-learning/pull/1) |
-| maharshi-coding/KAN-ODEs | Add optimized KAN-ODE implementation with regularization and evaluation framework | [#1](https://github.com/maharshi-coding/KAN-ODEs/pull/1) |
-| maharshi-coding/ai-tutor-app | Integrate Ollama LLM, Kokoro TTS, SadTalker avatar, RAG document upload, and streaming | [#2](https://github.com/maharshi-coding/ai-tutor-app/pull/2) |
-| maharshi-coding/ai-tutor-app | Fix avatar image not displaying after generation due to stale state and browser cache | [#1](https://github.com/maharshi-coding/ai-tutor-app/pull/1) |
-| maharshi-coding/orlog-game | Optimize core game loop and React rendering performance | [#1](https://github.com/maharshi-coding/orlog-game/pull/1) |
+**Open · under review**
 
-</details>
+- **vehicle-command** · [PR #535](https://github.com/teslamotors/vehicle-command/pull/535) — proxy: propagate vehicle request cancellation with startup cleanup
+- **react-native-camera-kit** · [PR #822](https://github.com/teslamotors/react-native-camera-kit/pull/822) — fix(android): center scan frame after enabling and layout changes
 
-### Open upstream · 11
+### [Meta](https://github.com/facebook)
 
-| Project | Contribution | PR |
-| :-- | :-- | :-- |
-| **teslamotors/vehicle-command** | proxy: propagate vehicle request cancellation with startup cleanup | [#535](https://github.com/teslamotors/vehicle-command/pull/535) |
-| **google-deepmind/mujoco** | Fix Studio native viewer on macOS: run the viewer on the main thread | [#3697](https://github.com/google-deepmind/mujoco/pull/3697) |
-| **facebook/mariana-trench** | Fix false negative: taint propagation through static fields (#91) | [#277](https://github.com/facebook/mariana-trench/pull/277) |
-| **facebook/pyrefly** | Preserve Unknown when narrowing missing attributes | [#5346](https://github.com/facebook/pyrefly/pull/5346) |
-| **moveit/moveit2** | Fix use-after-free in servo_keyboard_input demo by joining the spin thread | [#3850](https://github.com/moveit/moveit2/pull/3850) |
-| **facebook/ThreatExchange** | [pdq][cpp] Prevent signed integer overflow in image downscaling | [#2026](https://github.com/facebook/ThreatExchange/pull/2026) |
-| **supabase/supabase** | fix(studio): show removed edge functions in branch merge diff | [#44194](https://github.com/supabase/supabase/pull/44194) |
-| **teslamotors/react-native-camera-kit** | fix(android): center scan frame after enabling and layout changes | [#822](https://github.com/teslamotors/react-native-camera-kit/pull/822) |
-| **waymo-research/waymax** | Fix scenario ID batching in the WOSAC notebook | [#96](https://github.com/waymo-research/waymax/pull/96) |
-| **waymo-research/waymax** | Clarify that rollout actors receive the full state; add observation-based actor test | [#95](https://github.com/waymo-research/waymax/pull/95) |
-| **waymo-research/waymax** | Fix configured simulation actors in the dm_env factory | [#94](https://github.com/waymo-research/waymax/pull/94) |
+**Open · under review**
 
-<details><summary>View 3 open PRs in my own GitHub namespace</summary>
+- **mariana-trench** · [PR #277](https://github.com/facebook/mariana-trench/pull/277) — Fix false negative: taint propagation through static fields (#91)
+- **pyrefly** · [PR #5346](https://github.com/facebook/pyrefly/pull/5346) — Preserve Unknown when narrowing missing attributes
+- **ThreatExchange** · [PR #2026](https://github.com/facebook/ThreatExchange/pull/2026) — [pdq][cpp] Prevent signed integer overflow in image downscaling
 
-| Repository | Change | Pull request |
-| :-- | :-- | :-- |
-| maharshi-coding/supabase | fix(studio): prevent crash on log drains page in self-hosted environments | [#1](https://github.com/maharshi-coding/supabase/pull/1) |
-| maharshi-coding/face-attendance-app | Fix end-to-end: remove exposed key, green tests, clean frontend build | [#1](https://github.com/maharshi-coding/face-attendance-app/pull/1) |
-| maharshi-coding/ai-tutor-app | Fix end-to-end: green tests, clean builds across backend/frontend/mobile | [#3](https://github.com/maharshi-coding/ai-tutor-app/pull/3) |
+### [Google DeepMind](https://github.com/google-deepmind)
 
-</details>
+**Open · under review**
 
-[View all authored pull requests](https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding) · [Closed without merging](https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding+is%3Aclosed+-is%3Amerged)
+- **mujoco** · [PR #3697](https://github.com/google-deepmind/mujoco/pull/3697) — Fix Studio native viewer on macOS: run the viewer on the main thread
 
-_Status is sourced from GitHub; open means not merged._
+### [Waymo](https://github.com/waymo-research)
+
+**Open · under review**
+
+- **waymax** · [PR #96](https://github.com/waymo-research/waymax/pull/96) — Fix scenario ID batching in the WOSAC notebook
+- **waymax** · [PR #95](https://github.com/waymo-research/waymax/pull/95) — Clarify that rollout actors receive the full state; add observation-based actor test
+- **waymax** · [PR #94](https://github.com/waymo-research/waymax/pull/94) — Fix configured simulation actors in the dm_env factory
+
+_Statuses come from GitHub. These are public open-source contributions—not company employment or endorsement._
 <!--END_SECTION:prs-->
 
 ## Experience & focus
@@ -199,9 +183,9 @@ _Status is sourced from GitHub; open means not merged._
 | Public repositories | 33 |
 | Original repositories | 18 |
 | Total public repository stars | 1 |
-| Merged upstream PRs | 2 |
-| Open upstream PRs | 11 |
-| Contributions in last 365 days | 231 |
+| Merged PRs to featured tech companies | 1 |
+| Open PRs to featured tech companies | 9 |
+| Contributions in last 365 days | 249 |
 
 **Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
