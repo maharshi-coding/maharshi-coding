@@ -367,9 +367,15 @@
     } catch (error) {
       $("#projectsGrid").replaceChildren(create("div", "empty-state",
         "Project data could not be loaded. Please view the repositories directly on GitHub."));
-      $("#prList").replaceChildren(create("div", "empty-state",
-        "Pull request data is temporarily unavailable. See GitHub for the latest status."));
-      $("#updated").textContent = "Unable to load GitHub data snapshot";
+      const prList = $("#prList");
+      // Preserve the company PRs embedded in the HTML when the network fails.
+      // Only show an error panel when no static fallback exists.
+      if (!prList.children.length) {
+        prList.replaceChildren(create("div", "empty-state",
+          "Pull request data is temporarily unavailable. See GitHub for the latest status."));
+      }
+      $("#prCount").textContent = "Showing the last published company PR snapshot";
+      $("#updated").textContent = "Live GitHub data unavailable; showing saved information";
       console.warn("Portfolio data unavailable", error);
     }
   }
