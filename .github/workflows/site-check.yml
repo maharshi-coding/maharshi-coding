@@ -45,10 +45,17 @@ jobs:
           assert isinstance(groups, list) and groups
           for group in groups:
               assert group["name"] in companies
-              for state in ("merged", "open"):
+              for state in ("merged", "landed", "open"):
                   for pr in group[state]:
                       assert pr["state"] == state and pr["upstream"]
                       assert pr["repo"] in companies[group["name"]]
+                      if state == "landed":
+                          assert pr["method"] == "Meta CodeSync"
+                          assert len(pr["integration_commit"]) == 40
+                          assert pr["integration_url"].startswith("https://github.com/")
+          meta = next(g for g in groups if g["name"] == "Meta")
+          assert any(p["number"] == 277 for p in meta["landed"])
+          assert not any(p["number"] == 277 for p in meta["open"])
           markdown = Path("README.md").read_text()
           for marker in ("prs", "projects", "hud"):
               assert markdown.count("<!--START_SECTION:" + marker + "-->") == 1
