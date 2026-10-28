@@ -34,7 +34,7 @@
   const state = {
     data: null, scope: "featured", category: "All",
     projectSearch: "", projectSort: "featured",
-    prState: "merged", prScope: "upstream", prSearch: "", prLimit: 8
+    prState: "all", prSearch: ""
   };
   const $ = selector => document.querySelector(selector);
   const $$ = selector => [...document.querySelectorAll(selector)];
@@ -110,10 +110,11 @@
   function updateCounts() {
     const data = state.data;
     if (!data) return;
-    const upstream = mode => data.prs[mode].filter(p => p.upstream).length;
+    const groups = Array.isArray(data.company_contributions) ? data.company_contributions : [];
+    const totalFor = mode => groups.reduce((count, company) => count + (company[mode] || []).length, 0);
     $("#statRepos").textContent = fmt(data.stats.public_repos);
-    $("#statMerged").textContent = fmt(upstream("merged"));
-    $("#statOpen").textContent = fmt(upstream("open"));
+    $("#statMerged").textContent = fmt(totalFor("merged"));
+    $("#statOpen").textContent = fmt(totalFor("open"));
     $("#statContributions").textContent = data.stats.annual_contributions === null
       ? "—" : fmt(data.stats.annual_contributions);
     const updated = new Date(data.generated_at);
@@ -215,39 +216,74 @@
       button.setAttribute("aria-pressed", String(button.dataset.repoScope === state.scope)));
   }
 
-  function filteredPRs() {
-    let prs = state.data.prs[state.prState].filter(p =>
-      state.prScope === "all" || (state.prScope === "upstream" ? p.upstream : !p.upstream));
-    if (state.prSearch) {
-      const q = state.prSearch.toLowerCase();
-      prs = prs.filter(p => [p.repo, p.title, String(p.number)].join(" ").toLowerCase().includes(q));
-    }
-    return prs;
+  function filteredCompanies() {
+    const companies = Array.isArray(state.data.company_contributions)
+      ? state.data.company_contributions : [];
+    const statuses = state.prState === "all" ? ["merged", "open"] : [state.prState];
+    const query = state.prSearch.toLowerCase();
+    return companies.map(company => {
+      const sections = statuses.map(status => ({
+        status,
+        prs: (company[status] || []).filter(pr => {
+          if (!pr.upstream) return false;
+          if (!query) return true;
+          return [company.name, pr.repo, pr.title, String(pr.number)]
+            .join(" ").toLowerCase().includes(query);
+        })
+      })).filter(section => section.prs.length);
+      return { name: company.name, url: company.url, sections };
+    }).filter(company => company.sections.length);
   }
 
   function renderPRs() {
     if (!state.data) return;
-    const rows = filteredPRs();
+    const companies = filteredCompanies();
     const root = $("#prList");
     root.replaceChildren();
-    const visible = rows.slice(0, state.prLimit);
-    if (!rows.length) root.appendChild(create("div", "empty-state", "No pull requests match these filters."));
-    visible.forEach(pr => {
-      const row = create("article", "pr-row");
-      const left = create("div", "");
-      left.appendChild(create("span", "pr-repo", pr.repo + " · #" + pr.number));
-      const name = create("strong", "");
-      name.appendChild(link(pr.title, pr.url));
-      left.appendChild(name);
-      row.appendChild(left);
-      row.appendChild(create("span", "pr-status", state.prState === "merged" ? "Merged" : "Open"));
-      root.appendChild(row);
+    const prCount = companies.reduce((total, company) =>
+      total + company.sections.reduce((subtotal, section) => subtotal + section.prs.length, 0), 0);
+    if (!companies.length) {
+      root.appendChild(create("div", "empty-state",
+        "No company pull requests match this search and status."));
+    }
+    companies.forEach(company => {
+      const group = create("section", "company-group");
+      const header = create("div", "company-title");
+      const left = create("div", "company-identity");
+      const icon = create("span", "company-avatar", company.name.slice(0, 1));
+      icon.setAttribute("aria-hidden", "true");
+      left.appendChild(icon);
+      left.appendChild(link(company.name + " ↗", company.url, "company-link"));
+      header.appendChild(left);
+      header.appendChild(create("span", "company-count",
+        company.sections.reduce((n, section) => n + section.prs.length, 0) + " PRs"));
+      group.appendChild(header);
+      company.sections.forEach(section => {
+        const block = create("div", "company-status-group");
+        const heading = create("h4", "company-status-heading",
+          section.status === "merged" ? "Merged" : "Open · under review");
+        block.appendChild(heading);
+        section.prs.forEach(pr => {
+          const row = create("article", "pr-row");
+          const left = create("div", "");
+          left.appendChild(create("span", "pr-repo",
+            pr.repo.split("/").slice(1).join("/") + " · PR #" + pr.number));
+          const name = create("strong", "");
+          name.appendChild(link(pr.title, pr.url));
+          left.appendChild(name);
+          row.appendChild(left);
+          row.appendChild(create("span", "pr-status", section.status === "merged" ? "Merged" : "Open"));
+          block.appendChild(row);
+        });
+        group.appendChild(block);
+      });
+      root.appendChild(group);
     });
-    $("#prCount").textContent = rows.length + " pull request" + (rows.length === 1 ? "" : "s");
-    const more = $("#loadMore");
-    more.hidden = state.prLimit >= rows.length;
-    $$("[data-pr-state]").forEach(btn => btn.setAttribute(
-      "aria-pressed", String(btn.dataset.prState === state.prState)));
+    $("#prCount").textContent = prCount + " pull request" +
+      (prCount === 1 ? "" : "s") + " across " + companies.length +
+      " compan" + (companies.length === 1 ? "y" : "ies");
+    $$("[data-pr-state]").forEach(button => button.setAttribute(
+      "aria-pressed", String(button.dataset.prState === state.prState)));
   }
 
   function renderLanguages() {
@@ -290,23 +326,12 @@
       state.projectSort = e.target.value;
       renderProjects();
     });
-    $$("[data-pr-state]").forEach(button => button.addEventListener("click", () => {
+    $("[data-pr-state]").forEach(button => button.addEventListener("click", () => {
       state.prState = button.dataset.prState;
-      state.prLimit = 8;
       renderPRs();
     }));
-    $("#prScope").addEventListener("change", e => {
-      state.prScope = e.target.value;
-      state.prLimit = 8;
-      renderPRs();
-    });
     $("#prSearch").addEventListener("input", e => {
       state.prSearch = e.target.value.trim();
-      state.prLimit = 8;
-      renderPRs();
-    });
-    $("#loadMore").addEventListener("click", () => {
-      state.prLimit += 8;
       renderPRs();
     });
     $("#closeModal").addEventListener("click", () => $("#projectDialog").close());
@@ -320,8 +345,8 @@
       const response = await fetch("./data/profile.json", { cache: "no-store" });
       if (!response.ok) throw new Error("GitHub data HTTP " + response.status);
       const data = await response.json();
-      if (!Array.isArray(data.repos) || !data.prs || !Array.isArray(data.prs.merged) ||
-          !Array.isArray(data.prs.open) || !data.stats)
+      if (!Array.isArray(data.repos) || !Array.isArray(data.company_contributions) ||
+          !data.stats)
         throw new Error("Unrecognized GitHub data snapshot");
       state.data = data;
       updateCounts();
