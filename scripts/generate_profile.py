@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 DATA = ROOT / "docs" / "data" / "profile.json"
 TOKEN = os.getenv("GH_DATA_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN") or ""
+VERIFIED_DEMOS = {"oss-agent": "https://maharshi-coding.github.io/oss-agent/"}
 FEATURED = ["ai-tutor-app", "FulfillFlow", "oss-agent", "seller-shield",
             "outfallwatch", "overturn", "agent-pixel-visualizer", "datahub-steward-squad"]
 EMOJI = {
@@ -178,7 +179,7 @@ def normalize_repo(r):
         "language": r.get("language") or "Unspecified",
         "stars": r.get("stargazers_count", 0),
         "topics": r.get("topics") or [],
-        "live": valid_live_url(r.get("homepage")),
+        "live": valid_live_url(r.get("homepage")) or VERIFIED_DEMOS.get(name),
         "fork": bool(r.get("fork")),
         "archived": bool(r.get("archived")),
         "featured": name in FEATURED and not r.get("fork"),
