@@ -148,7 +148,7 @@ a{color:var(--green);text-decoration:none}a:hover{text-decoration:underline;colo
   }
   function cartridge(r){
     var c=node("article","cartridge");var img=node("img","cover");img.alt=r.name+" game cartridge";
-    img.src=r.featured?"../assets/covers/"+encodeURIComponent(r.name)+".svg":"";
+    img.src=r.featured?"https://raw.githubusercontent.com/maharshi-coding/maharshi-coding/main/assets/covers/"+encodeURIComponent(r.name)+".svg":"";
     if(!r.featured){img.removeAttribute("src");img.style.background="linear-gradient(130deg,#294432,#161e12)";img.style.height="70px";img.alt="Unillustrated source cartridge"}
     c.appendChild(img);
     c.appendChild(node("h3","",r.name));
