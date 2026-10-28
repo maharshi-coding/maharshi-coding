@@ -147,7 +147,7 @@ _Live GitHub project metadata • A star is a GitHub star, not a review rating._
 <h3>🧠 oss-agent</h3>
 <p>Human-approved AI agent for real open-source fixes</p>
 <p><code>Python · agentic-ai · ai-agent</code></p>
-<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/oss-agent">⌘ CODE</a></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://maharshi-coding.github.io/oss-agent/">▶ PLAY DEMO</a> &nbsp; <a href="https://github.com/maharshi-coding/oss-agent">⌘ CODE</a></p>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/maharshi-coding/seller-shield"><img width="100%" alt="seller-shield RPG cartridge" src="assets/covers/seller-shield.svg"></a>
@@ -279,7 +279,7 @@ These are forks, not original games. Authored PRs are credited in the raid log.
 | 🧬 Forks | 15 |
 | ⭐ Stars (public repos) | 1 |
 | ⚔️ Authored public PRs (merged / open) | 9 / 14 |
-| 🟩 Contributions in trailing 365 days | 204 |
+| 🟩 Contributions in trailing 365 days | 207 |
 
 **Language inventory** (number of nonfork public repos where language is primary):
 
