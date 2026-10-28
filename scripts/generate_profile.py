@@ -243,21 +243,20 @@ def render_prs(data):
 
 
 def project_card(r):
-    """Editorial two-column project card without false product ratings."""
+    """A minimal, readable project cell rendered with GitHub-safe HTML."""
     name = safe(r["name"])
     summary = safe(r["tagline"])
     tags = " · ".join([r["language"]] + r["topics"][:2])
-    live = (" &nbsp;·&nbsp; [Live demo](" + r["live"] + ")" if r["live"] else "")
-    # GitHub stars are not subjective product ratings.
+    live = (' &nbsp; · &nbsp; <a href="' + safe(r["live"]) +
+            '">Live demo</a>' if r["live"] else "")
     return (
         '<td width="50%" valign="top">\n'
-        '<a href="' + safe(r["url"]) + '"><b>' + name + '</b></a>\n\n'
-        + summary + '\n\n'
-        + '<sub>' + safe(tags) + ' · ★ ' + str(r["stars"]) + ' GitHub stars</sub>\n\n'
-        + '[Source code](' + r["url"] + ')' + live + '\n'
+        '<p><a href="' + safe(r["url"]) + '"><strong>' + name + '</strong></a></p>\n'
+        '<p>' + summary + '</p>\n'
+        '<p><sub>' + safe(tags) + ' · ★ ' + str(r["stars"]) + ' GitHub stars</sub></p>\n'
+        '<p><a href="' + safe(r["url"]) + '">Source code</a>' + live + '</p>\n'
         '</td>'
     )
-
 
 def render_projects(data):
     repos = [r for r in data["repos"] if not r["fork"] and not r["archived"]]
