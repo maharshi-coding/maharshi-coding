@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maharshi Barot — Software engineer building intelligent products and reliable systems" viewBox="0 0 1200 300" width="1200" height="300">
+<defs>
+<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0f172a"/><stop offset=".6" stop-color="#172554"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<linearGradient id="a" x1="0" x2="1"><stop stop-color="#93c5fd"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+<radialGradient id="h"><stop stop-color="#60a5fa" stop-opacity=".24"/><stop offset="1" stop-color="#60a5fa" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#e2e8f0" stroke-opacity=".055"/></pattern>
+<style><![CDATA[
+.t{font-family:Inter,'Segoe UI',Arial,sans-serif}.m{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.orbit{transform-origin:999px 150px;animation:turn 42s linear infinite}@keyframes turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.orbit{animation:none}}
+]]></style></defs>
+<rect width="1200" height="300" rx="18" fill="url(#bg)"/><rect width="1200" height="300" rx="18" fill="url(#grid)"/>
+<circle cx="1000" cy="150" r="220" fill="url(#h)"/>
+<path d="M55 55H115" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/>
+<text x="55" y="87" class="m" font-size="16" letter-spacing="2.2" fill="#93c5fd">SOFTWARE ENGINEERING  /  OPEN SOURCE</text>
+<text x="52" y="164" class="t" font-size="63" font-weight="750" fill="#f8fafc" letter-spacing="-2.5">Maharshi Barot</text>
+<text x="56" y="206" class="t" font-size="21" fill="#d5def0">AI systems · Robotics · Full-stack products</text>
+<rect x="55" y="236" width="316" height="30" rx="15" fill="#263b65" stroke="#5874a9" stroke-opacity=".8"/>
+<circle cx="72" cy="251" r="4.5" fill="#7dd3fc"/>
+<text x="86" y="256" class="m" font-size="13" fill="#dce9fc">BUILD  /  TEST  /  CONTRIBUTE</text>
+<g class="orbit" fill="none">
+<ellipse cx="1000" cy="150" rx="145" ry="68" stroke="#93c5fd" stroke-opacity=".65" stroke-width="2" transform="rotate(-25 1000 150)"/>
+<ellipse cx="1000" cy="150" rx="128" ry="99" stroke="#c4b5fd" stroke-opacity=".48" stroke-width="2" transform="rotate(39 1000 150)"/>
+</g>
+<circle cx="1000" cy="150" r="88" fill="#182848" stroke="#7d9bd2" stroke-width="1.6"/>
+<path d="M960 166V126L982 149L1000 130L1018 149L1040 126V166" fill="none" stroke="url(#a)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M946 186H1054" stroke="#647da9" stroke-width="2"/>
+<text x="1000" y="205" text-anchor="middle" font-size="13" class="m" letter-spacing="4" fill="#d3e1f9">MB / DEV</text>
+</svg>
