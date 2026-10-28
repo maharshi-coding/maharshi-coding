@@ -28,20 +28,60 @@ A curated view of original public work. Each project links to its real repositor
 <!--START_SECTION:projects-->
 <table>
 <tr>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/ai-tutor-app"><strong>ai-tutor-app</strong></a></p><p>Your AI tutor, powered by retrieval, voice and avatars</p><p><sub>TypeScript · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/ai-tutor-app">Source code</a></p></td>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/FulfillFlow"><strong>FulfillFlow</strong></a></p><p>Warehouse robot navigation powered by ROS 2 and Gazebo</p><p><sub>Python · autonomous-navigation · cpp · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/FulfillFlow">Source code</a></p></td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/ai-tutor-app"><strong>ai-tutor-app</strong></a></p>
+<p>Your AI tutor, powered by retrieval, voice and avatars</p>
+<p><sub>TypeScript · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/ai-tutor-app">Source code</a></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/FulfillFlow"><strong>FulfillFlow</strong></a></p>
+<p>Warehouse robot navigation powered by ROS 2 and Gazebo</p>
+<p><sub>Python · autonomous-navigation · cpp · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/FulfillFlow">Source code</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/oss-agent"><strong>oss-agent</strong></a></p><p>Human-approved AI agent for real open-source fixes</p><p><sub>Python · agentic-ai · ai-agent · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/oss-agent">Source code</a> &nbsp; · &nbsp; <a href="https://maharshi-coding.github.io/oss-agent/">Live demo</a></p></td>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/seller-shield"><strong>seller-shield</strong></a></p><p>Multi-agent risk defense for independent sellers</p><p><sub>Python · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/seller-shield">Source code</a></p></td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/oss-agent"><strong>oss-agent</strong></a></p>
+<p>Human-approved AI agent for real open-source fixes</p>
+<p><sub>Python · agentic-ai · ai-agent · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/oss-agent">Source code</a> &nbsp; · &nbsp; <a href="https://maharshi-coding.github.io/oss-agent/">Live demo</a></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/seller-shield"><strong>seller-shield</strong></a></p>
+<p>Multi-agent risk defense for independent sellers</p>
+<p><sub>Python · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/seller-shield">Source code</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/outfallwatch"><strong>outfallwatch</strong></a></p><p>Low-power coastal sensor alerts and storm simulation</p><p><sub>TypeScript · edge-computing · environmental-monitoring · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/outfallwatch">Source code</a> &nbsp; · &nbsp; <a href="https://outfallwatch.onrender.com">Live demo</a></p></td>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/overturn"><strong>overturn</strong></a></p><p>Stateful agent workflows for insurance denial appeals</p><p><sub>TypeScript · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/overturn">Source code</a></p></td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/outfallwatch"><strong>outfallwatch</strong></a></p>
+<p>Low-power coastal sensor alerts and storm simulation</p>
+<p><sub>TypeScript · edge-computing · environmental-monitoring · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/outfallwatch">Source code</a> &nbsp; · &nbsp; <a href="https://outfallwatch.onrender.com">Live demo</a></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/overturn"><strong>overturn</strong></a></p>
+<p>Stateful agent workflows for insurance denial appeals</p>
+<p><sub>TypeScript · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/overturn">Source code</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/agent-pixel-visualizer"><strong>agent-pixel-visualizer</strong></a></p><p>Turns VS Code agent activity into a pixel-art world</p><p><sub>JavaScript · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/agent-pixel-visualizer">Source code</a></p></td>
-<td width="50%" valign="top"><p><a href="https://github.com/maharshi-coding/datahub-steward-squad"><strong>datahub-steward-squad</strong></a></p><p>MCP-powered multi-agent metadata governance</p><p><sub>Python · ai-agents · claude · ★ 0 GitHub stars</sub></p><p><a href="https://github.com/maharshi-coding/datahub-steward-squad">Source code</a></p></td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/agent-pixel-visualizer"><strong>agent-pixel-visualizer</strong></a></p>
+<p>Turns VS Code agent activity into a pixel-art world</p>
+<p><sub>JavaScript · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/agent-pixel-visualizer">Source code</a></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://github.com/maharshi-coding/datahub-steward-squad"><strong>datahub-steward-squad</strong></a></p>
+<p>MCP-powered multi-agent metadata governance</p>
+<p><sub>Python · ai-agents · claude · ★ 0 GitHub stars</sub></p>
+<p><a href="https://github.com/maharshi-coding/datahub-steward-squad">Source code</a></p>
+</td>
 </tr>
 </table>
 
@@ -53,7 +93,7 @@ A curated view of original public work. Each project links to its real repositor
 | **face-attendance-app** —  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/face-attendance-app) |
 | **insta-go-sdk** —  | Go | 0 | [Code](https://github.com/maharshi-coding/insta-go-sdk) |
 | **kinetic-darkroom** — A gesture-controlled photo puzzle and digital darkroom. Built on Hand-Puzzle with original | Unspecified | 0 | [Code](https://github.com/maharshi-coding/kinetic-darkroom) |
-| **launchpad** — Interactive 3D launcher — try Maharshi's AI-agent projects live or view the code | HTML | 0 | [Code](https://github.com/maharshi-coding/launchpad) |
+| **launchpad** — Interactive 3D launcher — try Maharshi&#x27;s AI-agent projects live or view the code | HTML | 0 | [Code](https://github.com/maharshi-coding/launchpad) |
 | **maharshi-os** — Interactive neon-noir portfolio of Maharshi Barot — AI Solutions Developer &amp; Full-Stack En | TypeScript | 0 | [Code](https://github.com/maharshi-coding/maharshi-os) |
 | **my-library** —  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/my-library) |
 | **orlog-game** —  | JavaScript | 0 | [Code](https://github.com/maharshi-coding/orlog-game) |
@@ -161,7 +201,7 @@ _Status is sourced from GitHub; open means not merged._
 | Total public repository stars | 1 |
 | Merged upstream PRs | 2 |
 | Open upstream PRs | 11 |
-| Contributions in last 365 days | 225 |
+| Contributions in last 365 days | 226 |
 
 **Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
