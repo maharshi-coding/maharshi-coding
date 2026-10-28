@@ -1,0 +1,51 @@
+name: Sync RPG profile data
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'scripts/generate_profile.py'
+      - '.github/workflows/profile-rpg-sync.yml'
+      - 'docs/index.html'
+  schedule:
+    - cron: '13 */8 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rpg-profile-refresh
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'maharshi-coding/maharshi-coding'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch public GitHub repos, PRs, pins, profile and stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_DATA_TOKEN: ${{ secrets.GH_DATA_TOKEN }}
+        run: python scripts/generate_profile.py
+      - name: Verify generated snapshot
+        run: |
+          python -m py_compile scripts/generate_profile.py
+          python -m json.tool docs/data/profile.json > /dev/null
+      - name: Commit only if data changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! git diff --quiet -- README.md docs/data/profile.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md docs/data/profile.json
+            git commit -m "chore(profile): sync public GitHub quests and achievements"
+            git push
+          fi
