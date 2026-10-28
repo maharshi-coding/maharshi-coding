@@ -113,7 +113,7 @@
     const groups = Array.isArray(data.company_contributions) ? data.company_contributions : [];
     const totalFor = mode => groups.reduce((count, company) => count + (company[mode] || []).length, 0);
     $("#statRepos").textContent = fmt(data.stats.public_repos);
-    $("#statMerged").textContent = fmt(totalFor("merged"));
+    $("#statMerged").textContent = fmt(totalFor("merged") + totalFor("landed"));
     $("#statOpen").textContent = fmt(totalFor("open"));
     $("#statContributions").textContent = data.stats.annual_contributions === null
       ? "—" : fmt(data.stats.annual_contributions);
@@ -219,7 +219,8 @@
   function filteredCompanies() {
     const companies = Array.isArray(state.data.company_contributions)
       ? state.data.company_contributions : [];
-    const statuses = state.prState === "all" ? ["merged", "open"] : [state.prState];
+    const statuses = state.prState === "all" ? ["merged", "landed", "open"]
+      : state.prState === "merged" ? ["merged", "landed"] : ["open"];
     const query = state.prSearch.toLowerCase();
     return companies.map(company => {
       const sections = statuses.map(status => ({
@@ -261,7 +262,9 @@
       company.sections.forEach(section => {
         const block = create("div", "company-status-group");
         const heading = create("h4", "company-status-heading",
-          section.status === "merged" ? "Merged" : "Open · under review");
+          section.status === "merged" ? "Merged on GitHub"
+          : section.status === "landed" ? "Landed upstream via Meta CodeSync"
+          : "Open · under review");
         block.appendChild(heading);
         section.prs.forEach(pr => {
           const row = create("article", "pr-row");
@@ -271,8 +274,16 @@
           const name = create("strong", "");
           name.appendChild(link(pr.title, pr.url));
           left.appendChild(name);
+          if (section.status === "landed" && pr.integration_url) {
+            const proof = create("div", "integration-proof");
+            proof.appendChild(link("View upstream commit " + pr.integration_commit.slice(0, 7) + " ↗",
+              pr.integration_url));
+            left.appendChild(proof);
+          }
           row.appendChild(left);
-          row.appendChild(create("span", "pr-status", section.status === "merged" ? "Merged" : "Open"));
+          const statusLabel = section.status === "merged" ? "Merged"
+            : section.status === "landed" ? "Landed upstream" : "Open";
+          row.appendChild(create("span", "pr-status", statusLabel));
           block.appendChild(row);
         });
         group.appendChild(block);
