@@ -1,0 +1,51 @@
+name: Portfolio quality checks
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'scripts/**'
+      - 'docs/**'
+      - '.github/workflows/site-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check generated data and marker consistency
+        run: |
+          python -m py_compile scripts/generate_profile.py
+          python -m json.tool docs/data/profile.json > /dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("docs/data/profile.json").read_text())
+          assert data["username"] == "maharshi-coding"
+          assert isinstance(data["repos"], list)
+          assert set(data["prs"]) == {"merged", "open"}
+          assert not any(r.get("private") for r in data["repos"])
+          assert all("/pull/" in r["url"] and r["state"] == state
+                     for state in ("merged", "open") for r in data["prs"][state])
+          markdown = Path("README.md").read_text()
+          for marker in ("prs", "projects", "hud"):
+              assert markdown.count("<!--START_SECTION:" + marker + "-->") == 1
+              assert markdown.count("<!--END_SECTION:" + marker + "-->") == 1
+          html = Path("docs/index.html").read_text()
+          assert "./assets/styles.css" in html
+          assert "./assets/app.js" in html
+          assert Path("docs/assets/styles.css").is_file()
+          assert Path("docs/assets/app.js").is_file()
+          assert "projectDialog" in html and 'id="prList"' in html
+          print("Portfolio metadata and page structure valid")
+          PY
+      - name: Validate interactive website JavaScript
+        run: node --check docs/assets/app.js
