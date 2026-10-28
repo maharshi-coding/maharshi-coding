@@ -4,11 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'README.md'
       - 'scripts/generate_profile.py'
       - '.github/workflows/profile-sync.yml'
-      - 'docs/index.html'
-      - 'docs/assets/**'
   schedule:
     - cron: '13 */8 * * *'
 
@@ -38,7 +35,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for attempt in 1 2 3 4; do
+          for attempt in 1 2 3 4 5 6; do
             git fetch origin main
             git checkout -B main origin/main
             python -m py_compile scripts/generate_profile.py
@@ -54,6 +51,8 @@ jobs:
               echo "Portfolio data refreshed"
               exit 0
             fi
+            echo "Main changed during API processing; retrying from latest commit"
+            sleep $((attempt * 6))
           done
-          echo "Could not commit data after four retries" >&2
+          echo "Could not commit data after six retries" >&2
           exit 1
