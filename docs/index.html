@@ -1,251 +1,218 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080b1e">
-<meta name="description" content="Maharshi Barot's interactive RPG terminal: inspect projects, open-source raids, and GitHub engineering history.">
-<title>MAHARSHI.EXE // NEON VOID</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23090c22'/%3E%3Ctext x='7' y='32' fill='%23bba3ff' font-size='23' font-family='monospace'%3EMB%3C/text%3E%3C/svg%3E">
-<style>
-:root{color-scheme:dark;--bg:#07091b;--panel:#11142e;--panel2:#191d43;--line:#484d85;--violet:#bc9aff;--cyan:#7deaff;--muted:#a2abc9;--white:#f3f4ff;--red:#ff79ab;--glass:rgba(10,27,17,.9);--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 87% 7%,#261a4e 0,transparent 33%),radial-gradient(ellipse at 4% 40%,#101d45 0,transparent 35%),var(--bg);color:var(--white);font:14px/1.58 var(--mono)}
-body:after{content:"";position:fixed;z-index:20;inset:0;pointer-events:none;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,#000 4px,#000 5px)}
-a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline;color:var(--violet)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
-::selection{background:#9464e8;color:#07091b}.shell{max-width:1300px;margin:auto;padding:24px 22px 70px}
-.topbar{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);background:#14152eec;padding:12px 18px;gap:16px;border-radius:5px;box-shadow:0 6px 35px #0008}
-.brand{font-size:18px;color:var(--violet);font-weight:900;letter-spacing:2px}.brand small{font-size:10px;color:var(--muted);font-weight:400;margin-left:12px}
-.topbar nav{display:flex;gap:15px;flex-wrap:wrap}.topbar nav a{font-size:12px;color:var(--muted)}.topbar nav a:hover{color:var(--cyan)}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;margin:20px 0}
-.panel{border:1px solid var(--line);background:var(--glass);border-radius:5px;box-shadow:inset 0 0 26px #9573ff13,0 14px 50px #0007;min-width:0;overflow:hidden}
-.panelhead{padding:10px 15px;background:linear-gradient(90deg,#262357,#161833);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan)}
-.leds{display:flex;gap:5px}.led{width:8px;height:8px;background:var(--red);border-radius:50%}.led:nth-child(2){background:var(--violet)}.led:nth-child(3){background:var(--cyan)}
-.heroMain{padding:25px 28px 29px;position:relative}.kicker{font-size:11px;letter-spacing:3px;color:var(--cyan)}h1{font-size:clamp(34px,6.2vw,75px);line-height:1;letter-spacing:-3px;margin:18px 0 8px;color:var(--violet);text-shadow:0 0 50px #a46cff32}h1 span{color:var(--cyan)}.subtitle{font-size:14px;color:#d1d8f3}.boot{background:#0b0e25;border-left:2px solid var(--cyan);margin-top:24px;padding:15px 17px;color:#9fb0e4;min-height:78px}.boot span{display:block}.boot strong{color:var(--violet)}
-.btnrow,.commands{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pixelBtn,.commandBtn{background:#242650;color:var(--cyan);border:1px solid #786cbb;border-radius:3px;padding:10px 13px;font-size:12px;font-weight:700;transition:transform .15s,background .15s}.pixelBtn:hover,.commandBtn:hover{background:#343569;transform:translateY(-2px)}.pixelBtn.primary{background:var(--violet);border-color:var(--violet);color:#100e23}.pixelBtn.primary:hover{background:#e4c8ff}
-.sheet{padding:20px}.avatar{width:86px;height:86px;border-radius:6px;border:2px solid var(--violet);object-fit:cover;image-rendering:auto;margin-bottom:15px}.statLine{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #363864;padding:9px 0;font-size:12px}.statLine span:first-child{color:var(--muted)}.statLine strong{color:var(--violet);text-align:right}.progress{height:6px;background:#262752;border:1px solid #525894;overflow:hidden;margin:17px 0}.progress div{height:100%;width:78%;background:linear-gradient(90deg,var(--cyan),var(--violet))}
-.main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(270px,1fr);gap:18px}.terminal{height:565px;display:flex;flex-direction:column}.terminalOutput{padding:19px;overflow:auto;flex:1;font-size:12px;scrollbar-color:#6660a5 #0b0e25;white-space:pre-wrap;overflow-wrap:anywhere}.line{margin:0 0 7px;white-space:pre-wrap}.line.system{color:var(--muted)}.line.error{color:var(--red)}.line.ok{color:var(--cyan)}.line.command{color:var(--violet)}.line.big{font-weight:bold;font-size:14px;color:var(--violet)}.line a{color:var(--violet)}
-.prompt{border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:12px 16px;background:#0b0e26}.prompt label{color:var(--cyan);font-weight:700;white-space:nowrap}.prompt input{background:transparent;border:0;outline:0;color:var(--white);flex:1;min-width:30px;padding:6px 0}.prompt button{background:var(--cyan);color:#07091b;border:0;padding:7px 11px;font-weight:900;border-radius:2px}
-.sideStack{display:flex;flex-direction:column;gap:18px}.map{padding:18px;color:var(--muted);font-size:12px}.map pre{color:#9fe5ff;line-height:1.65;font-size:11px;overflow:auto}.map .mini{color:var(--violet)}.map a{display:inline-block;margin-top:7px}.hud{padding:15px 18px}.hudGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hudBox{padding:14px 10px;border:1px solid #515894;background:#1b2046;text-align:center}.hudBox strong{display:block;color:var(--violet);font-size:24px}.hudBox span{font-size:10px;letter-spacing:1px;color:var(--muted)}
-.sectionTitle{margin:36px 0 15px;display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionTitle h2{font-size:18px;letter-spacing:1px;color:var(--violet);margin:0}.sectionTitle small{color:var(--muted);font-size:11px}.filters{display:flex;gap:9px;margin:16px 0}.filters button{padding:7px 13px;border:1px solid var(--line);background:var(--panel2);color:var(--cyan);font-size:12px;border-radius:3px}.filters button.active{background:var(--violet);color:#0c0e23;border-color:var(--violet)}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.cartridge{background:#121730;border:1px solid #555b98;border-radius:4px;padding:12px;display:flex;flex-direction:column;min-height:240px;transition:transform .16s,border-color .16s}.cartridge:hover{transform:translateY(-4px);border-color:var(--violet)}.cover{width:100%;height:114px;object-fit:cover;border:1px solid #404875;border-radius:3px;background:#12162e}.cartridge h3{font-size:14px;line-height:1.2;color:var(--violet);margin:13px 0 6px;overflow-wrap:anywhere}.cartridge p{color:var(--muted);font-size:11px;margin:0 0 12px;flex:1}.tags{font-size:10px;color:var(--cyan);padding:5px 0}.actions{display:flex;gap:12px;font-size:12px;font-weight:700;margin-top:7px}.star{color:var(--violet)}
-.raid{border:1px solid var(--line);background:#12182f;padding:12px;margin:9px 0;border-radius:3px}.raid strong{display:block;color:var(--violet);font-size:12px}.raid .info{display:block;color:var(--muted);font-size:11px;margin-top:3px;overflow-wrap:anywhere}.raid a{font-size:11px}.raidSections{display:grid;grid-template-columns:1fr 1fr;gap:18px}.raidSections h3{color:var(--cyan);font-size:13px}.notice{padding:15px;border:1px dashed #665c9c;color:var(--muted);font-size:12px}.footer{text-align:center;margin:40px auto 0;padding:24px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footer a{color:var(--violet)}.cursor{display:inline-block;width:9px;height:17px;vertical-align:-3px;background:var(--violet);animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}@media (max-width:1050px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.main{grid-template-columns:1fr}.sideStack{display:grid;grid-template-columns:1fr 1fr}.terminal{height:520px}}
-@media(max-width:720px){.shell{padding:9px 10px 45px}.topbar{padding:12px}.topbar nav{gap:10px}.brand small{display:none}.hero{grid-template-columns:1fr}.heroMain{padding:19px}.sheet{display:grid;grid-template-columns:84px 1fr;gap:0 15px}.sheet .avatar{grid-row:span 4;width:70px;height:70px}.sheet .progress{grid-column:1/-1}.sideStack{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.raidSections{grid-template-columns:1fr}.terminal{height:470px}.sectionTitle{align-items:flex-start}.sectionTitle h2{font-size:16px}.panelhead{font-size:10px}.cover{height:85px}}
-@media(max-width:420px){.cards{grid-template-columns:1fr}.cover{height:150px}h1{letter-spacing:-1px}.statLine{font-size:11px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-
-/* NEON VOID V3 — immersive midnight arcade palette and dimensional panels. */
-body{background:
-  radial-gradient(ellipse 58% 49% at 85% -5%,rgba(51,125,207,.22),transparent 76%),
-  radial-gradient(ellipse 48% 56% at 6% 17%,rgba(122,59,222,.27),transparent 75%),
-  linear-gradient(158deg,#090a21 0%,#070b1e 52%,#100a2d 100%);
-  background-attachment:fixed}
-body::before{content:"";pointer-events:none;position:fixed;z-index:-1;inset:0;background-image:
-  linear-gradient(rgba(109,109,190,.045) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(109,109,190,.045) 1px,transparent 1px);
-  background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 83%)}
-.panel{background:linear-gradient(155deg,rgba(23,26,59,.91),rgba(10,13,36,.97));border-color:#45487f;
-  box-shadow:0 0 0 1px rgba(133,113,255,.07),0 19px 52px rgba(3,4,22,.45),inset 0 1px rgba(202,186,255,.06)}
-.panelhead{background:linear-gradient(90deg,rgba(83,57,159,.34),rgba(22,33,75,.85));color:#8aeaff}
-.topbar{background:rgba(15,18,45,.89);border-color:#4a4989;backdrop-filter:blur(12px)}
-.topbar .brand{color:#cdafff}.topbar nav a:hover{color:#85e8ff}
-.heroMain{background:
-  radial-gradient(ellipse 57% 62% at 94% 17%,rgba(103,75,231,.15),transparent 80%)}
-.heroMain h1{background:linear-gradient(115deg,#f8f7ff 8%,#bfa5ff 45%,#79e7ff 100%);
-  background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 4px 24px rgba(166,119,255,.15))}
-.heroMain h1 span{color:inherit}
-.boot{border-left:3px solid #b694ff;background:linear-gradient(90deg,rgba(108,71,187,.15),rgba(16,18,44,.7))}
-.pixelBtn,.commandBtn,.filters button{background:linear-gradient(145deg,#282750,#1b224a);border-color:#6665b3;color:#d8c8ff}
-.pixelBtn.primary,.filters button.active{color:#0c1022;background:linear-gradient(120deg,#a68bff,#78e9ff);border-color:#b8a4ff;box-shadow:0 6px 21px rgba(112,93,254,.22)}
-.pixelBtn:hover,.commandBtn:hover{background:#333367;border-color:#b79fff;box-shadow:0 0 18px rgba(147,122,255,.16)}
-.terminal{border-color:#67569e;box-shadow:0 0 34px rgba(112,78,212,.16)}
-.terminalOutput{background:radial-gradient(ellipse at 100% 0%,rgba(91,52,189,.1),transparent 50%)}
-.prompt{background:#0e132d}.prompt label{color:#81e8fa}.prompt input{caret-color:#c5acff}
-.prompt button{background:linear-gradient(120deg,#b39aff,#81e8ff);color:#0c1030}
-.hudBox{background:linear-gradient(135deg,#181c41,#13172d);border-color:#494f8e}
-.hudBox strong{color:#c9a9ff;text-shadow:0 0 18px rgba(164,132,255,.24)}
-.cartridge{background:linear-gradient(145deg,#1b1c41,#0e1430);border-color:#555589;
-  box-shadow:0 10px 24px rgba(0,0,0,.24)}
-.cartridge:hover{border-color:#b393ff;box-shadow:0 13px 32px rgba(89,65,198,.18)}
-.cover{border-color:#5f5589}.cartridge h3{color:#d1bbff}
-.raid{background:linear-gradient(135deg,#191c3b,#0f1731);border-color:#49477c}
-.raid strong{color:#cbb0ff}
-.sectionTitle h2{color:#caaaff;text-shadow:0 0 19px rgba(186,143,255,.18)}
-.notice{background:rgba(33,31,77,.46);border-color:#6465a6}
-@media(prefers-reduced-motion:reduce){.heroMain h1{filter:none}}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Maharshi Barot — Software engineer building AI systems, robotics applications, developer tools, and full-stack products. Explore real GitHub projects and open-source contributions.">
+  <meta property="og:title" content="Maharshi Barot — Software Engineer">
+  <meta property="og:description" content="An interactive portfolio of AI systems, robotics, full-stack work, and open-source contributions.">
+  <title>Maharshi Barot — Software Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172335'/%3E%3Ctext x='10' y='43' fill='white' font-size='28' font-weight='bold' font-family='Arial'%3EMB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/app.js" defer></script>
 </head>
 <body>
-<div class="shell">
-<header class="topbar"><a class="brand" href="#top">◈ MAHARSHI.EXE <small>V3 / NEON VOID</small></a><nav aria-label="Level select"><a href="#console">CONSOLE</a><a href="#games">CARTRIDGES</a><a href="#raids">RAID LOG</a><a href="https://github.com/maharshi-coding" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></nav></header>
-<div class="hero" id="top">
-<section class="panel"><div class="panelhead"><span>★ BOOT SEQUENCE / PLAYER ONE</span><span class="leds"><span class="led"></span><span class="led"></span><span class="led"></span></span></div><div class="heroMain"><div class="kicker">[ 01 / MAHARSHI UNIVERSE ]</div><h1>FULL-STACK<br><span>MAGE.</span></h1><div class="subtitle">AI SUMMONER × OPEN SOURCE RAIDER × ROBOTICS BUILDER <span class="cursor" aria-hidden="true"></span></div><div class="boot" aria-label="System boot status"><span>[ OK ] ROM loaded // Player: Maharshi Barot</span><span>[ OK ] Current quest: Software Developer @ Meeka</span><span><strong>[ READY ]</strong> Enter the terminal. Type HELP.</span></div><div class="btnrow"><button class="pixelBtn primary" id="focusConsole">▶ START GAME</button><a class="pixelBtn" href="#games">▦ SELECT GAME</a><a class="pixelBtn" href="https://maharshi-os.netlify.app/" target="_blank" rel="noopener noreferrer">↗ MAIN PORTFOLIO</a></div></div></section>
-<aside class="panel"><div class="panelhead">🧙 CHARACTER SHEET // LVL ∞</div><div class="sheet"><img class="avatar" id="avatar" src="https://avatars.githubusercontent.com/u/261245761?v=4" alt="GitHub profile avatar"><div class="statLine"><span>NAME</span><strong>Maharshi Barot</strong></div><div class="statLine"><span>CLASS</span><strong>AI SUMMONER</strong></div><div class="statLine"><span>BASE</span><strong>TAMU-CC</strong></div><div class="statLine"><span>CURRENT QUEST</span><strong>Meeka · Developer</strong></div><div class="statLine"><span>ALIGNMENT</span><strong>Build / Test / Ship</strong></div><div class="progress" title="Decorative stamina / not a GitHub metric"><div></div></div><span style="font-size:11px;color:var(--muted)">“Ship code that survives the real world.”</span></div></aside>
-</div>
-<div class="main">
-<section class="panel terminal" id="console"><div class="panelhead"><span>⌘ INTERACTIVE TERMINAL // GAME MASTER</span><span>PTY: /dev/maharshi</span></div><div class="terminalOutput" id="output" role="log" aria-live="polite" aria-label="Console output"></div><div class="prompt"><label for="command">PLAYER@DEV:~$</label><input id="command" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Enter terminal command" placeholder="type help ..." maxlength="160"><button id="run">↵</button></div></section>
-<div class="sideStack">
-<section class="panel"><div class="panelhead">🗺️ WORLD MAP // FAST TRAVEL</div><div class="map"><pre aria-label="ASCII world map">    ┌───────────┐
-    │ CHARACTER │
-    └─────┬─────┘
-          │
-  ┌───────▼────────┐
-  │  MAHARSHI.EXE  │
-  └───┬────────┬───┘
-      │        │
-  ┌───▼──┐ ┌───▼────┐
-  │ GAMES│ │ RAIDS  │
-  └───┬──┘ └───┬────┘
-      └────┬───┘
-         ┌─▼───┐
-         │ STATS│
-         └─────┘</pre><span class="mini">FAST TRAVEL:</span> <a href="#games">[ GAME LIBRARY ]</a> <a href="#raids">[ RAID BOARD ]</a></div></section>
-<section class="panel"><div class="panelhead">▣ LIVE HUD // GITHUB</div><div class="hud"><div class="hudGrid"><div class="hudBox"><strong id="repos">--</strong><span>PUBLIC REPOS</span></div><div class="hudBox"><strong id="stars">--</strong><span>STARS</span></div><div class="hudBox"><strong id="merged">--</strong><span>MERGED PRs</span></div><div class="hudBox"><strong id="open">--</strong><span>OPEN PRs</span></div></div><p style="font-size:10px;color:var(--muted);margin-bottom:0">Source: saved snapshot of public GitHub API records.<br><span id="synced">Sync state: loading...</span></p></div></section>
-</div>
-</div>
-<div class="sectionTitle" id="games"><h2>▦ GAME LIBRARY / ORIGINAL BUILDS</h2><small>REAL PUBLIC REPOS · NO INVENTED STAR RATINGS</small></div>
-<div class="filters" role="group" aria-label="Project shelves"><button data-filter="featured" class="active">MAIN QUESTS</button><button data-filter="all">ALL ORIGINALS</button><button data-filter="forks">UPSTREAM FORKS</button></div>
-<div id="gameGrid" class="cards" aria-live="polite"></div>
-<div class="sectionTitle" id="raids"><h2>⚔️ RAID LOG / PUBLIC PRs</h2><small>MERGED ≠ OPEN · VERIFIED STATES</small></div><div id="raidGrid" class="raidSections"></div>
-<div class="sectionTitle"><h2>☷ LORE / LEGENDARY SIDE QUEST</h2></div><div class="notice"><strong style="color:var(--violet)">RAMAYANAGPT</strong> — Previously listed as a domain-specific conversational AI project. No verified public repository was found, so this entry deliberately has no fabricated PLAY or CODE link.</div>
-<footer class="footer">★ MAHARSHI.EXE — A REAL GITHUB PROFILE WITH A FICTIONAL GAME SHELL ★<br><a href="https://github.com/maharshi-coding">VIEW SOURCE</a> · <a href="https://maharshi-os.netlify.app/">PORTFOLIO</a> · <a href="https://github.com/maharshi-coding/maharshi-coding/blob/main/SETUP.md">SETUP GUIDE</a><br><span id="footerStamp">WORLD DATA LOADING...</span></footer>
-</div>
-<script>
-"use strict";
-(function () {
-  var db = null;
-  var output = document.getElementById("output");
-  var input = document.getElementById("command");
-  var history = [];
-  var h = 0;
-  var cmdList = ["help","about","whoami","stats","projects","project","prs","prs open","prs merged","skills","inventory","map","quests","achievements","contact","clear","neofetch","secret"];
-  function node(tag,cls,text){var el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=String(text);return el}
-  function safeLink(uri){try{var u=new URL(uri);return u.protocol==="https:"||u.protocol==="http:"?u.href:null}catch(e){return null}}
-  function anchor(text,url){var a=node("a","",text);var href=safeLink(url);if(href){a.href=href;a.target="_blank";a.rel="noopener noreferrer"}return a}
-  function log(text,kind){var e=node("div","line "+(kind||""),text);output.appendChild(e);output.scrollTop=output.scrollHeight;return e}
-  function linkLog(text,url){var line=node("div","line");line.appendChild(anchor(text,url));output.appendChild(line);output.scrollTop=output.scrollHeight}
-  function quick(name){var b=node("button","commandBtn",name.toUpperCase());b.type="button";b.addEventListener("click",function(){run(name)});return b}
-  function boot(){
-    log("╔═ MAHARSHI.EXE / TERMINAL ADVENTURE ══════════════════╗","big");
-    log("[ OK ] Player cartridge inserted.","ok");
-    log("[ OK ] GitHub public data snapshot mounted.","ok");
-    log("[ READY ] Type HELP to inspect available commands.","ok");
-    log("Try: PROJECTS • PRS MERGED • PRS OPEN • ABOUT • STATS","system");
-  }
-  function run(raw) {
-    var text=(raw||"").trim(); if(!text)return; history.push(text);h=history.length;
-    log("PLAYER@DEV:~$ "+text,"command");input.value="";
-    var parts=text.split(/\s+/),action=parts[0].toLowerCase(),arg=parts.slice(1).join(" ").toLowerCase();
-    if(action==="clear"){output.replaceChildren();return}
-    if(action==="help"){log("COMMANDS AVAILABLE", "big");
-      log("help · about · whoami · skills · inventory · map · quests");
-      log("projects [featured|all|forks] · project <repo-name>");
-      log("prs [open|merged] · stats · achievements · neofetch");
-      log("contact · clear · secret");
-      log("↑/↓ history · Tab autocomplete · enter to execute","system");return}
-    if(action==="about"||action==="whoami"){log("PLAYER: Maharshi Barot | CLASS: Full-Stack Mage / AI Summoner","big");log("BASE CAMP: Texas A&M University–Corpus Christi");log("CURRENT QUEST: Software Developer @ Meeka (provided by player)");log("SPECIALTIES: AI agents, full-stack products, C++, robotics, open source");return}
-    if(action==="skills"||action==="inventory"){log("⚔️ LANGUAGES: Python / TypeScript / JavaScript / C++ / Go","big");log("🛡️ FRAMEWORKS: React / Node.js / .NET / Next.js / FastAPI");log("🔮 SPELLBOOK: AI/LLM / RAG / Multi-agent orchestration / Bedrock");log("🧰 TOOLS: ROS 2 / Docker / GitHub Actions / PostgreSQL / Firebase");return}
-    if(action==="map"||action==="quests"){log("WORLD MAP: CHARACTER → GAME LIBRARY → RAID BOARD → ACHIEVEMENTS","big");log("MAIN QUEST: Ship useful engineering systems.");log("SIDE QUEST: RamayanaGPT (public code URL unverified).");log("FAST TRAVEL: use buttons or anchors above.");return}
-    if(action==="contact"){linkLog("GITHUB PROFILE ↗","https://github.com/maharshi-coding");linkLog("INTERACTIVE PORTFOLIO ↗","https://maharshi-os.netlify.app/");return}
-    if(action==="secret"){log("✨ SECRET FOUND: Good code is code someone else can understand.","ok");log("ACHIEVEMENT UNLOCKED: READ THE DOCUMENTATION");return}
-    if(!db){log("Data cartridge failed to load. Refresh the page or view GitHub directly.","error");return}
-    var pr=db.prs||{merged:[],open:[]};
-    if(action==="stats"||action==="achievements"||action==="neofetch"){
-      log("╔═ ACHIEVEMENT HUD ═══════════════════════╗","big");
-      log("Account created: "+(db.stats.created_at||"Not available in snapshot"));
-      log("Public repositories: "+db.stats.public_repos+" | forks: "+db.stats.forks);
-      log("GitHub stars: "+db.stats.stars+" | merged PRs: "+pr.merged.length+" | open PRs: "+pr.open.length);
-      log("Trailing 365d contributions: "+(db.stats.annual_contributions===null?"Not available":db.stats.annual_contributions));
-      log("Pinned: "+(db.pinned.length?db.pinned.join(", "):"Not available in current snapshot"));
-      return
-    }
-    if(action==="projects"){
-      var subset=arg==="all"?db.repos.filter(function(r){return !r.fork}):arg==="forks"?db.repos.filter(function(r){return r.fork}):db.repos.filter(function(r){return r.featured});
-      log("CARTRIDGE INVENTORY // "+subset.length+" entries","big");
-      subset.forEach(function(r){linkLog("▣ "+r.name+" · "+r.language+" · ⭐"+r.stars,r.url)});
-      return
-    }
-    if(action==="project"){
-      var target=db.repos.find(function(r){return r.name.toLowerCase()===arg})||
-                 db.repos.find(function(r){return r.name.toLowerCase().includes(arg)&&arg});
-      if(!target){log("No matching public repository. Try PROJECTS.","error");return}
-      log("▶ CARTRIDGE: "+target.name.toUpperCase(),"big");
-      log(target.description||target.tagline||"No public description supplied.");
-      log("PRIMARY LANGUAGE: "+target.language+" | STARS: "+target.stars+" | FORK: "+(target.fork?"YES":"NO"));
-      if(target.topics.length)log("TOPICS: "+target.topics.join(", "));
-      linkLog("⌘ SOURCE CODE ↗",target.url);
-      if(target.live)linkLog("▶ PLAY LIVE DEMO ↗",target.live);
-      return
-    }
-    if(action==="prs"){
-      var states=arg==="open"?["open"]:arg==="merged"?["merged"]:["merged","open"];
-      states.forEach(function(state){
-        log("⚔️ "+state.toUpperCase()+" // "+pr[state].length+" PUBLIC PRs","big");
-        pr[state].forEach(function(p){linkLog((p.upstream?"⚔ ":"⌂ ")+p.repo+" #"+p.number+" — "+p.title,p.url)});
-      });return
-    }
-    log("UNKNOWN COMMAND: "+text+". Type HELP to open the command list.","error");
-  }
-  function cartridge(r){
-    var c=node("article","cartridge");var img=node("img","cover");img.alt=r.name+" game cartridge";
-    img.src=r.featured?"https://raw.githubusercontent.com/maharshi-coding/maharshi-coding/main/assets/covers/"+encodeURIComponent(r.name)+".svg":"";
-    if(!r.featured){img.removeAttribute("src");img.style.background="linear-gradient(130deg,#34285c,#12142a)";img.style.height="70px";img.alt="Unillustrated source cartridge"}
-    c.appendChild(img);
-    c.appendChild(node("h3","",r.name));
-    c.appendChild(node("p","",r.tagline||r.description||"Explore this repository."));
-    var tag=node("div","tags",r.language+" · ⭐ "+r.stars);c.appendChild(tag);
-    var buttons=node("div","actions");buttons.appendChild(anchor("⌘ CODE ↗",r.url));
-    if(r.live)buttons.appendChild(anchor("▶ PLAY ↗",r.live));
-    c.appendChild(buttons);return c
-  }
-  function paintGames(which){
-    if(!db)return;
-    var container=document.getElementById("gameGrid");container.replaceChildren();
-    var repo=db.repos.filter(function(r){return which==="forks"?r.fork:which==="all"?!r.fork:r.featured});
-    if(!repo.length){container.appendChild(node("p","notice","No accessible public repositories in this shelf."));return}
-    repo.sort(function(a,b){return a.name.localeCompare(b.name)});
-    repo.forEach(function(r){container.appendChild(cartridge(r))});
-    document.querySelectorAll("[data-filter]").forEach(function(b){b.classList.toggle("active",b.dataset.filter===which)})
-  }
-  function raidColumn(state){
-    var col=node("div");
-    col.appendChild(node("h3","",state==="merged"?"✅ CLEARED BOUNTIES / MERGED":"🔶 ACTIVE QUESTS / OPEN"));
-    (db.prs[state]||[]).forEach(function(p){
-      var card=node("article","raid");
-      card.appendChild(node("strong","",(p.upstream?"⚔ UPSTREAM  ":"⌂ HOME BASE  ")+p.repo));
-      card.appendChild(node("span","info",p.title));
-      card.appendChild(anchor("INSPECT PR #"+p.number+" ↗",p.url));
-      col.appendChild(card)
-    });
-    return col
-  }
-  function paint(){
-    document.getElementById("repos").textContent=db.stats.public_repos;
-    document.getElementById("stars").textContent=db.stats.stars;
-    document.getElementById("merged").textContent=db.prs.merged.length;
-    document.getElementById("open").textContent=db.prs.open.length;
-    document.getElementById("synced").textContent="Updated: "+db.generated_at.slice(0,16).replace("T"," ")+" UTC";
-    document.getElementById("footerStamp").textContent="DATA SOURCE: PUBLIC GITHUB API · SNAPSHOT "+db.generated_at.slice(0,10);
-    var a=safeLink(db.avatar);if(a)document.getElementById("avatar").src=a;
-    paintGames("featured");
-    var raids=document.getElementById("raidGrid");raids.replaceChildren();raids.appendChild(raidColumn("merged"));raids.appendChild(raidColumn("open"));
-  }
-  document.getElementById("run").addEventListener("click",function(){run(input.value);input.focus()});
-  document.getElementById("focusConsole").addEventListener("click",function(){document.getElementById("console").scrollIntoView({behavior:"smooth",block:"center"});input.focus()});
-  input.addEventListener("keydown",function(e){
-    if(e.key==="Enter"){e.preventDefault();run(input.value)}
-    else if(e.key==="ArrowUp"){e.preventDefault();h=Math.max(0,h-1);input.value=history[h]||""}
-    else if(e.key==="ArrowDown"){e.preventDefault();h=Math.min(history.length,h+1);input.value=history[h]||""}
-    else if(e.key==="Tab"){var v=input.value.toLowerCase().trim();var match=cmdList.find(function(c){return c.startsWith(v)&&v});if(match){e.preventDefault();input.value=match}}
-  });
-  document.querySelectorAll("[data-filter]").forEach(function(b){b.addEventListener("click",function(){paintGames(b.dataset.filter)})});
-  boot();
-  fetch("./data/profile.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(function(v){
-    if(!v.repos||!v.prs||!v.stats)throw new Error("Invalid data snapshot");
-    db=v;paint();log("★ DATA CARTRIDGE ONLINE: "+v.repos.length+" public repositories indexed.","ok");
-  }).catch(function(e){log("Unable to mount data/profile.json: "+e.message,"error");document.getElementById("synced").textContent="Snapshot unavailable"});
-})();
-</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="#top" aria-label="Back to top"><span class="monogram">MB</span> Maharshi Barot</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#open-source">Open source</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="utility">
+        <button id="themeToggle" type="button" class="icon-btn" aria-label="Toggle color theme" title="Toggle theme">☾</button>
+        <a class="github-btn" href="https://github.com/maharshi-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Software engineer / Applied AI / Open source</p>
+          <h1 id="hero-title">Building software that makes <em>complex systems useful.</em></h1>
+          <p class="lead">I'm Maharshi Barot. I work across intelligent applications, robotics, backend systems, and product engineering — creating software that's thoughtful, testable, and designed for real use.</p>
+          <div class="hero-links">
+            <a class="primary" href="#projects">Explore selected work <span aria-hidden="true">↗</span></a>
+            <a class="secondary" href="#open-source">Open-source contributions</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="My approach to engineering">
+          <div class="art-top"><strong>How I approach a problem</strong><span>01 / 03</span></div>
+          <div class="process">
+            <div class="process-step"><div class="number">01</div><div><strong>Understand the problem</strong><p>Scope the use case, constraints, and trade-offs.</p></div></div>
+            <div class="process-step"><div class="number">02</div><div><strong>Build and validate</strong><p>Develop the system, test critical paths, iterate.</p></div></div>
+            <div class="process-step"><div class="number">03</div><div><strong>Ship and improve</strong><p>Document results, monitor behavior, contribute back.</p></div></div>
+          </div>
+          <div class="art-bottom">Engineering with a bias toward useful outcomes.</div>
+        </div>
+      </section>
+
+      <div class="stat-strip" aria-label="Current public GitHub statistics">
+        <div class="stat"><strong id="statRepos">—</strong><span>Public repositories</span></div>
+        <div class="stat"><strong id="statMerged">—</strong><span>Merged upstream PRs</span></div>
+        <div class="stat"><strong id="statOpen">—</strong><span>Open upstream PRs</span></div>
+        <div class="stat"><strong id="statContributions">—</strong><span>Last 365 days' contributions</span></div>
+      </div>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Portfolio / Real repositories</p>
+            <h2 id="projects-heading">Selected projects</h2>
+            <p>Explore original public work across AI, autonomous systems, developer tools, and full-stack applications. Filter the collection, inspect technical details, and open source code or verified demos.</p>
+          </div>
+          <a class="section-link" href="https://github.com/maharshi-coding?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories ↗</a>
+        </div>
+
+        <div class="filters" aria-label="Project filtering controls">
+          <div class="segment" role="group" aria-label="Repository type">
+            <button type="button" data-repo-scope="featured" aria-pressed="true">Featured</button>
+            <button type="button" data-repo-scope="all" aria-pressed="false">All original</button>
+            <button type="button" data-repo-scope="forks" aria-pressed="false">Forks</button>
+          </div>
+          <label class="search" for="projectSearch">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+            <input id="projectSearch" type="search" placeholder="Search projects, tools, or topics…" autocomplete="off">
+          </label>
+          <label class="visually-hidden" for="projectCategory">Filter by project category</label>
+          <select class="control" id="projectCategory">
+            <option value="All">All categories</option>
+            <option>AI &amp; agents</option>
+            <option>Robotics</option>
+            <option>Systems &amp; IoT</option>
+            <option>Developer tools</option>
+            <option>Web &amp; mobile</option>
+            <option>Research</option>
+            <option>Other</option>
+          </select>
+          <label class="visually-hidden" for="projectSort">Sort projects</label>
+          <select class="control" id="projectSort">
+            <option value="featured">Curated order</option>
+            <option value="name">Name A–Z</option>
+            <option value="stars">Most starred</option>
+          </select>
+        </div>
+        <p id="projectsCount" class="countline" aria-live="polite">Loading public repositories…</p>
+        <div id="projectsGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="open-source" aria-labelledby="open-source-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Community / Engineering contributions</p>
+            <h2 id="open-source-heading">Open-source contributions</h2>
+            <p>Real fixes and improvements submitted to other projects. Browse merged PRs or contributions under review, and distinguish upstream work from changes in my own repositories.</p>
+          </div>
+          <a class="section-link" href="https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding" target="_blank" rel="noopener noreferrer">All authored PRs ↗</a>
+        </div>
+        <div class="open-source-layout">
+          <aside class="aside">
+            <h3>Working in the open</h3>
+            <p>My open-source contributions span robotics, developer infrastructure, security tooling, simulation, and more. Each item links directly to the original GitHub pull request.</p>
+            <p><strong>Merged</strong> means the maintainers accepted the changes. <strong>Open</strong> means the PR has been submitted but hasn't been merged.</p>
+            <a href="https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding+is%3Aclosed+-is%3Amerged" target="_blank" rel="noopener noreferrer">View closed without merge ↗</a>
+          </aside>
+          <div class="pr-pane">
+            <div class="pr-toolbar">
+              <div class="segment" role="group" aria-label="Pull request status">
+                <button type="button" data-pr-state="merged" aria-pressed="true">Merged</button>
+                <button type="button" data-pr-state="open" aria-pressed="false">Open</button>
+              </div>
+              <label class="visually-hidden" for="prScope">Filter pull requests by repository ownership</label>
+              <select id="prScope" class="control">
+                <option value="upstream">External upstream</option>
+                <option value="own">My repositories</option>
+                <option value="all">All PRs</option>
+              </select>
+              <label class="search" for="prSearch">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+                <input id="prSearch" type="search" placeholder="Search PRs…" autocomplete="off">
+              </label>
+            </div>
+            <div id="prList" class="pr-list" aria-live="polite"></div>
+            <div class="pr-bottom">
+              <span id="prCount">Loading pull requests…</span>
+              <button type="button" id="loadMore" hidden>Show more ↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Background / Toolkit</p>
+            <h2 id="about-heading">A little more about my work</h2>
+            <p>I enjoy turning technical complexity into usable experiences — and making sure the underlying system holds up.</p>
+          </div>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Experience &amp; education</h3>
+            <p>I'm pursuing an M.S. in Computer &amp; Information Science at Texas A&amp;M University–Corpus Christi. As a Teaching Assistant, I help undergraduates develop practical programming skills.</p>
+            <p>My engineering projects combine software architecture, test-driven thinking, and product-focused implementation.</p>
+          </article>
+          <article class="about-card">
+            <h3>Technologies I work with</h3>
+            <ul>
+              <li><strong>Languages:</strong> Python, TypeScript, JavaScript, C++, Go.</li>
+              <li><strong>Web &amp; backend:</strong> React, React Native, Next.js, Node.js, FastAPI, .NET.</li>
+              <li><strong>AI &amp; systems:</strong> AI agents, RAG, AWS, ROS 2, Nav2, Gazebo.</li>
+              <li><strong>Delivery:</strong> PostgreSQL, Firebase, Docker, GitHub Actions.</li>
+            </ul>
+          </article>
+          <article class="about-card">
+            <h3>Language distribution</h3>
+            <p>Primary languages across my original public repositories, sourced from GitHub rather than inferred proficiency.</p>
+            <div class="bars" id="languageBars" aria-label="Repository primary language distribution"></div>
+          </article>
+          <article class="about-card">
+            <h3>Collaboration and quality</h3>
+            <p>I care about reproducible bug reports, code reviews, regression tests, documentation, and getting fixes into the actual upstream projects.</p>
+            <p>You'll find those practices across my development work and pull requests.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2 id="contact-heading">Have a project or an idea?</h2>
+          <p>I'm always interested in thoughtful engineering work and open-source collaboration.</p>
+        </div>
+        <div class="hero-links">
+          <a class="primary" href="https://github.com/maharshi-coding" target="_blank" rel="noopener noreferrer">Connect on GitHub ↗</a>
+          <a class="secondary" href="https://maharshi-os.netlify.app/" target="_blank" rel="noopener noreferrer">Visit main portfolio ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container inner">
+      <span>© 2026 Maharshi Barot · Built to showcase real work, clearly.</span>
+      <span id="updated" aria-live="polite">Loading GitHub data…</span>
+    </div>
+  </footer>
+
+  <dialog id="projectDialog" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <div><span class="eyebrow" id="modalCategory">Project</span><h2 id="modalTitle"></h2></div>
+      <button type="button" class="icon-btn" id="closeModal" aria-label="Close project details">✕</button>
+    </div>
+    <div class="modal-content">
+      <p id="modalDescription"></p>
+      <div class="tag-row" id="modalTopics"></div>
+      <p><strong>Primary language:</strong> <span id="modalLanguage"></span> &nbsp; · &nbsp; <strong>GitHub stars:</strong> <span id="modalStars"></span></p>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+  </dialog>
 </body>
 </html>
