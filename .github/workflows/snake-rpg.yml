@@ -25,7 +25,7 @@ jobs:
         with:
           github_user_name: maharshi-coding
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#efc27d&color_dots=#0b1511,#234b31,#397c47,#6caf76,#b4e9aa
+            dist/github-contribution-grid-snake.svg?color_snake=#d9a2ff&color_dots=#0b0e27,#292450,#59418b,#9476dc,#bce8ff
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to output branch
