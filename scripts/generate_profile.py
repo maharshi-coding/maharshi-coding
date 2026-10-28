@@ -35,6 +35,15 @@ COMPANY_REPOSITORIES = (
         "waymo-research/waymax",)),
 )
 
+# Meta's CodeSync can land an approved change upstream while GitHub records
+# the original PR as 'closed' with merged_at=None. Verify each exceptional
+# integration against the public PR, landed commit, and default-branch ancestry.
+CODESYNC_INTEGRATIONS = (
+    {"repo": "facebook/mariana-trench", "number": 277,
+     "commit": "81b835dff56763b871d9db8dcbf29bdb1bb35973",
+     "method": "Meta CodeSync"},
+)
+
 FEATURED = ["ai-tutor-app", "FulfillFlow", "oss-agent", "seller-shield",
             "outfallwatch", "overturn", "agent-pixel-visualizer", "datahub-steward-squad"]
 EMOJI = {
@@ -216,17 +225,61 @@ def section_replace(markdown, label, content):
     return before + start + "\n" + content.strip() + "\n" + end + after
 
 
-def company_contributions(prs):
-    """Showcase only authored, public PRs to specific big-tech-owned repositories."""
+def verified_codesync_integrations():
+    """Check that Meta's closed PR truly landed on the public upstream branch.
+
+    CodeSync imports a reviewed change as an upstream commit instead of using
+    GitHub's merge button. Never claim merged_at was set on the GitHub PR.
+    """
+    verified = []
+    for ref in CODESYNC_INTEGRATIONS:
+        repo, number, sha = ref["repo"], ref["number"], ref["commit"]
+        pull = github("/repos/" + repo + "/pulls/" + str(number))
+        if pull.get("user", {}).get("login", "").lower() != USER:
+            raise RuntimeError("CodeSync PR author mismatch: " + repo)
+        # When a PR is normally merged, global merged search already includes it.
+        if pull.get("merged_at") is not None:
+            continue
+        if pull.get("state") != "closed":
+            continue
+        commit = github("/repos/" + repo + "/commits/" + sha)
+        if commit.get("sha") != sha or "(#" + str(number) + ")" not in (
+                commit.get("commit", {}).get("message", "")):
+            raise RuntimeError("CodeSync commit does not reference the PR: " + repo)
+        default_branch = github("/repos/" + repo).get("default_branch")
+        if not default_branch:
+            raise RuntimeError("Could not verify the upstream default branch: " + repo)
+        compare = github("/repos/" + repo + "/compare/" + sha + "..." +
+                         quote(default_branch, safe=""))
+        if compare.get("status") not in ("identical", "ahead"):
+            raise RuntimeError("CodeSync commit is not in the default-branch history: " + repo)
+        verified.append({
+            "repo": repo,
+            "number": number,
+            "title": pull.get("title", "Upstream code integration"),
+            "url": pull.get("html_url"),
+            "state": "landed",
+            "upstream": True,
+            "method": ref["method"],
+            "integration_commit": sha,
+            "integration_url": commit.get("html_url"),
+        })
+    return verified
+
+
+def company_contributions(prs, landed):
+    """Group GitHub merges, verified upstream landings and open PRs separately."""
     result = []
     for name, url, repositories in COMPANY_REPOSITORIES:
         allowed = {r.lower() for r in repositories}
         merged = [p for p in prs["merged"]
                   if p["upstream"] and p["repo"].lower() in allowed]
+        landed_here = [p for p in landed if p["repo"].lower() in allowed]
         opened = [p for p in prs["open"]
                   if p["upstream"] and p["repo"].lower() in allowed]
-        if merged or opened:
-            result.append({"name": name, "url": url, "merged": merged, "open": opened})
+        if merged or landed_here or opened:
+            result.append({"name": name, "url": url, "merged": merged,
+                           "landed": landed_here, "open": opened})
     return result
 
 
@@ -235,20 +288,28 @@ def render_prs(data):
     lines = []
     for company in data["company_contributions"]:
         lines.extend(["### [" + safe(company["name"]) + "](" + company["url"] + ")", ""])
-        for state, heading in (("merged", "Merged"), ("open", "Open · under review")):
+        for state, heading in (
+                ("merged", "Merged on GitHub"),
+                ("landed", "Landed upstream via Meta CodeSync"),
+                ("open", "Open · under review")):
             if not company[state]:
                 continue
             lines.extend(["**" + heading + "**", ""])
             for pr in company[state]:
                 project = pr["repo"].split("/", 1)[1]
-                lines.append("- **" + safe(project) + "** · [PR #" +
-                             str(pr["number"]) + "](" + pr["url"] + ") — " +
-                             safe(pr["title"]))
+                line = ("- **" + safe(project) + "** · [PR #" +
+                        str(pr["number"]) + "](" + pr["url"] + ") — " +
+                        safe(pr["title"]))
+                if state == "landed":
+                    line += (" · [Upstream commit " +
+                             pr["integration_commit"][:7] + "](" +
+                             pr["integration_url"] + ")")
+                lines.append(line)
             lines.append("")
     if not lines:
         return "_No matching publicly visible company pull requests found._"
-    lines.append("_Statuses come from GitHub. These are public open-source "
-                 "contributions—not company employment or endorsement._")
+    lines.append("_GitHub merge and Meta CodeSync integration are labeled separately. "
+                 "These are public open-source contributions—not company employment or endorsement._")
     return "\n".join(lines)
 
 
@@ -314,8 +375,9 @@ def render_hud(data):
         "| Public repositories | " + str(stats["public_repos"]) + " |",
         "| Original repositories | " + str(stats["public_repos"] - stats["forks"]) + " |",
         "| Total public repository stars | " + str(stats["stars"]) + " |",
-        "| Merged PRs to featured tech companies | " +
-        str(sum(len(c["merged"]) for c in data["company_contributions"])) + " |",
+        "| Integrated contributions to featured tech companies | " +
+        str(sum(len(c["merged"]) + len(c["landed"])
+                for c in data["company_contributions"])) + " |",
         "| Open PRs to featured tech companies | " +
         str(sum(len(c["open"]) for c in data["company_contributions"])) + " |",
         "| Contributions in last 365 days | " +
@@ -360,7 +422,9 @@ def main():
             "annual_contributions": contributions,
         },
     }
-    data["company_contributions"] = company_contributions(data["prs"])
+    data["verified_upstream_integrations"] = verified_codesync_integrations()
+    data["company_contributions"] = company_contributions(
+        data["prs"], data["verified_upstream_integrations"])
     print("Public repos:", len(public), "| merged PRs:", len(merged),
           "| open PRs:", len(opened), "| pins:", len(pins))
     if args.dry_run:
