@@ -7,7 +7,6 @@
 **M.S. Computer & Information Science @ Texas A&M University–Corpus Christi** · **Teaching Assistant** · **Graduating Dec 2027**
 
 [![Portfolio](https://img.shields.io/badge/EXPLORE-INTERACTIVE_PORTFOLIO-7c6afa?style=for-the-badge&logo=vercel&logoColor=white)](https://maharshi-os.netlify.app/)
-[![LinkedIn](https://img.shields.io/badge/CONNECT-LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 [![Source](https://img.shields.io/badge/EXPLORE-ALL_REPOS-172638?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maharshi-coding?tab=repositories)
 [![PRs](https://img.shields.io/badge/VIEW-PULL_REQUESTS-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding)
 
