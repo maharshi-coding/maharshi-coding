@@ -38,7 +38,7 @@ jobs:
         run: |
           python -m py_compile scripts/generate_profile.py
           python -m json.tool docs/data/profile.json > /dev/null
-      - name: Commit only if data changed
+      - name: Commit only if data changed (safe concurrent-push retry)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -47,5 +47,15 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add README.md docs/data/profile.json
             git commit -m "chore(profile): sync public GitHub quests and achievements"
-            git push
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                echo "GitHub profile synced on attempt $attempt"
+                exit 0
+              fi
+              echo "Remote main advanced; safely rebasing before retry $attempt"
+              git fetch origin main
+              git rebase origin/main
+            done
+            echo "Failed to safely push regenerated data" >&2
+            exit 1
           fi
