@@ -1,14 +1,14 @@
 <div align="center">
 
-<a href="https://maharshi-coding.github.io/maharshi-coding/"><img src="assets/rpg-boot.svg" alt="MAHARSHI RPG / DEV — Terminal Boot" width="100%"></a>
+<a href="https://maharshi-coding.github.io/maharshi-coding/"><img src="assets/rpg-boot.svg" alt="MAHARSHI.EXE — Neon Void Ultraviolet Game Console" width="100%"></a>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=2300&pause=900&color=91E3A4&center=true&vCenter=true&width=960&lines=%3E+INITIALIZING+MAHARSHI.EXE...;%3E+LOADING+PLAYER+DATA...;%3E+CLASS%3A+FULL-STACK+MAGE+%2F+AI+SUMMONER;%3E+NEW+QUESTS+AVAILABLE.+PRESS+START." alt="Animated console boot log" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=2300&pause=900&color=BDA2FF&center=true&vCenter=true&width=960&lines=%3E+INITIALIZING+MAHARSHI.EXE...;%3E+LOADING+PLAYER+DATA...;%3E+CLASS%3A+FULL-STACK+MAGE+%2F+AI+SUMMONER;%3E+NEW+QUESTS+AVAILABLE.+PRESS+START." alt="Animated console boot log" />
 
-**`PLAYER 01`** · **`MAHARSHI BAROT`** · **`FULL-STACK MAGE / AI SUMMONER`**
+**`PLAYER 01`** · **`MAHARSHI BAROT`** · **`FULL-STACK MAGE / AI SUMMONER`** · **`NEON VOID // V3`**
 
-[![LAUNCH FULL CONSOLE](https://img.shields.io/badge/%E2%96%B6_LAUNCH-FULL_CONSOLE-0c2218?style=for-the-badge&labelColor=aa7635&color=254b34)](https://maharshi-coding.github.io/maharshi-coding/)
-[![REPOSITORIES](https://img.shields.io/badge/%E2%8C%98_OPEN-GAME_LIBRARY-0c2218?style=for-the-badge&labelColor=aa7635&color=254b34)](#-level-03--game-library)
-[![QUESTS](https://img.shields.io/badge/%E2%9A%94_VIEW-RAID_LOG-0c2218?style=for-the-badge&labelColor=aa7635&color=254b34)](#-level-02--raid-log)
+[![LAUNCH FULL CONSOLE](https://img.shields.io/badge/%E2%96%B6_LAUNCH-FULL_CONSOLE-17172f?style=for-the-badge&labelColor=6B4CD0&color=1F2B55)](https://maharshi-coding.github.io/maharshi-coding/)
+[![REPOSITORIES](https://img.shields.io/badge/%E2%8C%98_OPEN-GAME_LIBRARY-17172f?style=for-the-badge&labelColor=6B4CD0&color=1F2B55)](#-level-03--game-library)
+[![QUESTS](https://img.shields.io/badge/%E2%9A%94_VIEW-RAID_LOG-17172f?style=for-the-badge&labelColor=6B4CD0&color=1F2B55)](#-level-02--raid-log)
 
 </div>
 
@@ -245,25 +245,25 @@ These are forks, not original games. Authored PRs are credited in the raid log.
 
 <details open><summary><b>⚔️ WEAPON SLOT // LANGUAGES</b></summary>
 
-![Python](https://img.shields.io/badge/Python-UNLOCKED-284937?style=flat-square&logo=python&logoColor=ffe0a0&labelColor=152b20) ![TypeScript](https://img.shields.io/badge/TypeScript-UNLOCKED-284937?style=flat-square&logo=typescript&logoColor=ffe0a0&labelColor=152b20) ![JavaScript](https://img.shields.io/badge/JavaScript-UNLOCKED-284937?style=flat-square&logo=javascript&logoColor=ffe0a0&labelColor=152b20) ![C++](https://img.shields.io/badge/C%2B%2B-UNLOCKED-284937?style=flat-square&logo=cplusplus&logoColor=ffe0a0&labelColor=152b20) ![Go](https://img.shields.io/badge/Go-UNLOCKED-284937?style=flat-square&logo=go&logoColor=ffe0a0&labelColor=152b20)
+![Python](https://img.shields.io/badge/Python-UNLOCKED-24244E?style=flat-square&logo=python&logoColor=E9E6FF&labelColor=181A36) ![TypeScript](https://img.shields.io/badge/TypeScript-UNLOCKED-24244E?style=flat-square&logo=typescript&logoColor=E9E6FF&labelColor=181A36) ![JavaScript](https://img.shields.io/badge/JavaScript-UNLOCKED-24244E?style=flat-square&logo=javascript&logoColor=E9E6FF&labelColor=181A36) ![C++](https://img.shields.io/badge/C%2B%2B-UNLOCKED-24244E?style=flat-square&logo=cplusplus&logoColor=E9E6FF&labelColor=181A36) ![Go](https://img.shields.io/badge/Go-UNLOCKED-24244E?style=flat-square&logo=go&logoColor=E9E6FF&labelColor=181A36)
 
 </details>
 
 <details open><summary><b>🛡️ ARMOR SLOT // FRAMEWORKS</b></summary>
 
-![React](https://img.shields.io/badge/React-UNLOCKED-284937?style=flat-square&logo=react&logoColor=ffe0a0&labelColor=152b20) ![Node.js](https://img.shields.io/badge/Node.js-UNLOCKED-284937?style=flat-square&logo=nodedotjs&logoColor=ffe0a0&labelColor=152b20) ![.NET](https://img.shields.io/badge/.NET-UNLOCKED-284937?style=flat-square&logo=dotnet&logoColor=ffe0a0&labelColor=152b20) ![Next.js](https://img.shields.io/badge/Next.js-UNLOCKED-284937?style=flat-square&logo=nextdotjs&logoColor=ffe0a0&labelColor=152b20) ![FastAPI](https://img.shields.io/badge/FastAPI-UNLOCKED-284937?style=flat-square&logo=fastapi&logoColor=ffe0a0&labelColor=152b20) ![React Native](https://img.shields.io/badge/React_Native-UNLOCKED-284937?style=flat-square&logo=react&logoColor=ffe0a0&labelColor=152b20)
+![React](https://img.shields.io/badge/React-UNLOCKED-24244E?style=flat-square&logo=react&logoColor=E9E6FF&labelColor=181A36) ![Node.js](https://img.shields.io/badge/Node.js-UNLOCKED-24244E?style=flat-square&logo=nodedotjs&logoColor=E9E6FF&labelColor=181A36) ![.NET](https://img.shields.io/badge/.NET-UNLOCKED-24244E?style=flat-square&logo=dotnet&logoColor=E9E6FF&labelColor=181A36) ![Next.js](https://img.shields.io/badge/Next.js-UNLOCKED-24244E?style=flat-square&logo=nextdotjs&logoColor=E9E6FF&labelColor=181A36) ![FastAPI](https://img.shields.io/badge/FastAPI-UNLOCKED-24244E?style=flat-square&logo=fastapi&logoColor=E9E6FF&labelColor=181A36) ![React Native](https://img.shields.io/badge/React_Native-UNLOCKED-24244E?style=flat-square&logo=react&logoColor=E9E6FF&labelColor=181A36)
 
 </details>
 
 <details><summary><b>🔮 MAGIC SLOT // AI / LLM</b></summary>
 
-![AI](https://img.shields.io/badge/AI%2FLLM-UNLOCKED-284937?style=flat-square&labelColor=152b20) ![RAG](https://img.shields.io/badge/RAG-UNLOCKED-284937?style=flat-square&labelColor=152b20) ![Agents](https://img.shields.io/badge/Multi--Agent-UNLOCKED-284937?style=flat-square&labelColor=152b20) ![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-UNLOCKED-284937?style=flat-square&logo=amazonaws&logoColor=ffe0a0&labelColor=152b20)
+![AI](https://img.shields.io/badge/AI%2FLLM-UNLOCKED-24244E?style=flat-square&labelColor=181A36) ![RAG](https://img.shields.io/badge/RAG-UNLOCKED-24244E?style=flat-square&labelColor=181A36) ![Agents](https://img.shields.io/badge/Multi--Agent-UNLOCKED-24244E?style=flat-square&labelColor=181A36) ![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-UNLOCKED-24244E?style=flat-square&logo=amazonaws&logoColor=E9E6FF&labelColor=181A36)
 
 </details>
 
 <details><summary><b>🧰 TOOL SLOT // INFRASTRUCTURE & ROBOTICS</b></summary>
 
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-UNLOCKED-284937?style=flat-square&logo=githubactions&logoColor=ffe0a0&labelColor=152b20) ![Docker](https://img.shields.io/badge/Docker-UNLOCKED-284937?style=flat-square&logo=docker&logoColor=ffe0a0&labelColor=152b20) ![ROS 2](https://img.shields.io/badge/ROS_2-UNLOCKED-284937?style=flat-square&logo=ros&logoColor=ffe0a0&labelColor=152b20) ![Firebase](https://img.shields.io/badge/Firebase-UNLOCKED-284937?style=flat-square&logo=firebase&logoColor=ffe0a0&labelColor=152b20) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-UNLOCKED-284937?style=flat-square&logo=postgresql&logoColor=ffe0a0&labelColor=152b20)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-UNLOCKED-24244E?style=flat-square&logo=githubactions&logoColor=E9E6FF&labelColor=181A36) ![Docker](https://img.shields.io/badge/Docker-UNLOCKED-24244E?style=flat-square&logo=docker&logoColor=E9E6FF&labelColor=181A36) ![ROS 2](https://img.shields.io/badge/ROS_2-UNLOCKED-24244E?style=flat-square&logo=ros&logoColor=E9E6FF&labelColor=181A36) ![Firebase](https://img.shields.io/badge/Firebase-UNLOCKED-24244E?style=flat-square&logo=firebase&logoColor=E9E6FF&labelColor=181A36) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-UNLOCKED-24244E?style=flat-square&logo=postgresql&logoColor=E9E6FF&labelColor=181A36)
 
 </details>
 
@@ -279,7 +279,7 @@ These are forks, not original games. Authored PRs are credited in the raid log.
 | 🧬 Forks | 15 |
 | ⭐ Stars (public repos) | 1 |
 | ⚔️ Authored public PRs (merged / open) | 9 / 14 |
-| 🟩 Contributions in trailing 365 days | 208 |
+| 🟪 Contributions in trailing 365 days | 208 |
 
 **Language inventory** (number of nonfork public repos where language is primary):
 
@@ -294,15 +294,15 @@ These are forks, not original games. Authored PRs are credited in the raid log.
 
 <div align="center">
 
-<img height="170" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=maharshi-coding&show_icons=true&hide_border=true&bg_color=0b1511&title_color=e8b86f&text_color=9fd6ac&icon_color=ebbe75&ring_color=8ace99"/>
-<img height="170" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=maharshi-coding&layout=compact&hide_border=true&bg_color=0b1511&title_color=e8b86f&text_color=9fd6ac&langs_count=8"/>
+<img height="170" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=maharshi-coding&show_icons=true&hide_border=true&bg_color=0B1024&title_color=BCA0FF&text_color=D2D8F1&icon_color=8CEAFF&ring_color=C6A5FF"/>
+<img height="170" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=maharshi-coding&layout=compact&hide_border=true&bg_color=0B1024&title_color=BCA0FF&text_color=D2D8F1&langs_count=8"/>
 
-<img width="57%" alt="Contribution streak panel" src="https://streak-stats.demolab.com?user=maharshi-coding&theme=dark&hide_border=true&background=0B1511&ring=E6B86F&fire=E6B86F&currStreakLabel=9FD6AC&sideLabels=9FD6AC&dates=789C7E"/>
-<img width="41%" alt="Trophy cabinet" src="https://github-profile-trophy.vercel.app/?username=maharshi-coding&theme=onedark&no-frame=true&column=2&margin-w=5"/>
+<img width="57%" alt="Contribution streak panel" src="https://streak-stats.demolab.com?user=maharshi-coding&theme=dark&hide_border=true&background=0B1024&ring=C8A9FF&fire=FF8BC2&currStreakLabel=8CEAFF&sideLabels=D0D7F0&dates=939DCD"/>
+<img width="41%" alt="Trophy cabinet" src="https://github-profile-trophy.vercel.app/?username=maharshi-coding&theme=discord&no-frame=true&column=2&margin-w=5"/>
 
-<img width="100%" alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=maharshi-coding&bg_color=0b1511&color=9fd6ac&line=e6b86f&point=ffe0a0&area=true&hide_border=true"/>
+<img width="100%" alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=maharshi-coding&bg_color=0B1024&color=B8A3FF&line=7CE5FF&point=FC9ECD&area=true&hide_border=true"/>
 
-![Visitor high-score counter](https://komarev.com/ghpvc/?username=maharshi-coding&label=VISITOR+HIGH+SCORE&style=for-the-badge&color=284937)
+![Visitor high-score counter](https://komarev.com/ghpvc/?username=maharshi-coding&label=VISITOR+HIGH+SCORE&style=for-the-badge&color=403A82)
 
 </div>
 
