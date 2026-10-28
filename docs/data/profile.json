@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-10-28T15:07:23+00:00",
+  "generated_at": "2026-10-28T21:05:38+00:00",
   "pinned": [],
   "repos": [
     {
@@ -617,8 +617,8 @@
       },
       {
         "title": "Preserve Unknown when narrowing missing attributes",
-        "url": "https://github.com/facebook/pyrefly/pull/5346",
-        "repo": "facebook/pyrefly",
+        "url": "https://github.com/meta/pyrefly/pull/5346",
+        "repo": "meta/pyrefly",
         "number": 5346,
         "upstream": true,
         "state": "open"
@@ -633,8 +633,8 @@
       },
       {
         "title": "[pdq][cpp] Prevent signed integer overflow in image downscaling",
-        "url": "https://github.com/facebook/ThreatExchange/pull/2026",
-        "repo": "facebook/ThreatExchange",
+        "url": "https://github.com/meta/ThreatExchange/pull/2026",
+        "repo": "meta/ThreatExchange",
         "number": 2026,
         "upstream": true,
         "state": "open"
@@ -717,12 +717,12 @@
       "repo": "facebook/mariana-trench",
       "number": 277,
       "title": "Fix false negative: taint propagation through static fields (#91)",
-      "url": "https://github.com/facebook/mariana-trench/pull/277",
+      "url": "https://github.com/meta/mariana-trench/pull/277",
       "state": "landed",
       "upstream": true,
       "method": "Meta CodeSync",
       "integration_commit": "81b835dff56763b871d9db8dcbf29bdb1bb35973",
-      "integration_url": "https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
+      "integration_url": "https://github.com/meta/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
     }
   ],
   "company_contributions": [
@@ -768,32 +768,15 @@
           "repo": "facebook/mariana-trench",
           "number": 277,
           "title": "Fix false negative: taint propagation through static fields (#91)",
-          "url": "https://github.com/facebook/mariana-trench/pull/277",
+          "url": "https://github.com/meta/mariana-trench/pull/277",
           "state": "landed",
           "upstream": true,
           "method": "Meta CodeSync",
           "integration_commit": "81b835dff56763b871d9db8dcbf29bdb1bb35973",
-          "integration_url": "https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
+          "integration_url": "https://github.com/meta/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973"
         }
       ],
-      "open": [
-        {
-          "title": "Preserve Unknown when narrowing missing attributes",
-          "url": "https://github.com/facebook/pyrefly/pull/5346",
-          "repo": "facebook/pyrefly",
-          "number": 5346,
-          "upstream": true,
-          "state": "open"
-        },
-        {
-          "title": "[pdq][cpp] Prevent signed integer overflow in image downscaling",
-          "url": "https://github.com/facebook/ThreatExchange/pull/2026",
-          "repo": "facebook/ThreatExchange",
-          "number": 2026,
-          "upstream": true,
-          "state": "open"
-        }
-      ]
+      "open": []
     },
     {
       "name": "Google DeepMind",

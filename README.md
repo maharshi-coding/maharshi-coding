@@ -144,12 +144,7 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 
 **Landed upstream via Meta CodeSync**
 
-- **mariana-trench** · [PR #277](https://github.com/facebook/mariana-trench/pull/277) — Fix false negative: taint propagation through static fields (#91) · [Upstream commit 81b835d](https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973)
-
-**Open · under review**
-
-- **pyrefly** · [PR #5346](https://github.com/facebook/pyrefly/pull/5346) — Preserve Unknown when narrowing missing attributes
-- **ThreatExchange** · [PR #2026](https://github.com/facebook/ThreatExchange/pull/2026) — [pdq][cpp] Prevent signed integer overflow in image downscaling
+- **mariana-trench** · [PR #277](https://github.com/meta/mariana-trench/pull/277) — Fix false negative: taint propagation through static fields (#91) · [Upstream commit 81b835d](https://github.com/meta/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973)
 
 ### [Google DeepMind](https://github.com/google-deepmind)
 
@@ -187,7 +182,7 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 | Original repositories | 18 |
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
-| Open PRs to featured tech companies | 8 |
+| Open PRs to featured tech companies | 6 |
 | Contributions in last 365 days | 277 |
 
 **Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
