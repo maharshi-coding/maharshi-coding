@@ -55,7 +55,7 @@
 
       <div class="stat-strip" aria-label="Current public GitHub statistics">
         <div class="stat"><strong id="statRepos">—</strong><span>Public repositories</span></div>
-        <div class="stat"><strong id="statMerged">—</strong><span>Merged company PRs</span></div>
+        <div class="stat"><strong id="statMerged">—</strong><span>Merged / landed PRs</span></div>
         <div class="stat"><strong id="statOpen">—</strong><span>Open company PRs</span></div>
         <div class="stat"><strong id="statContributions">—</strong><span>Last 365 days' contributions</span></div>
       </div>
@@ -107,7 +107,7 @@
           <div>
             <p class="eyebrow">Community / Engineering contributions</p>
             <h2 id="open-source-heading">Open-source contributions</h2>
-            <p>Public contributions to open-source projects maintained by Tesla, Meta, Google DeepMind, and Waymo. Explore verified merged changes and pull requests currently under review.</p>
+            <p>Public contributions to open-source projects maintained by Tesla, Meta, Google DeepMind, and Waymo. Explore GitHub merges, Meta CodeSync integrations, and pull requests currently under review.</p>
           </div>
           <span class="pill">Company projects only</span>
         </div>
@@ -115,14 +115,14 @@
           <aside class="aside">
             <h3>Contributing to industry projects</h3>
             <p>Focused contributions to open-source repositories associated with major technology companies. Every entry links directly to the original pull request.</p>
-            <p><strong>Merged</strong> indicates acceptance into the upstream codebase. <strong>Open</strong> means the proposed change is still awaiting a merge decision.</p>
+            <p><strong>Merged / landed</strong> includes standard GitHub merges and independently verified upstream integrations (such as Meta CodeSync). <strong>Open</strong> means the PR is awaiting a merge decision.</p>
             <p><small>These are open-source contributions, not employment or endorsement by the companies.</small></p>
           </aside>
           <div class="pr-pane">
             <div class="pr-toolbar">
               <div class="segment" role="group" aria-label="Pull request status">
                 <button type="button" data-pr-state="all" aria-pressed="true">All statuses</button>
-                <button type="button" data-pr-state="merged" aria-pressed="false">Merged</button>
+                <button type="button" data-pr-state="merged" aria-pressed="false">Merged / landed</button>
                 <button type="button" data-pr-state="open" aria-pressed="false">Open</button>
               </div>
               <label class="search" for="prSearch">
