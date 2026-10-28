@@ -154,3 +154,7 @@ dialog::backdrop{background:rgba(10,20,40,.65);backdrop-filter:blur(5px)}
 .company-status-group .pr-repo{margin-bottom:4px}
 .company-status-group .pr-row strong{font-size:12px}
 @media(max-width:620px){.company-group{padding:0 14px}.company-title{padding:18px 0 12px}.company-link{font-size:16px}.company-status-group{padding-left:0}.company-count{font-size:10px}}
+
+/* Links from CodeSync-imported Meta PRs to verified upstream commits. */
+.integration-proof{margin-top:5px;font-size:11px;font-weight:650}
+.integration-proof a{color:var(--blue-strong)}
