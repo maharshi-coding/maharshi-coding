@@ -107,29 +107,24 @@
           <div>
             <p class="eyebrow">Community / Engineering contributions</p>
             <h2 id="open-source-heading">Open-source contributions</h2>
-            <p>Real fixes and improvements submitted to other projects. Browse merged PRs or contributions under review, and distinguish upstream work from changes in my own repositories.</p>
+            <p>Public contributions to open-source projects maintained by Tesla, Meta, Google DeepMind, and Waymo. Explore verified merged changes and pull requests currently under review.</p>
           </div>
-          <a class="section-link" href="https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding" target="_blank" rel="noopener noreferrer">All authored PRs ↗</a>
+          <span class="pill">Company projects only</span>
         </div>
         <div class="open-source-layout">
           <aside class="aside">
-            <h3>Working in the open</h3>
-            <p>My open-source contributions span robotics, developer infrastructure, security tooling, simulation, and more. Each item links directly to the original GitHub pull request.</p>
-            <p><strong>Merged</strong> means the maintainers accepted the changes. <strong>Open</strong> means the PR has been submitted but hasn't been merged.</p>
-            <a href="https://github.com/pulls?q=is%3Apr+author%3Amaharshi-coding+is%3Aclosed+-is%3Amerged" target="_blank" rel="noopener noreferrer">View closed without merge ↗</a>
+            <h3>Contributing to industry projects</h3>
+            <p>Focused contributions to open-source repositories associated with major technology companies. Every entry links directly to the original pull request.</p>
+            <p><strong>Merged</strong> indicates acceptance into the upstream codebase. <strong>Open</strong> means the proposed change is still awaiting a merge decision.</p>
+            <p><small>These are open-source contributions, not employment or endorsement by the companies.</small></p>
           </aside>
           <div class="pr-pane">
             <div class="pr-toolbar">
               <div class="segment" role="group" aria-label="Pull request status">
-                <button type="button" data-pr-state="merged" aria-pressed="true">Merged</button>
+                <button type="button" data-pr-state="all" aria-pressed="true">All statuses</button>
+                <button type="button" data-pr-state="merged" aria-pressed="false">Merged</button>
                 <button type="button" data-pr-state="open" aria-pressed="false">Open</button>
               </div>
-              <label class="visually-hidden" for="prScope">Filter pull requests by repository ownership</label>
-              <select id="prScope" class="control">
-                <option value="upstream">External upstream</option>
-                <option value="own">My repositories</option>
-                <option value="all">All PRs</option>
-              </select>
               <label class="search" for="prSearch">
                 <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
                 <input id="prSearch" type="search" placeholder="Search PRs…" autocomplete="off">
@@ -137,8 +132,8 @@
             </div>
             <div id="prList" class="pr-list" aria-live="polite"></div>
             <div class="pr-bottom">
-              <span id="prCount">Loading pull requests…</span>
-              <button type="button" id="loadMore" hidden>Show more ↓</button>
+              <span id="prCount" aria-live="polite">Loading company pull requests…</span>
+              <span>Statuses updated from GitHub</span>
             </div>
           </div>
         </div>
