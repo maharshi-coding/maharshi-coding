@@ -24,6 +24,17 @@ README = ROOT / "README.md"
 DATA = ROOT / "docs" / "data" / "profile.json"
 TOKEN = os.getenv("GH_DATA_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN") or ""
 VERIFIED_DEMOS = {"oss-agent": "https://maharshi-coding.github.io/oss-agent/"}
+COMPANY_REPOSITORIES = (
+    ("Tesla", "https://github.com/teslamotors", (
+        "teslamotors/vehicle-command", "teslamotors/react-native-camera-kit")),
+    ("Meta", "https://github.com/facebook", (
+        "facebook/mariana-trench", "facebook/pyrefly", "facebook/ThreatExchange")),
+    ("Google DeepMind", "https://github.com/google-deepmind", (
+        "google-deepmind/mujoco",)),
+    ("Waymo", "https://github.com/waymo-research", (
+        "waymo-research/waymax",)),
+)
+
 FEATURED = ["ai-tutor-app", "FulfillFlow", "oss-agent", "seller-shield",
             "outfallwatch", "overturn", "agent-pixel-visualizer", "datahub-steward-squad"]
 EMOJI = {
@@ -54,7 +65,7 @@ def github(path, params=None, graphql=None):
         body = None
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "maharshi-rpg-profile",
+        "User-Agent": "maharshi-portfolio-profile",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if TOKEN:
@@ -205,40 +216,39 @@ def section_replace(markdown, label, content):
     return before + start + "\n" + content.strip() + "\n" + end + after
 
 
+def company_contributions(prs):
+    """Showcase only authored, public PRs to specific big-tech-owned repositories."""
+    result = []
+    for name, url, repositories in COMPANY_REPOSITORIES:
+        allowed = {r.lower() for r in repositories}
+        merged = [p for p in prs["merged"]
+                  if p["upstream"] and p["repo"].lower() in allowed]
+        opened = [p for p in prs["open"]
+                  if p["upstream"] and p["repo"].lower() in allowed]
+        if merged or opened:
+            result.append({"name": name, "url": url, "merged": merged, "open": opened})
+    return result
+
+
 def render_prs(data):
-    """Show independently verified upstream outcomes and clearly separate own PRs."""
+    """Only big-tech company PRs, grouped beneath the company that maintains them."""
     lines = []
-    for state, heading in (("merged", "Merged upstream"), ("open", "Open upstream")):
-        upstream = [p for p in data["prs"][state] if p["upstream"]]
-        own = [p for p in data["prs"][state] if not p["upstream"]]
-        lines += [
-            "### " + heading + " · " + str(len(upstream)),
-            "",
-            "| Project | Contribution | PR |",
-            "| :-- | :-- | :-- |",
-        ]
-        if not upstream:
-            lines.append("| — | No publicly visible upstream PRs in this state. | — |")
-        for p in upstream:
-            lines.append("| **" + safe(p["repo"]) + "** | " + safe(p["title"]) +
-                         " | [#" + str(p["number"]) + "](" + p["url"] + ") |")
-        lines.append("")
-        lines.append("<details><summary>View " + str(len(own)) +
-                     " " + state + " PRs in my own GitHub namespace</summary>\n")
-        if own:
-            lines += ["| Repository | Change | Pull request |", "| :-- | :-- | :-- |"]
-            for p in own:
-                lines.append("| " + safe(p["repo"]) + " | " + safe(p["title"]) +
-                             " | [#" + str(p["number"]) + "](" + p["url"] + ") |")
-        else:
-            lines.append("_No publicly visible PRs in this category._")
-        lines.append("\n</details>\n")
-    lines.append(
-        "[View all authored pull requests](https://github.com/pulls?q=is%3Apr+author%3A" +
-        USER + ") · [Closed without merging](https://github.com/pulls?q=is%3Apr+author%3A" +
-        USER + "+is%3Aclosed+-is%3Amerged)"
-    )
-    lines.append("\n_Status is sourced from GitHub; open means not merged._")
+    for company in data["company_contributions"]:
+        lines.extend(["### [" + safe(company["name"]) + "](" + company["url"] + ")", ""])
+        for state, heading in (("merged", "Merged"), ("open", "Open · under review")):
+            if not company[state]:
+                continue
+            lines.extend(["**" + heading + "**", ""])
+            for pr in company[state]:
+                project = pr["repo"].split("/", 1)[1]
+                lines.append("- **" + safe(project) + "** · [PR #" +
+                             str(pr["number"]) + "](" + pr["url"] + ") — " +
+                             safe(pr["title"]))
+            lines.append("")
+    if not lines:
+        return "_No matching publicly visible company pull requests found._"
+    lines.append("_Statuses come from GitHub. These are public open-source "
+                 "contributions—not company employment or endorsement._")
     return "\n".join(lines)
 
 
@@ -304,10 +314,10 @@ def render_hud(data):
         "| Public repositories | " + str(stats["public_repos"]) + " |",
         "| Original repositories | " + str(stats["public_repos"] - stats["forks"]) + " |",
         "| Total public repository stars | " + str(stats["stars"]) + " |",
-        "| Merged upstream PRs | " +
-        str(sum(p["upstream"] for p in data["prs"]["merged"])) + " |",
-        "| Open upstream PRs | " +
-        str(sum(p["upstream"] for p in data["prs"]["open"])) + " |",
+        "| Merged PRs to featured tech companies | " +
+        str(sum(len(c["merged"]) for c in data["company_contributions"])) + " |",
+        "| Open PRs to featured tech companies | " +
+        str(sum(len(c["open"]) for c in data["company_contributions"])) + " |",
         "| Contributions in last 365 days | " +
         (str(stats["annual_contributions"]) if stats["annual_contributions"] is not None
          else "Not available") + " |",
@@ -350,6 +360,7 @@ def main():
             "annual_contributions": contributions,
         },
     }
+    data["company_contributions"] = company_contributions(data["prs"])
     print("Public repos:", len(public), "| merged PRs:", len(merged),
           "| open PRs:", len(opened), "| pins:", len(pins))
     if args.dry_run:
