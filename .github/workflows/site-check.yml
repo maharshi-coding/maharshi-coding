@@ -35,16 +35,37 @@ jobs:
           assert not any(r.get("private") for r in data["repos"])
           assert all("/pull/" in r["url"] and r["state"] == state
                      for state in ("merged", "open") for r in data["prs"][state])
+          companies = {
+              "Tesla": {"teslamotors/vehicle-command", "teslamotors/react-native-camera-kit"},
+              "Meta": {"facebook/mariana-trench", "facebook/pyrefly", "facebook/ThreatExchange"},
+              "Google DeepMind": {"google-deepmind/mujoco"},
+              "Waymo": {"waymo-research/waymax"},
+          }
+          groups = data.get("company_contributions")
+          assert isinstance(groups, list) and groups
+          for group in groups:
+              assert group["name"] in companies
+              for state in ("merged", "open"):
+                  for pr in group[state]:
+                      assert pr["state"] == state and pr["upstream"]
+                      assert pr["repo"] in companies[group["name"]]
           markdown = Path("README.md").read_text()
           for marker in ("prs", "projects", "hud"):
               assert markdown.count("<!--START_SECTION:" + marker + "-->") == 1
               assert markdown.count("<!--END_SECTION:" + marker + "-->") == 1
+          pr_showcase = markdown.split("<!--START_SECTION:prs-->")[1].split(
+              "<!--END_SECTION:prs-->")[0]
+          assert "maharshi-coding/" not in pr_showcase
+          for group in groups:
+              assert "### [" + group["name"] + "](" in pr_showcase
           html = Path("docs/index.html").read_text()
           assert "./assets/styles.css" in html
           assert "./assets/app.js" in html
           assert Path("docs/assets/styles.css").is_file()
           assert Path("docs/assets/app.js").is_file()
           assert "projectDialog" in html and 'id="prList"' in html
+          assert 'id="prScope"' not in html
+          assert 'data-pr-state="all"' in html
           print("Portfolio metadata and page structure valid")
           PY
       - name: Validate interactive website JavaScript
