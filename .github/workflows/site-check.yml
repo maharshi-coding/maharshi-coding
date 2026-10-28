@@ -77,3 +77,5 @@ jobs:
           PY
       - name: Validate interactive website JavaScript
         run: node --check docs/assets/app.js
+      - name: Browser interaction smoke tests (no external dependencies)
+        run: node --test scripts/portfolio-smoke.test.cjs
