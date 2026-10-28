@@ -110,7 +110,7 @@ Do not commit an API token. The script uses GitHub REST endpoints for public rep
 ## Data and source-of-truth rules
 
 - Only public repos returned by GitHub API become public game cartridges. A fork is labeled and filed in the fork archive, not credited as an original product.
-- A **PLAY** link is shown only when the API contains a suitable application homepage. A GitHub/source URL is not automatically a playable app.
+- A **PLAY** link is shown only for a suitable repository homepage or a separately verified live demo documented in the project's README (currently OSS-Agent). A GitHub/source URL is not automatically a playable app.
 - GitHub **stars** are displayed as popularity signals, not invented review ratings.
 - Merged and open PRs come from separate GitHub Search queries. A closed-without-merge PR is not a cleared bounty.
 - The PR search is across publicly searchable repositories, not just the profile owner's repo. Private PRs are *not* published.
