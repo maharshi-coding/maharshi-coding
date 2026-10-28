@@ -5,7 +5,7 @@ This repository powers two views of the same public engineering work:
 - **GitHub profile README:** https://github.com/maharshi-coding
 - **Interactive portfolio explorer:** https://maharshi-coding.github.io/maharshi-coding/
 
-The README is deliberately simple and scannable. The website offers project search, category filters, a light/dark theme toggle, a project details dialog, and merged/open PR filters. Both are backed by the same public GitHub metadata.
+The README is deliberately simple and scannable. The website offers project search, category filters, a light/dark theme toggle, a project details dialog, and a company-grouped merged/open PR showcase. Both are backed by the same public GitHub metadata.
 
 ## Repository structure
 
@@ -95,7 +95,7 @@ The generator replaces only the text between each pair. All static prose and lay
 
 - **Original work vs forks:** forks are distinct from original projects.
 - **PR status:** merged and open are queried independently. Closed without merging is never counted as merged.
-- **Upstream vs own:** PRs to external owners are labeled upstream; PRs in this account's own namespace appear separately.
+- **Company-only contributions:** the public open-source showcase includes only explicitly allowlisted repositories maintained by Tesla, Meta, Google DeepMind, and Waymo. No PRs to personal repositories or unrelated community projects are displayed in the showcase. The full internal API snapshot may contain other public PRs for accurate auditability, but the site and README show only `company_contributions`.
 - **Projects:** only publicly visible repository entries are published. A private project is not linked as though it were public.
 - **Stars:** counts come from GitHub, not fabricated review ratings.
 - **Demo links:** displayed only for a suitably verified public homepage or a verified project demo URL.
@@ -110,4 +110,4 @@ The generator replaces only the text between each pair. All static prose and lay
 - **Status tab seems outdated:** run the data refresh workflow manually and inspect any API errors.
 - **A workflow fails:** open its logs. The quality checks validate JavaScript with `node --check` and verify the JSON and README markers.
 
-The previous game-console theme, RPG banner, cartridge artwork and snake animation are intentionally no longer part of the active portfolio.
+The public company list and repository allowlist are managed in `COMPANY_REPOSITORIES` in `scripts/generate_profile.py`. Those groupings are generated into `company_contributions` for the website. Contributions do not imply employment by, or endorsement from, the companies.
