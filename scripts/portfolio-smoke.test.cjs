@@ -169,7 +169,7 @@ test("unavailable data shows explicit messages instead of hanging on Loading", a
   await app.flush();
   assert.match(app.text("prList"), /temporarily unavailable/i);
   assert.match(app.text("projectsGrid"), /could not be loaded/i);
-  assert.match(app.text("updated"), /Unable to load/i);
+  assert.match(app.text("updated"), /Live GitHub data unavailable/i);
 });
 
 test("server-rendered HTML includes a usable PR fallback if scripts cannot run", () => {
