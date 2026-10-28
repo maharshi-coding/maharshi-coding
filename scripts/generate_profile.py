@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the RPG profile from current, publicly visible GitHub API data.
+"""Generate the professional GitHub profile from current, publicly visible API data.
 
 Never publishes private repositories or unpublished PRs. Requires only Python 3.10+.
 GH_DATA_TOKEN (optional PAT) > GH_TOKEN > GITHUB_TOKEN. With no token, public
@@ -206,40 +206,55 @@ def section_replace(markdown, label, content):
 
 
 def render_prs(data):
-    bits = []
-    for state, heading, label in (("merged", "✅ CLEARED BOUNTIES // MERGED", "Completed"),
-                                  ("open", "🔶 ACTIVE RAIDS // OPEN", "In review")):
-        items = data["prs"][state]
-        upstream = sum(p["upstream"] for p in items)
-        bits.append("### " + heading + " (" + str(len(items)) + ")\n")
-        bits.append("**" + label + "** · " + str(upstream) + " upstream · " +
-                    str(len(items) - upstream) + " own-repository contributions\n")
-        bits.append("| Guild / Repository | Quest completed or attempted | Scroll |")
-        bits.append("| :-- | :-- | :-- |")
-        if not items:
-            bits.append("| — | No public PRs in this state | — |")
-        for p in items:
-            guild = "⚔️ " if p["upstream"] else "🏠 "
-            bits.append("| " + guild + safe(p["repo"]) + " | " + safe(p["title"]) +
-                        " | [#" + str(p["number"]) + "](" + p["url"] + ") |")
-        bits.append("")
-    bits.append("**⚔️** External upstream PR · **🏠** PR in my namespace. " +
-                "Closed-without-merge PRs are not listed as completed bounties.")
-    return "\n".join(bits)
+    """Show independently verified upstream outcomes and clearly separate own PRs."""
+    lines = []
+    for state, heading in (("merged", "Merged upstream"), ("open", "Open upstream")):
+        upstream = [p for p in data["prs"][state] if p["upstream"]]
+        own = [p for p in data["prs"][state] if not p["upstream"]]
+        lines += [
+            "### " + heading + " · " + str(len(upstream)),
+            "",
+            "| Project | Contribution | PR |",
+            "| :-- | :-- | :-- |",
+        ]
+        if not upstream:
+            lines.append("| — | No publicly visible upstream PRs in this state. | — |")
+        for p in upstream:
+            lines.append("| **" + safe(p["repo"]) + "** | " + safe(p["title"]) +
+                         " | [#" + str(p["number"]) + "](" + p["url"] + ") |")
+        lines.append("")
+        lines.append("<details><summary>View " + str(len(own)) +
+                     " " + state + " PRs in my own GitHub namespace</summary>\n")
+        if own:
+            lines += ["| Repository | Change | Pull request |", "| :-- | :-- | :-- |"]
+            for p in own:
+                lines.append("| " + safe(p["repo"]) + " | " + safe(p["title"]) +
+                             " | [#" + str(p["number"]) + "](" + p["url"] + ") |")
+        else:
+            lines.append("_No publicly visible PRs in this category._")
+        lines.append("\n</details>\n")
+    lines.append(
+        "[View all authored pull requests](https://github.com/pulls?q=is%3Apr+author%3A" +
+        USER + ") · [Closed without merging](https://github.com/pulls?q=is%3Apr+author%3A" +
+        USER + "+is%3Aclosed+-is%3Amerged)"
+    )
+    lines.append("\n_Status is sourced from GitHub; open means not merged._")
+    return "\n".join(lines)
 
 
 def project_card(r):
-    name = r["name"]
-    tag = " · ".join([r["language"]] + r["topics"][:2])
-    live = ('<a href="' + safe(r["live"]) + '">▶ PLAY DEMO</a> &nbsp; ' if r["live"] else "")
+    """Editorial two-column project card without false product ratings."""
+    name = safe(r["name"])
+    summary = safe(r["tagline"])
+    tags = " · ".join([r["language"]] + r["topics"][:2])
+    live = (" &nbsp;·&nbsp; [Live demo](" + r["live"] + ")" if r["live"] else "")
+    # GitHub stars are not subjective product ratings.
     return (
         '<td width="50%" valign="top">\n'
-        '<a href="' + safe(r["url"]) + '"><img width="100%" alt="' + safe(name) + ' RPG cartridge" src="assets/covers/' + safe(name) + '.svg"></a>\n' +
-        '<h3>' + EMOJI.get(name, "🎮") + " " + safe(name) + '</h3>\n'
-        '<p>' + safe(r["tagline"]) + '</p>\n'
-        '<p><code>' + safe(tag) + '</code></p>\n'
-        '<p>⭐ ' + str(r["stars"]) + ' stars &nbsp; / &nbsp; ' + live +
-        '<a href="' + safe(r["url"]) + '">⌘ CODE</a></p>\n'
+        '<a href="' + safe(r["url"]) + '"><b>' + name + '</b></a>\n\n'
+        + summary + '\n\n'
+        + '<sub>' + safe(tags) + ' · ★ ' + str(r["stars"]) + ' GitHub stars</sub>\n\n'
+        + '[Source code](' + r["url"] + ')' + live + '\n'
         '</td>'
     )
 
@@ -248,27 +263,30 @@ def render_projects(data):
     repos = [r for r in data["repos"] if not r["fork"] and not r["archived"]]
     by_name = {r["name"]: r for r in repos}
     featured = [by_name[n] for n in FEATURED if n in by_name]
-    other = [r for r in repos if r["name"] not in FEATURED and r["name"] != USER]
-    other.sort(key=lambda r: r["name"].lower())
-    parts = ["_Live GitHub project metadata • A star is a GitHub star, not a review rating._\n"]
-    parts.append('<table>')
+    other = sorted(
+        (r for r in repos if r["name"] not in FEATURED and r["name"] != USER),
+        key=lambda r: r["name"].lower(),
+    )
+    parts = ['<table>']
     for i in range(0, len(featured), 2):
         parts.append("<tr>\n" + "\n".join(project_card(r) for r in featured[i:i+2]) + "\n</tr>")
     parts.append("</table>")
-    parts.append("\n<details><summary><b>🗄️ OPEN THE SIDE-QUEST SHELF (" +
-                 str(len(other)) + " other original public repositories)</b></summary>\n")
-    parts.append("| Game / Repository | Tech | ⭐ | Enter |")
-    parts.append("| :-- | :-- | --: | :-- |")
+    parts.append("\n<details><summary><b>Browse " + str(len(other)) +
+                 " more original public repositories</b></summary>\n")
+    parts += ["| Repository | Primary language | Stars | Links |", "| :-- | :-- | --: | :-- |"]
     for r in other:
-        parts.append("| " + safe(r["name"]) + " — " + safe(r["description"][:85]) +
+        links = "[Code](" + r["url"] + ")"
+        if r["live"]:
+            links += " · [Live](" + r["live"] + ")"
+        parts.append("| **" + safe(r["name"]) + "** — " + safe(r["description"][:90]) +
                      " | " + safe(r["language"]) + " | " + str(r["stars"]) +
-                     " | [CODE](" + r["url"] + ")" +
-                     (" · [PLAY](" + r["live"] + ")" if r["live"] else "") + " |")
+                     " | " + links + " |")
     parts.append("\n</details>")
-    forks = sorted((r for r in data["repos"] if r["fork"]), key=lambda r: r["name"].lower())
-    parts.append("\n<details><summary><b>🧬 FORK ARCHIVE (" +
-                 str(len(forks)) + " public forks / upstream workbenches)</b></summary>\n")
-    parts.append("These are forks, not original games. Authored PRs are credited in the raid log.\n")
+    forks = sorted([r for r in data["repos"] if r["fork"]],
+                   key=lambda r: r["name"].lower())
+    parts.append("\n<details><summary>Open the " + str(len(forks)) +
+                 "-repository public fork archive</summary>\n")
+    parts.append("_Forks are shown separately from original projects._\n")
     for r in forks:
         parts.append("- [" + safe(r["name"]) + "](" + r["url"] + ")")
     parts.append("\n</details>")
@@ -276,31 +294,35 @@ def render_projects(data):
 
 
 def render_hud(data):
-    v = data["stats"]
-    bars = Counter(r["language"] for r in data["repos"] if not r["fork"] and
-                   r["language"] != "Unspecified")
+    stats = data["stats"]
+    main_languages = Counter(
+        r["language"] for r in data["repos"] if not r["fork"] and
+        r["language"] != "Unspecified"
+    )
     lines = [
-        "| HUD field | Live value |", "| :-- | :-- |",
-        "| 🎮 Account spawned | " + safe(v.get("created_at") or "GitHub profile API unavailable") + " |",
-        "| 📦 Public repositories | " + str(v["public_repos"]) + " |",
-        "| 🧬 Forks | " + str(v["forks"]) + " |",
-        "| ⭐ Stars (public repos) | " + str(v["stars"]) + " |",
-        "| ⚔️ Authored public PRs (merged / open) | " +
-        str(len(data["prs"]["merged"])) + " / " + str(len(data["prs"]["open"])) + " |",
-        "| 🟪 Contributions in trailing 365 days | " +
-        (str(v["annual_contributions"]) if v["annual_contributions"] is not None else
-         "Unavailable (GraphQL authorization needed)") + " |",
+        "| Public GitHub activity | Count |",
+        "| :-- | --: |",
+        "| Public repositories | " + str(stats["public_repos"]) + " |",
+        "| Original repositories | " + str(stats["public_repos"] - stats["forks"]) + " |",
+        "| Total public repository stars | " + str(stats["stars"]) + " |",
+        "| Merged upstream PRs | " +
+        str(sum(p["upstream"] for p in data["prs"]["merged"])) + " |",
+        "| Open upstream PRs | " +
+        str(sum(p["upstream"] for p in data["prs"]["open"])) + " |",
+        "| Contributions in last 365 days | " +
+        (str(stats["annual_contributions"]) if stats["annual_contributions"] is not None
+         else "Not available") + " |",
         "",
-        "**Language inventory** (number of nonfork public repos where language is primary):",
+        "**Primary repository languages:** " +
+        (", ".join(safe(k) + " (" + str(v) + ")" for k, v in main_languages.most_common(6))
+         or "Not available"),
         "",
     ]
-    lines.extend("- " + safe(name) + ": " + str(count) for name, count in bars.most_common(12))
     if data["pinned"]:
-        lines.append("\n**Pinned loadout:** " + " · ".join(
-            "[" + safe(r) + "](https://github.com/" + quote(r, safe="/") + ")"
-            for r in data["pinned"]))
-    else:
-        lines.append("\n**Pinned loadout:** Not available from this API run; GitHub GraphQL refresh may supply it.")
+        lines.append("**GitHub pinned:** " + " · ".join(
+            "[" + safe(repo) + "](https://github.com/" + quote(repo, safe="/") + ")"
+            for repo in data["pinned"]
+        ))
     return "\n".join(lines)
 
 
