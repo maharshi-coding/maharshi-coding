@@ -126,7 +126,7 @@ _Forks are shown separately from original projects._
 
 ## Open-source contributions
 
-I submit fixes and improvements to established projects and maintain my own tools. The upstream list is separated by **merged** and **open** status; pull requests in my own namespace are available in expandable sections.
+Selected public pull requests to repositories maintained by **Tesla, Meta, Google DeepMind, and Waymo**. Each company has its own section with **merged** and **open** contributions. PRs from my personal repositories and unrelated projects are excluded.
 
 <!--START_SECTION:prs-->
 ### [Tesla](https://github.com/teslamotors)
