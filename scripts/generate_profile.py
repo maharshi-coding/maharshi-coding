@@ -287,7 +287,7 @@ def render_hud(data):
         "| ⭐ Stars (public repos) | " + str(v["stars"]) + " |",
         "| ⚔️ Authored public PRs (merged / open) | " +
         str(len(data["prs"]["merged"])) + " / " + str(len(data["prs"]["open"])) + " |",
-        "| 🟩 Contributions in trailing 365 days | " +
+        "| 🟪 Contributions in trailing 365 days | " +
         (str(v["annual_contributions"]) if v["annual_contributions"] is not None else
          "Unavailable (GraphQL authorization needed)") + " |",
         "",
