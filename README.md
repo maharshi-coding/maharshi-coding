@@ -126,7 +126,7 @@ _Forks are shown separately from original projects._
 
 ## Open-source contributions
 
-Selected public pull requests to repositories maintained by **Tesla, Meta, Google DeepMind, and Waymo**. Each company has its own section with **merged** and **open** contributions. PRs from my personal repositories and unrelated projects are excluded.
+Selected public pull requests to repositories maintained by **Tesla, Meta, Google DeepMind, and Waymo**. Each company has its own section for **GitHub-merged**, **landed upstream through CodeSync**, and **open** contributions. PRs from my personal repositories and unrelated projects are excluded.
 
 <!--START_SECTION:prs-->
 ### [Tesla](https://github.com/teslamotors)
@@ -142,9 +142,12 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 
 ### [Meta](https://github.com/facebook)
 
+**Landed upstream via Meta CodeSync**
+
+- **mariana-trench** · [PR #277](https://github.com/facebook/mariana-trench/pull/277) — Fix false negative: taint propagation through static fields (#91) · [Upstream commit 81b835d](https://github.com/facebook/mariana-trench/commit/81b835dff56763b871d9db8dcbf29bdb1bb35973)
+
 **Open · under review**
 
-- **mariana-trench** · [PR #277](https://github.com/facebook/mariana-trench/pull/277) — Fix false negative: taint propagation through static fields (#91)
 - **pyrefly** · [PR #5346](https://github.com/facebook/pyrefly/pull/5346) — Preserve Unknown when narrowing missing attributes
 - **ThreatExchange** · [PR #2026](https://github.com/facebook/ThreatExchange/pull/2026) — [pdq][cpp] Prevent signed integer overflow in image downscaling
 
@@ -162,7 +165,7 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 - **waymax** · [PR #95](https://github.com/waymo-research/waymax/pull/95) — Clarify that rollout actors receive the full state; add observation-based actor test
 - **waymax** · [PR #94](https://github.com/waymo-research/waymax/pull/94) — Fix configured simulation actors in the dm_env factory
 
-_Statuses come from GitHub. These are public open-source contributions—not company employment or endorsement._
+_GitHub merges and Meta CodeSync integrations are labeled separately. These are public open-source contributions—not company employment or endorsement._
 <!--END_SECTION:prs-->
 
 ## Experience & focus
@@ -183,8 +186,8 @@ _Statuses come from GitHub. These are public open-source contributions—not com
 | Public repositories | 33 |
 | Original repositories | 18 |
 | Total public repository stars | 1 |
-| Merged PRs to featured tech companies | 1 |
-| Open PRs to featured tech companies | 9 |
+| Integrated contributions to featured tech companies | 2 |
+| Open PRs to featured tech companies | 8 |
 | Contributions in last 365 days | 256 |
 
 **Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
