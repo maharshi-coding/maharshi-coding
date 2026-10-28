@@ -93,7 +93,7 @@ def find_prs(state):
     # Search API caps result retrieval at 1000 records.
     items = []
     for page in range(1, 11):
-        query = "author:" + USER + " is:pr is:" + state + " is:public"
+        query = "author:" + USER + " is:pr is:" + state
         data = github("/search/issues",
                       {"q": query, "per_page": 100, "page": page, "sort": "updated", "order": "desc"})
         chunk = data.get("items", [])
@@ -103,10 +103,19 @@ def find_prs(state):
         if len(chunk) < 100:
             break
     out, seen = [], set()
+    visibility_cache = {}
     for item in items:
         url = item.get("html_url", "")
         match = re.fullmatch(r"https://github[.]com/([^/]+)/([^/]+)/pull/([0-9]+)", url)
         if not match or url in seen:
+            continue
+        full_name = match.group(1) + "/" + match.group(2)
+        if full_name not in visibility_cache:
+            try:
+                visibility_cache[full_name] = not github("/repos/" + full_name).get("private", True)
+            except RuntimeError:
+                visibility_cache[full_name] = False
+        if not visibility_cache[full_name]:
             continue
         seen.add(url)
         out.append({
@@ -224,6 +233,7 @@ def project_card(r):
     live = ('<a href="' + safe(r["live"]) + '">▶ PLAY DEMO</a> &nbsp; ' if r["live"] else "")
     return (
         '<td width="50%" valign="top">\n'
+        '<a href="' + safe(r["url"]) + '"><img width="100%" alt="' + safe(name) + ' RPG cartridge" src="assets/covers/' + safe(name) + '.svg"></a>\n' +
         '<h3>' + EMOJI.get(name, "🎮") + " " + safe(name) + '</h3>\n'
         '<p>' + safe(r["tagline"]) + '</p>\n'
         '<p><code>' + safe(tag) + '</code></p>\n'
