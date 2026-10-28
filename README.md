@@ -69,22 +69,27 @@
 Bounties from other engineering guilds are marked **⚔️ upstream**. Work in my own public repositories is marked **🏠 home-base**. **Merged** means GitHub confirms the PR was merged, while **open** means it is still awaiting a decision.
 
 <!--START_SECTION:prs-->
-### ✅ MERGED // CLEARED BOUNTIES (8)
+### ✅ CLEARED BOUNTIES // MERGED (9)
 
-| Guild / Repository | Mission description | PR scroll |
+**Completed** · 2 upstream · 7 own-repository contributions
+
+| Guild / Repository | Quest completed or attempted | Scroll |
 | :-- | :-- | :-- |
 | ⚔️ teslamotors/vehicle-command | tesla-http-proxy: exit 1 and report startup failures on stderr | [#524](https://github.com/teslamotors/vehicle-command/pull/524) |
-| ⚔️ ros-navigation/navigation2 | Fix BtActionNode cancellation when halted before goal acknowledgement | [#6445](https://github.com/ros-navigation/navigation2/pull/6445) |
 | 🏠 maharshi-coding/oss-agent | Interactive README + live GitHub Pages visualizer demo | [#1](https://github.com/maharshi-coding/oss-agent/pull/1) |
+| ⚔️ ros-navigation/navigation2 | Fix BtActionNode cancellation when halted before goal acknowledgement | [#6445](https://github.com/ros-navigation/navigation2/pull/6445) |
 | 🏠 maharshi-coding/agent-pixel-visualizer | perf: fix 60fps rendering bottlenecks and event-listener leak in webview | [#1](https://github.com/maharshi-coding/agent-pixel-visualizer/pull/1) |
 | 🏠 maharshi-coding/reinforcement-learning | Implement RL-Based Autonomous Intrusion Response System (AIRS) | [#1](https://github.com/maharshi-coding/reinforcement-learning/pull/1) |
+| 🏠 maharshi-coding/KAN-ODEs | Add optimized KAN-ODE implementation with regularization and evaluation framework | [#1](https://github.com/maharshi-coding/KAN-ODEs/pull/1) |
 | 🏠 maharshi-coding/ai-tutor-app | Integrate Ollama LLM, Kokoro TTS, SadTalker avatar, RAG document upload, and streaming | [#2](https://github.com/maharshi-coding/ai-tutor-app/pull/2) |
 | 🏠 maharshi-coding/ai-tutor-app | Fix avatar image not displaying after generation due to stale state and browser cache | [#1](https://github.com/maharshi-coding/ai-tutor-app/pull/1) |
 | 🏠 maharshi-coding/orlog-game | Optimize core game loop and React rendering performance | [#1](https://github.com/maharshi-coding/orlog-game/pull/1) |
 
-### 🔶 OPEN // ACTIVE RAIDS (13)
+### 🔶 ACTIVE RAIDS // OPEN (14)
 
-| Guild / Repository | Mission description | PR scroll |
+**In review** · 11 upstream · 3 own-repository contributions
+
+| Guild / Repository | Quest completed or attempted | Scroll |
 | :-- | :-- | :-- |
 | ⚔️ teslamotors/vehicle-command | proxy: propagate vehicle request cancellation with startup cleanup | [#535](https://github.com/teslamotors/vehicle-command/pull/535) |
 | ⚔️ google-deepmind/mujoco | Fix Studio native viewer on macOS: run the viewer on the main thread | [#3697](https://github.com/google-deepmind/mujoco/pull/3697) |
@@ -92,6 +97,7 @@ Bounties from other engineering guilds are marked **⚔️ upstream**. Work in m
 | ⚔️ facebook/pyrefly | Preserve Unknown when narrowing missing attributes | [#5346](https://github.com/facebook/pyrefly/pull/5346) |
 | ⚔️ moveit/moveit2 | Fix use-after-free in servo_keyboard_input demo by joining the spin thread | [#3850](https://github.com/moveit/moveit2/pull/3850) |
 | ⚔️ facebook/ThreatExchange | [pdq][cpp] Prevent signed integer overflow in image downscaling | [#2026](https://github.com/facebook/ThreatExchange/pull/2026) |
+| 🏠 maharshi-coding/supabase | fix(studio): prevent crash on log drains page in self-hosted environments | [#1](https://github.com/maharshi-coding/supabase/pull/1) |
 | ⚔️ supabase/supabase | fix(studio): show removed edge functions in branch merge diff | [#44194](https://github.com/supabase/supabase/pull/44194) |
 | ⚔️ teslamotors/react-native-camera-kit | fix(android): center scan frame after enabling and layout changes | [#822](https://github.com/teslamotors/react-native-camera-kit/pull/822) |
 | ⚔️ waymo-research/waymax | Fix scenario ID batching in the WOSAC notebook | [#96](https://github.com/waymo-research/waymax/pull/96) |
@@ -100,7 +106,7 @@ Bounties from other engineering guilds are marked **⚔️ upstream**. Work in m
 | 🏠 maharshi-coding/face-attendance-app | Fix end-to-end: remove exposed key, green tests, clean frontend build | [#1](https://github.com/maharshi-coding/face-attendance-app/pull/1) |
 | 🏠 maharshi-coding/ai-tutor-app | Fix end-to-end: green tests, clean builds across backend/frontend/mobile | [#3](https://github.com/maharshi-coding/ai-tutor-app/pull/3) |
 
-_Initial GitHub API audit. This section is rewritten automatically by `scripts/generate_profile.py`._
+**⚔️** External upstream PR · **🏠** PR in my namespace. Closed-without-merge PRs are not listed as completed bounties.
 <!--END_SECTION:prs-->
 
 <details><summary><b>🗃️ WHAT ABOUT CLOSED / UNMERGED PRs?</b></summary>
@@ -116,56 +122,110 @@ They are **not** cleared bounties. [View the separate closed-without-merge histo
 **Insert cartridge. Inspect the code. Play the demo when one actually exists.** ⭐ means **GitHub stars**, not a made-up game review score. Only original **public** repositories are featured here; private work is not exposed.
 
 <!--START_SECTION:projects-->
+_Live GitHub project metadata • A star is a GitHub star, not a review rating._
+
 <table>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/ai-tutor-app"><img alt="AI Tutor cartridge" width="100%" src="assets/covers/ai-tutor-app.svg"/></a><p><b>AI Tutor</b> · ⭐ 0 stars</p><p>AI tutor with RAG, courses, and avatar-powered updates</p><p><code>TypeScript</code></p><a href="https://github.com/maharshi-coding/ai-tutor-app">⌘ CODE</a></td>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/FulfillFlow"><img alt="FulfillFlow cartridge" width="100%" src="assets/covers/FulfillFlow.svg"/></a><p><b>FulfillFlow</b> · ⭐ 0 stars</p><p>ROS 2 warehouse navigation with verified single-robot baseline</p><p><code>Python</code></p><a href="https://github.com/maharshi-coding/FulfillFlow">⌘ CODE</a></td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/ai-tutor-app"><img width="100%" alt="ai-tutor-app RPG cartridge" src="assets/covers/ai-tutor-app.svg"></a>
+<h3>🧙 ai-tutor-app</h3>
+<p>Your AI tutor, powered by retrieval, voice and avatars</p>
+<p><code>TypeScript</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/ai-tutor-app">⌘ CODE</a></p>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/FulfillFlow"><img width="100%" alt="FulfillFlow RPG cartridge" src="assets/covers/FulfillFlow.svg"></a>
+<h3>🤖 FulfillFlow</h3>
+<p>Warehouse robot navigation powered by ROS 2 and Gazebo</p>
+<p><code>Python · autonomous-navigation · cpp</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/FulfillFlow">⌘ CODE</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/oss-agent"><img alt="OSS-Agent cartridge" width="100%" src="assets/covers/oss-agent.svg"/></a><p><b>OSS-Agent</b> · ⭐ 0 stars</p><p>Human-approved AI agent for meaningful upstream fixes</p><p><code>Python</code></p><a href="https://maharshi-coding.github.io/oss-agent/">▶ PLAY DEMO</a> &nbsp; · &nbsp; <a href="https://github.com/maharshi-coding/oss-agent">⌘ CODE</a></td>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/seller-shield"><img alt="Seller Shield cartridge" width="100%" src="assets/covers/seller-shield.svg"/></a><p><b>Seller Shield</b> · ⭐ 0 stars</p><p>Four-agent seller defense with AWS Bedrock and Strands</p><p><code>Python</code></p><a href="https://github.com/maharshi-coding/seller-shield">⌘ CODE</a></td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/oss-agent"><img width="100%" alt="oss-agent RPG cartridge" src="assets/covers/oss-agent.svg"></a>
+<h3>🧠 oss-agent</h3>
+<p>Human-approved AI agent for real open-source fixes</p>
+<p><code>Python · agentic-ai · ai-agent</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/oss-agent">⌘ CODE</a></p>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/seller-shield"><img width="100%" alt="seller-shield RPG cartridge" src="assets/covers/seller-shield.svg"></a>
+<h3>🛡️ seller-shield</h3>
+<p>Multi-agent risk defense for independent sellers</p>
+<p><code>Python</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/seller-shield">⌘ CODE</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/outfallwatch"><img alt="OutfallWatch cartridge" width="100%" src="assets/covers/outfallwatch.svg"/></a><p><b>OutfallWatch</b> · ⭐ 0 stars</p><p>Edge-powered coastal monitoring and storm simulation</p><p><code>TypeScript</code></p><a href="https://outfallwatch.onrender.com">▶ PLAY DEMO</a> &nbsp; · &nbsp; <a href="https://github.com/maharshi-coding/outfallwatch">⌘ CODE</a></td>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/overturn"><img alt="Overturn cartridge" width="100%" src="assets/covers/overturn.svg"/></a><p><b>Overturn</b> · ⭐ 0 stars</p><p>Persistent multi-agent appeal workflow on Cloud Run</p><p><code>TypeScript</code></p><a href="https://github.com/maharshi-coding/overturn">⌘ CODE</a></td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/outfallwatch"><img width="100%" alt="outfallwatch RPG cartridge" src="assets/covers/outfallwatch.svg"></a>
+<h3>🌊 outfallwatch</h3>
+<p>Low-power coastal sensor alerts and storm simulation</p>
+<p><code>TypeScript · edge-computing · environmental-monitoring</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://outfallwatch.onrender.com">▶ PLAY DEMO</a> &nbsp; <a href="https://github.com/maharshi-coding/outfallwatch">⌘ CODE</a></p>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/overturn"><img width="100%" alt="overturn RPG cartridge" src="assets/covers/overturn.svg"></a>
+<h3>⚖️ overturn</h3>
+<p>Stateful agent workflows for insurance denial appeals</p>
+<p><code>TypeScript</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/overturn">⌘ CODE</a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/agent-pixel-visualizer"><img alt="Agent Pixel Visualizer cartridge" width="100%" src="assets/covers/agent-pixel-visualizer.svg"/></a><p><b>Agent Pixel Visualizer</b> · ⭐ 0 stars</p><p>Interactive pixel-art world for coding-agent activity</p><p><code>JavaScript</code></p><a href="https://github.com/maharshi-coding/agent-pixel-visualizer">⌘ CODE</a></td>
-<td width="50%" valign="top"><a href="https://github.com/maharshi-coding/datahub-steward-squad"><img alt="DataHub Steward Squad cartridge" width="100%" src="assets/covers/datahub-steward-squad.svg"/></a><p><b>DataHub Steward Squad</b> · ⭐ 0 stars</p><p>Governed metadata analysis and MCP writeback</p><p><code>Python</code></p><a href="https://github.com/maharshi-coding/datahub-steward-squad">⌘ CODE</a></td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/agent-pixel-visualizer"><img width="100%" alt="agent-pixel-visualizer RPG cartridge" src="assets/covers/agent-pixel-visualizer.svg"></a>
+<h3>👾 agent-pixel-visualizer</h3>
+<p>Turns VS Code agent activity into a pixel-art world</p>
+<p><code>JavaScript</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/agent-pixel-visualizer">⌘ CODE</a></p>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/maharshi-coding/datahub-steward-squad"><img width="100%" alt="datahub-steward-squad RPG cartridge" src="assets/covers/datahub-steward-squad.svg"></a>
+<h3>🗺️ datahub-steward-squad</h3>
+<p>MCP-powered multi-agent metadata governance</p>
+<p><code>Python · ai-agents · claude</code></p>
+<p>⭐ 0 stars &nbsp; / &nbsp; <a href="https://github.com/maharshi-coding/datahub-steward-squad">⌘ CODE</a></p>
+</td>
 </tr>
 </table>
 
-<details><summary><b>🗄️ OPEN SIDE-QUEST SHELF (9 other original public repositories)</b></summary>
+<details><summary><b>🗄️ OPEN THE SIDE-QUEST SHELF (9 other original public repositories)</b></summary>
 
-- [⌘ launchpad](https://github.com/maharshi-coding/launchpad)
-- [⌘ maharshi-os](https://github.com/maharshi-coding/maharshi-os)
-- [⌘ my-library](https://github.com/maharshi-coding/my-library)
-- [⌘ face-attendance-app](https://github.com/maharshi-coding/face-attendance-app)
-- [⌘ ai-tutoring](https://github.com/maharshi-coding/ai-tutoring)
-- [⌘ insta-go-sdk](https://github.com/maharshi-coding/insta-go-sdk)
-- [⌘ reinforcement-learning](https://github.com/maharshi-coding/reinforcement-learning)
-- [⌘ orlog-game](https://github.com/maharshi-coding/orlog-game)
-- [⌘ kinetic-darkroom](https://github.com/maharshi-coding/kinetic-darkroom)
+| Game / Repository | Tech | ⭐ | Enter |
+| :-- | :-- | --: | :-- |
+| ai-tutoring —  | Unspecified | 0 | [CODE](https://github.com/maharshi-coding/ai-tutoring) |
+| face-attendance-app —  | TypeScript | 0 | [CODE](https://github.com/maharshi-coding/face-attendance-app) |
+| insta-go-sdk —  | Go | 0 | [CODE](https://github.com/maharshi-coding/insta-go-sdk) |
+| kinetic-darkroom — A gesture-controlled photo puzzle and digital darkroom. Built on Hand-Puzzle with ori | Unspecified | 0 | [CODE](https://github.com/maharshi-coding/kinetic-darkroom) |
+| launchpad — Interactive 3D launcher — try Maharshi&#x27;s AI-agent projects live or view the code | HTML | 0 | [CODE](https://github.com/maharshi-coding/launchpad) |
+| maharshi-os — Interactive neon-noir portfolio of Maharshi Barot — AI Solutions Developer &amp; Full-Sta | TypeScript | 0 | [CODE](https://github.com/maharshi-coding/maharshi-os) |
+| my-library —  | TypeScript | 0 | [CODE](https://github.com/maharshi-coding/my-library) |
+| orlog-game —  | JavaScript | 0 | [CODE](https://github.com/maharshi-coding/orlog-game) |
+| reinforcement-learning —  | HTML | 0 | [CODE](https://github.com/maharshi-coding/reinforcement-learning) |
 
 </details>
 
-<details><summary><b>🧬 OPEN FORK ARCHIVE (15 public upstream forks)</b></summary>
+<details><summary><b>🧬 FORK ARCHIVE (15 public forks / upstream workbenches)</b></summary>
 
-- [navigation2](https://github.com/maharshi-coding/navigation2)
-- [moveit2](https://github.com/maharshi-coding/moveit2)
-- [mariana-trench](https://github.com/maharshi-coding/mariana-trench)
-- [KAN-ODEs](https://github.com/maharshi-coding/KAN-ODEs)
-- [mujoco](https://github.com/maharshi-coding/mujoco)
-- [insta-go-sdk-1](https://github.com/maharshi-coding/insta-go-sdk-1)
-- [waymax](https://github.com/maharshi-coding/waymax)
+These are forks, not original games. Authored PRs are credited in the raid log.
+
 - [click](https://github.com/maharshi-coding/click)
-- [ThreatExchange](https://github.com/maharshi-coding/ThreatExchange)
-- [supabase](https://github.com/maharshi-coding/supabase)
-- [vehicle-command](https://github.com/maharshi-coding/vehicle-command)
+- [insta-go-sdk-1](https://github.com/maharshi-coding/insta-go-sdk-1)
+- [KAN-ODEs](https://github.com/maharshi-coding/KAN-ODEs)
+- [mariana-trench](https://github.com/maharshi-coding/mariana-trench)
 - [marshmallow](https://github.com/maharshi-coding/marshmallow)
+- [moveit2](https://github.com/maharshi-coding/moveit2)
+- [mujoco](https://github.com/maharshi-coding/mujoco)
 - [natsort](https://github.com/maharshi-coding/natsort)
-- [react-native-camera-kit](https://github.com/maharshi-coding/react-native-camera-kit)
+- [navigation2](https://github.com/maharshi-coding/navigation2)
 - [pyrefly](https://github.com/maharshi-coding/pyrefly)
+- [react-native-camera-kit](https://github.com/maharshi-coding/react-native-camera-kit)
+- [supabase](https://github.com/maharshi-coding/supabase)
+- [ThreatExchange](https://github.com/maharshi-coding/ThreatExchange)
+- [vehicle-command](https://github.com/maharshi-coding/vehicle-command)
+- [waymax](https://github.com/maharshi-coding/waymax)
 
 </details>
 <!--END_SECTION:projects-->
@@ -212,18 +272,24 @@ They are **not** cleared bounties. [View the separate closed-without-merge histo
 ## 🏆 LEVEL 05 // ACHIEVEMENTS & HUD
 
 <!--START_SECTION:hud-->
-| HUD field | Verified API snapshot |
+| HUD field | Live value |
 | :-- | :-- |
-| 🎮 Account spawned | Pending profile API refresh |
+| 🎮 Account spawned | 2026-02-12 |
 | 📦 Public repositories | 33 |
-| 🧬 Public forks | 15 |
-| ⭐ Public repository stars | 1 |
-| ⚔️ Authored public PRs (merged / open, current snapshot) | 8 / 13 |
-| 🟩 Contributions in trailing 365 days | Pending authenticated GraphQL refresh |
+| 🧬 Forks | 15 |
+| ⭐ Stars (public repos) | 1 |
+| ⚔️ Authored public PRs (merged / open) | 9 / 14 |
+| 🟩 Contributions in trailing 365 days | 204 |
 
-**Language inventory:** Python, TypeScript, JavaScript, Go and HTML are present in original public repositories. Exact primary-language counts will be generated from the API.
+**Language inventory** (number of nonfork public repos where language is primary):
 
-**Pinned loadout:** Requires an authenticated GraphQL fetch; it will be populated automatically when available.
+- TypeScript: 6
+- Python: 5
+- JavaScript: 2
+- HTML: 2
+- Go: 1
+
+**Pinned loadout:** Not available from this API run; GitHub GraphQL refresh may supply it.
 <!--END_SECTION:hud-->
 
 <div align="center">
