@@ -85,7 +85,7 @@ A curated view of original public work. Each project links to its real repositor
 </tr>
 </table>
 
-<details><summary><b>Browse 9 more original public repositories</b></summary>
+<details><summary><b>Browse 10 more original public repositories</b></summary>
 
 | Repository | Primary language | Stars | Links |
 | :-- | :-- | --: | :-- |
@@ -98,10 +98,11 @@ A curated view of original public work. Each project links to its real repositor
 | **my-library** —  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/my-library) |
 | **orlog-game** —  | JavaScript | 0 | [Code](https://github.com/maharshi-coding/orlog-game) |
 | **reinforcement-learning** —  | HTML | 0 | [Code](https://github.com/maharshi-coding/reinforcement-learning) |
+| **XAIFlow** — Visual machine learning workflows with SHAP/LIME explanations, experiment tracking, model  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/XAIFlow) |
 
 </details>
 
-<details><summary>Open the 15-repository public fork archive</summary>
+<details><summary>Open the 16-repository public fork archive</summary>
 
 _Forks are shown separately from original projects._
 
@@ -112,6 +113,7 @@ _Forks are shown separately from original projects._
 - [marshmallow](https://github.com/maharshi-coding/marshmallow)
 - [moveit2](https://github.com/maharshi-coding/moveit2)
 - [mujoco](https://github.com/maharshi-coding/mujoco)
+- [mujoco_warp](https://github.com/maharshi-coding/mujoco_warp)
 - [natsort](https://github.com/maharshi-coding/natsort)
 - [navigation2](https://github.com/maharshi-coding/navigation2)
 - [pyrefly](https://github.com/maharshi-coding/pyrefly)
@@ -178,14 +180,14 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 <!--START_SECTION:hud-->
 | Public GitHub activity | Count |
 | :-- | --: |
-| Public repositories | 33 |
-| Original repositories | 18 |
+| Public repositories | 35 |
+| Original repositories | 19 |
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 6 |
-| Contributions in last 365 days | 277 |
+| Contributions in last 365 days | 282 |
 
-**Primary repository languages:** TypeScript (6), Python (5), JavaScript (2), HTML (2), Go (1)
+**Primary repository languages:** TypeScript (7), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
 
 <details>
