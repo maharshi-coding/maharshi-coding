@@ -3,9 +3,23 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-10-30T05:49:59+00:00",
+  "generated_at": "2026-10-30T15:03:43+00:00",
   "pinned": [],
   "repos": [
+    {
+      "name": "maharshi-coding",
+      "full_name": "maharshi-coding/maharshi-coding",
+      "url": "https://github.com/maharshi-coding/maharshi-coding",
+      "description": "Professional GitHub profile README for Maharshi Barot",
+      "language": "Python",
+      "stars": 0,
+      "topics": [],
+      "live": null,
+      "fork": false,
+      "archived": false,
+      "featured": false,
+      "tagline": "Professional GitHub profile README for Maharshi Barot"
+    },
     {
       "name": "pytorch",
       "full_name": "maharshi-coding/pytorch",
@@ -33,20 +47,6 @@
       "archived": false,
       "featured": false,
       "tagline": "A composable and fully extensible C++ execution engine library for data management systems."
-    },
-    {
-      "name": "maharshi-coding",
-      "full_name": "maharshi-coding/maharshi-coding",
-      "url": "https://github.com/maharshi-coding/maharshi-coding",
-      "description": "Professional GitHub profile README for Maharshi Barot",
-      "language": "Python",
-      "stars": 0,
-      "topics": [],
-      "live": null,
-      "fork": false,
-      "archived": false,
-      "featured": false,
-      "tagline": "Professional GitHub profile README for Maharshi Barot"
     },
     {
       "name": "XAIFlow",
@@ -648,10 +648,18 @@
     ],
     "open": [
       {
-        "title": "[Inductor] Prevent input mutation from buffer reuse across cond branches",
-        "url": "https://github.com/pytorch/pytorch/pull/202710",
-        "repo": "pytorch/pytorch",
-        "number": 202710,
+        "title": "proxy: propagate vehicle request cancellation with startup cleanup",
+        "url": "https://github.com/teslamotors/vehicle-command/pull/535",
+        "repo": "teslamotors/vehicle-command",
+        "number": 535,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "GJK: report penetration when a discrete simplex ends not separated",
+        "url": "https://github.com/google-deepmind/mujoco_warp/pull/1866",
+        "repo": "google-deepmind/mujoco_warp",
+        "number": 1866,
         "upstream": true,
         "state": "open"
       },
@@ -660,6 +668,14 @@
         "url": "https://github.com/facebookincubator/velox/pull/19928",
         "repo": "facebookincubator/velox",
         "number": 19928,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "[Inductor] Prevent input mutation from buffer reuse across cond branches",
+        "url": "https://github.com/pytorch/pytorch/pull/202710",
+        "repo": "pytorch/pytorch",
+        "number": 202710,
         "upstream": true,
         "state": "open"
       },
@@ -688,14 +704,6 @@
         "state": "open"
       },
       {
-        "title": "GJK: report penetration when a discrete simplex ends not separated",
-        "url": "https://github.com/google-deepmind/mujoco_warp/pull/1866",
-        "repo": "google-deepmind/mujoco_warp",
-        "number": 1866,
-        "upstream": true,
-        "state": "open"
-      },
-      {
         "title": "[pdq][cpp] Prevent signed integer overflow in image downscaling",
         "url": "https://github.com/meta/ThreatExchange/pull/2026",
         "repo": "meta/ThreatExchange",
@@ -717,14 +725,6 @@
         "repo": "maharshi-coding/maharshi-coding",
         "number": 1,
         "upstream": false,
-        "state": "open"
-      },
-      {
-        "title": "proxy: propagate vehicle request cancellation with startup cleanup",
-        "url": "https://github.com/teslamotors/vehicle-command/pull/535",
-        "repo": "teslamotors/vehicle-command",
-        "number": 535,
-        "upstream": true,
         "state": "open"
       },
       {
