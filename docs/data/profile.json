@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-10-30T15:03:43+00:00",
+  "generated_at": "2026-10-30T20:48:19+00:00",
   "pinned": [],
   "repos": [
     {
@@ -684,14 +684,6 @@
         "url": "https://github.com/google-deepmind/mujoco/pull/3741",
         "repo": "google-deepmind/mujoco",
         "number": 3741,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "fix(passive): account for off-center ellipsoid fluid forces",
-        "url": "https://github.com/google-deepmind/mujoco_warp/pull/1869",
-        "repo": "google-deepmind/mujoco_warp",
-        "number": 1869,
         "upstream": true,
         "state": "open"
       },
