@@ -102,7 +102,7 @@ A curated view of original public work. Each project links to its real repositor
 
 </details>
 
-<details><summary>Open the 16-repository public fork archive</summary>
+<details><summary>Open the 18-repository public fork archive</summary>
 
 _Forks are shown separately from original projects._
 
@@ -117,10 +117,12 @@ _Forks are shown separately from original projects._
 - [natsort](https://github.com/maharshi-coding/natsort)
 - [navigation2](https://github.com/maharshi-coding/navigation2)
 - [pyrefly](https://github.com/maharshi-coding/pyrefly)
+- [pytorch](https://github.com/maharshi-coding/pytorch)
 - [react-native-camera-kit](https://github.com/maharshi-coding/react-native-camera-kit)
 - [supabase](https://github.com/maharshi-coding/supabase)
 - [ThreatExchange](https://github.com/maharshi-coding/ThreatExchange)
 - [vehicle-command](https://github.com/maharshi-coding/vehicle-command)
+- [velox](https://github.com/maharshi-coding/velox)
 - [waymax](https://github.com/maharshi-coding/waymax)
 
 </details>
@@ -152,6 +154,7 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 
 **Open · under review**
 
+- **mujoco** · [PR #3741](https://github.com/google-deepmind/mujoco/pull/3741) — perf(collision): reduce broadphase overhead for static child bodies
 - **mujoco** · [PR #3697](https://github.com/google-deepmind/mujoco/pull/3697) — Fix Studio native viewer on macOS: run the viewer on the main thread
 
 ### [Waymo](https://github.com/waymo-research)
@@ -180,12 +183,12 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 <!--START_SECTION:hud-->
 | Public GitHub activity | Count |
 | :-- | --: |
-| Public repositories | 35 |
+| Public repositories | 37 |
 | Original repositories | 19 |
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
-| Open PRs to featured tech companies | 6 |
-| Contributions in last 365 days | 284 |
+| Open PRs to featured tech companies | 7 |
+| Contributions in last 365 days | 289 |
 
 **Primary repository languages:** TypeScript (7), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
