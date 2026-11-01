@@ -3,23 +3,9 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-01T15:10:21+00:00",
+  "generated_at": "2026-11-01T20:30:35+00:00",
   "pinned": [],
   "repos": [
-    {
-      "name": "smithy-go",
-      "full_name": "maharshi-coding/smithy-go",
-      "url": "https://github.com/maharshi-coding/smithy-go",
-      "description": "Smithy code generators for Go (in development)",
-      "language": "Unspecified",
-      "stars": 0,
-      "topics": [],
-      "live": null,
-      "fork": true,
-      "archived": false,
-      "featured": false,
-      "tagline": "Smithy code generators for Go (in development)"
-    },
     {
       "name": "maharshi-coding",
       "full_name": "maharshi-coding/maharshi-coding",
@@ -33,6 +19,20 @@
       "archived": false,
       "featured": false,
       "tagline": "Professional GitHub profile README for Maharshi Barot"
+    },
+    {
+      "name": "smithy-go",
+      "full_name": "maharshi-coding/smithy-go",
+      "url": "https://github.com/maharshi-coding/smithy-go",
+      "description": "Smithy code generators for Go (in development)",
+      "language": "Unspecified",
+      "stars": 0,
+      "topics": [],
+      "live": null,
+      "fork": true,
+      "archived": false,
+      "featured": false,
+      "tagline": "Smithy code generators for Go (in development)"
     },
     {
       "name": "amazon-kinesis-client",
