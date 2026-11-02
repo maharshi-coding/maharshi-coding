@@ -102,7 +102,7 @@ A curated view of original public work. Each project links to its real repositor
 
 </details>
 
-<details><summary>Open the 23-repository public fork archive</summary>
+<details><summary>Open the 24-repository public fork archive</summary>
 
 _Forks are shown separately from original projects._
 
@@ -128,6 +128,7 @@ _Forks are shown separately from original projects._
 - [ThreatExchange](https://github.com/maharshi-coding/ThreatExchange)
 - [vehicle-command](https://github.com/maharshi-coding/vehicle-command)
 - [velox](https://github.com/maharshi-coding/velox)
+- [warp](https://github.com/maharshi-coding/warp)
 - [waymax](https://github.com/maharshi-coding/waymax)
 
 </details>
@@ -188,12 +189,12 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 <!--START_SECTION:hud-->
 | Public GitHub activity | Count |
 | :-- | --: |
-| Public repositories | 42 |
+| Public repositories | 43 |
 | Original repositories | 19 |
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 7 |
-| Contributions in last 365 days | 299 |
+| Contributions in last 365 days | 302 |
 
 **Primary repository languages:** TypeScript (7), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->

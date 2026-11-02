@@ -3,9 +3,37 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-02T06:04:39+00:00",
+  "generated_at": "2026-11-02T18:23:12+00:00",
   "pinned": [],
   "repos": [
+    {
+      "name": "warp",
+      "full_name": "maharshi-coding/warp",
+      "url": "https://github.com/maharshi-coding/warp",
+      "description": "A Python framework for GPU-accelerated simulation, robotics, and machine learning.",
+      "language": "Unspecified",
+      "stars": 0,
+      "topics": [],
+      "live": "https://nvidia.github.io/warp/stable/",
+      "fork": true,
+      "archived": false,
+      "featured": false,
+      "tagline": "A Python framework for GPU-accelerated simulation, robotics, and machine learning."
+    },
+    {
+      "name": "maharshi-coding",
+      "full_name": "maharshi-coding/maharshi-coding",
+      "url": "https://github.com/maharshi-coding/maharshi-coding",
+      "description": "Professional GitHub profile README for Maharshi Barot",
+      "language": "Python",
+      "stars": 0,
+      "topics": [],
+      "live": null,
+      "fork": false,
+      "archived": false,
+      "featured": false,
+      "tagline": "Professional GitHub profile README for Maharshi Barot"
+    },
     {
       "name": "aws-xray-sdk-node",
       "full_name": "maharshi-coding/aws-xray-sdk-node",
@@ -47,20 +75,6 @@
       "archived": false,
       "featured": false,
       "tagline": "Networking plugin repository for pod networking in Kubernetes using Elastic Network Interfaces on AWS"
-    },
-    {
-      "name": "maharshi-coding",
-      "full_name": "maharshi-coding/maharshi-coding",
-      "url": "https://github.com/maharshi-coding/maharshi-coding",
-      "description": "Professional GitHub profile README for Maharshi Barot",
-      "language": "Python",
-      "stars": 0,
-      "topics": [],
-      "live": null,
-      "fork": false,
-      "archived": false,
-      "featured": false,
-      "tagline": "Professional GitHub profile README for Maharshi Barot"
     },
     {
       "name": "smithy-go",
@@ -718,6 +732,22 @@
     ],
     "open": [
       {
+        "title": "Fix cascading errors when narrowing missing attributes",
+        "url": "https://github.com/meta/pyrefly/pull/5482",
+        "repo": "meta/pyrefly",
+        "number": 5482,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "Fix CPU graph geometry replay correctness",
+        "url": "https://github.com/NVIDIA/warp/pull/2211",
+        "repo": "NVIDIA/warp",
+        "number": 2211,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "Fix concurrent Lambda invocation trace isolation",
         "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
         "repo": "aws/aws-xray-sdk-node",
@@ -814,14 +844,6 @@
         "state": "open"
       },
       {
-        "title": "Preserve Unknown when narrowing missing attributes",
-        "url": "https://github.com/meta/pyrefly/pull/5346",
-        "repo": "meta/pyrefly",
-        "number": 5346,
-        "upstream": true,
-        "state": "open"
-      },
-      {
         "title": "Harden `refresh` workflow against concurrent `main` updates",
         "url": "https://github.com/maharshi-coding/maharshi-coding/pull/1",
         "repo": "maharshi-coding/maharshi-coding",
@@ -913,10 +935,10 @@
   },
   "stats": {
     "created_at": "2026-02-12",
-    "public_repos": 42,
-    "forks": 23,
+    "public_repos": 43,
+    "forks": 24,
     "stars": 1,
-    "annual_contributions": 299
+    "annual_contributions": 302
   },
   "verified_upstream_integrations": [
     {
