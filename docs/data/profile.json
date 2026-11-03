@@ -3,23 +3,9 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-03T06:48:28+00:00",
+  "generated_at": "2026-11-03T16:16:39+00:00",
   "pinned": [],
   "repos": [
-    {
-      "name": "cudf-spark",
-      "full_name": "maharshi-coding/cudf-spark",
-      "url": "https://github.com/maharshi-coding/cudf-spark",
-      "description": "NVIDIA cuDF for Apache Spark plugin - accelerate Apache Spark with GPUs",
-      "language": "Unspecified",
-      "stars": 0,
-      "topics": [],
-      "live": "https://nvidia.github.io/cudf-spark",
-      "fork": true,
-      "archived": false,
-      "featured": false,
-      "tagline": "NVIDIA cuDF for Apache Spark plugin - accelerate Apache Spark with GPUs"
-    },
     {
       "name": "maharshi-coding",
       "full_name": "maharshi-coding/maharshi-coding",
@@ -33,6 +19,20 @@
       "archived": false,
       "featured": false,
       "tagline": "Professional GitHub profile README for Maharshi Barot"
+    },
+    {
+      "name": "cudf-spark",
+      "full_name": "maharshi-coding/cudf-spark",
+      "url": "https://github.com/maharshi-coding/cudf-spark",
+      "description": "NVIDIA cuDF for Apache Spark plugin - accelerate Apache Spark with GPUs",
+      "language": "Unspecified",
+      "stars": 0,
+      "topics": [],
+      "live": "https://nvidia.github.io/cudf-spark",
+      "fork": true,
+      "archived": false,
+      "featured": false,
+      "tagline": "NVIDIA cuDF for Apache Spark plugin - accelerate Apache Spark with GPUs"
     },
     {
       "name": "warp",
