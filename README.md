@@ -102,7 +102,7 @@ A curated view of original public work. Each project links to its real repositor
 
 </details>
 
-<details><summary>Open the 24-repository public fork archive</summary>
+<details><summary>Open the 25-repository public fork archive</summary>
 
 _Forks are shown separately from original projects._
 
@@ -111,6 +111,7 @@ _Forks are shown separately from original projects._
 - [aws-c-io](https://github.com/maharshi-coding/aws-c-io)
 - [aws-xray-sdk-node](https://github.com/maharshi-coding/aws-xray-sdk-node)
 - [click](https://github.com/maharshi-coding/click)
+- [cudf-spark](https://github.com/maharshi-coding/cudf-spark)
 - [insta-go-sdk-1](https://github.com/maharshi-coding/insta-go-sdk-1)
 - [KAN-ODEs](https://github.com/maharshi-coding/KAN-ODEs)
 - [mariana-trench](https://github.com/maharshi-coding/mariana-trench)
@@ -189,12 +190,12 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 <!--START_SECTION:hud-->
 | Public GitHub activity | Count |
 | :-- | --: |
-| Public repositories | 43 |
+| Public repositories | 44 |
 | Original repositories | 19 |
 | Total public repository stars | 1 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 7 |
-| Contributions in last 365 days | 302 |
+| Contributions in last 365 days | 303 |
 
 **Primary repository languages:** TypeScript (7), Python (5), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
