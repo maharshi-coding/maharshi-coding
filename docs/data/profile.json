@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-03T16:16:39+00:00",
+  "generated_at": "2026-11-04T06:23:36+00:00",
   "pinned": [],
   "repos": [
     {
@@ -790,14 +790,6 @@
         "url": "https://github.com/aws/amazon-vpc-cni-k8s/pull/3952",
         "repo": "aws/amazon-vpc-cni-k8s",
         "number": 3952,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "Fix numeric precision in schema JSON documents",
-        "url": "https://github.com/aws/smithy-go/pull/742",
-        "repo": "aws/smithy-go",
-        "number": 742,
         "upstream": true,
         "state": "open"
       },
