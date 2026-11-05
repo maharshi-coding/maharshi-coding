@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-05T06:47:39+00:00",
+  "generated_at": "2026-11-05T16:29:18+00:00",
   "pinned": [],
   "repos": [
     {
@@ -746,6 +746,14 @@
     ],
     "open": [
       {
+        "title": "Fix concurrent Lambda invocation trace isolation",
+        "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
+        "repo": "aws/aws-xray-sdk-node",
+        "number": 761,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "[Inductor] Prevent input mutation from buffer reuse across cond branches",
         "url": "https://github.com/pytorch/pytorch/pull/202710",
         "repo": "pytorch/pytorch",
@@ -766,14 +774,6 @@
         "url": "https://github.com/NVIDIA/warp/pull/2211",
         "repo": "NVIDIA/warp",
         "number": 2211,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "Fix concurrent Lambda invocation trace isolation",
-        "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
-        "repo": "aws/aws-xray-sdk-node",
-        "number": 761,
         "upstream": true,
         "state": "open"
       },
