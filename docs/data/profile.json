@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-07T05:58:53+00:00",
+  "generated_at": "2026-11-07T14:54:56+00:00",
   "pinned": [],
   "repos": [
     {
@@ -746,6 +746,14 @@
     ],
     "open": [
       {
+        "title": "Fix cascading errors when narrowing missing attributes",
+        "url": "https://github.com/meta/pyrefly/pull/5482",
+        "repo": "meta/pyrefly",
+        "number": 5482,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "Fix concurrent Lambda invocation trace isolation",
         "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
         "repo": "aws/aws-xray-sdk-node",
@@ -758,14 +766,6 @@
         "url": "https://github.com/pytorch/pytorch/pull/202710",
         "repo": "pytorch/pytorch",
         "number": 202710,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "Fix cascading errors when narrowing missing attributes",
-        "url": "https://github.com/meta/pyrefly/pull/5482",
-        "repo": "meta/pyrefly",
-        "number": 5482,
         "upstream": true,
         "state": "open"
       },
