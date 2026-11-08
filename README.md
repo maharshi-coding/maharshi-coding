@@ -161,8 +161,8 @@ Selected public pull requests to repositories maintained by **Tesla, Meta, Googl
 
 **Open · under review**
 
-- **mujoco** · [PR #3741](https://github.com/google-deepmind/mujoco/pull/3741) — perf(collision): reduce broadphase overhead for static child bodies
 - **mujoco** · [PR #3697](https://github.com/google-deepmind/mujoco/pull/3697) — Fix Studio native viewer on macOS: run the viewer on the main thread
+- **mujoco** · [PR #3741](https://github.com/google-deepmind/mujoco/pull/3741) — perf(collision): reduce broadphase overhead for static child bodies
 
 ### [Waymo](https://github.com/waymo-research)
 

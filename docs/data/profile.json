@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-08T06:02:03+00:00",
+  "generated_at": "2026-11-08T15:12:57+00:00",
   "pinned": [],
   "repos": [
     {
@@ -746,6 +746,30 @@
     ],
     "open": [
       {
+        "title": "Fix Studio native viewer on macOS: run the viewer on the main thread",
+        "url": "https://github.com/google-deepmind/mujoco/pull/3697",
+        "repo": "google-deepmind/mujoco",
+        "number": 3697,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "perf(collision): reduce broadphase overhead for static child bodies",
+        "url": "https://github.com/google-deepmind/mujoco/pull/3741",
+        "repo": "google-deepmind/mujoco",
+        "number": 3741,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "GJK: report penetration when a discrete simplex ends not separated",
+        "url": "https://github.com/google-deepmind/mujoco_warp/pull/1866",
+        "repo": "google-deepmind/mujoco_warp",
+        "number": 1866,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "Fix cascading errors when narrowing missing attributes",
         "url": "https://github.com/meta/pyrefly/pull/5482",
         "repo": "meta/pyrefly",
@@ -810,26 +834,10 @@
         "state": "open"
       },
       {
-        "title": "GJK: report penetration when a discrete simplex ends not separated",
-        "url": "https://github.com/google-deepmind/mujoco_warp/pull/1866",
-        "repo": "google-deepmind/mujoco_warp",
-        "number": 1866,
-        "upstream": true,
-        "state": "open"
-      },
-      {
         "title": "perf(cudf): Avoid single-batch groupby copy and synchronization",
         "url": "https://github.com/facebookincubator/velox/pull/19928",
         "repo": "facebookincubator/velox",
         "number": 19928,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "perf(collision): reduce broadphase overhead for static child bodies",
-        "url": "https://github.com/google-deepmind/mujoco/pull/3741",
-        "repo": "google-deepmind/mujoco",
-        "number": 3741,
         "upstream": true,
         "state": "open"
       },
@@ -855,14 +863,6 @@
         "repo": "maharshi-coding/maharshi-coding",
         "number": 1,
         "upstream": false,
-        "state": "open"
-      },
-      {
-        "title": "Fix Studio native viewer on macOS: run the viewer on the main thread",
-        "url": "https://github.com/google-deepmind/mujoco/pull/3697",
-        "repo": "google-deepmind/mujoco",
-        "number": 3697,
-        "upstream": true,
         "state": "open"
       },
       {
@@ -1019,18 +1019,18 @@
       "landed": [],
       "open": [
         {
-          "title": "perf(collision): reduce broadphase overhead for static child bodies",
-          "url": "https://github.com/google-deepmind/mujoco/pull/3741",
-          "repo": "google-deepmind/mujoco",
-          "number": 3741,
-          "upstream": true,
-          "state": "open"
-        },
-        {
           "title": "Fix Studio native viewer on macOS: run the viewer on the main thread",
           "url": "https://github.com/google-deepmind/mujoco/pull/3697",
           "repo": "google-deepmind/mujoco",
           "number": 3697,
+          "upstream": true,
+          "state": "open"
+        },
+        {
+          "title": "perf(collision): reduce broadphase overhead for static child bodies",
+          "url": "https://github.com/google-deepmind/mujoco/pull/3741",
+          "repo": "google-deepmind/mujoco",
+          "number": 3741,
           "upstream": true,
           "state": "open"
         }
