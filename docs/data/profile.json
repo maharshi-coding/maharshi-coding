@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-09T18:49:18+00:00",
+  "generated_at": "2026-11-10T07:19:28+00:00",
   "pinned": [],
   "repos": [
     {
@@ -760,6 +760,14 @@
     ],
     "open": [
       {
+        "title": "Fix concurrent Lambda invocation trace isolation",
+        "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
+        "repo": "aws/aws-xray-sdk-node",
+        "number": 761,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "netlink: allow RTNLGRP_NOTIFY and RTNLGRP_IPV6_MROUTE subscriptions",
         "url": "https://github.com/google/gvisor/pull/17271",
         "repo": "google/gvisor",
@@ -796,14 +804,6 @@
         "url": "https://github.com/meta/pyrefly/pull/5482",
         "repo": "meta/pyrefly",
         "number": 5482,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "Fix concurrent Lambda invocation trace isolation",
-        "url": "https://github.com/aws/aws-xray-sdk-node/pull/761",
-        "repo": "aws/aws-xray-sdk-node",
-        "number": 761,
         "upstream": true,
         "state": "open"
       },
