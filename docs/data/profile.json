@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-11T06:21:53+00:00",
+  "generated_at": "2026-11-11T16:11:23+00:00",
   "pinned": [],
   "repos": [
     {
@@ -768,6 +768,14 @@
     ],
     "open": [
       {
+        "title": "Fix cascading errors when narrowing missing attributes",
+        "url": "https://github.com/meta/pyrefly/pull/5482",
+        "repo": "meta/pyrefly",
+        "number": 5482,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "fix(cni-metrics-helper): correct multi-node counter aggregation",
         "url": "https://github.com/aws/amazon-vpc-cni-k8s/pull/3952",
         "repo": "aws/amazon-vpc-cni-k8s",
@@ -812,14 +820,6 @@
         "url": "https://github.com/google-deepmind/mujoco_warp/pull/1866",
         "repo": "google-deepmind/mujoco_warp",
         "number": 1866,
-        "upstream": true,
-        "state": "open"
-      },
-      {
-        "title": "Fix cascading errors when narrowing missing attributes",
-        "url": "https://github.com/meta/pyrefly/pull/5482",
-        "repo": "meta/pyrefly",
-        "number": 5482,
         "upstream": true,
         "state": "open"
       },
