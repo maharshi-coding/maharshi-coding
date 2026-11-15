@@ -51,7 +51,7 @@ A curated view of original public work. Each project links to its real repositor
 <td width="50%" valign="top">
 <p><a href="https://github.com/maharshi-coding/seller-shield"><strong>seller-shield</strong></a></p>
 <p>Multi-agent risk defense for independent sellers</p>
-<p><sub>Python · ★ 0 GitHub stars</sub></p>
+<p><sub>Python · ★ 1 GitHub stars</sub></p>
 <p><a href="https://github.com/maharshi-coding/seller-shield">Source code</a></p>
 </td>
 </tr>
@@ -193,7 +193,7 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 | :-- | --: |
 | Public repositories | 45 |
 | Original repositories | 19 |
-| Total public repository stars | 1 |
+| Total public repository stars | 2 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 7 |
 | Contributions in last 365 days | 307 |

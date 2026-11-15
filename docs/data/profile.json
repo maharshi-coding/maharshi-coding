@@ -3,9 +3,23 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-15T06:32:57+00:00",
+  "generated_at": "2026-11-15T15:40:18+00:00",
   "pinned": [],
   "repos": [
+    {
+      "name": "seller-shield",
+      "full_name": "maharshi-coding/seller-shield",
+      "url": "https://github.com/maharshi-coding/seller-shield",
+      "description": "AI agent team that protects small Amazon sellers from account suspensions and return fraud (AWS Agents for Humans hackathon; Strands Agents + Amazon Bedrock).",
+      "language": "Python",
+      "stars": 1,
+      "topics": [],
+      "live": null,
+      "fork": false,
+      "archived": false,
+      "featured": true,
+      "tagline": "Multi-agent risk defense for independent sellers"
+    },
     {
       "name": "pyrefly",
       "full_name": "maharshi-coding/pyrefly",
@@ -259,20 +273,6 @@
       "tagline": "Explore source and project history"
     },
     {
-      "name": "agent-pixel-visualizer",
-      "full_name": "maharshi-coding/agent-pixel-visualizer",
-      "url": "https://github.com/maharshi-coding/agent-pixel-visualizer",
-      "description": "VS Code extension — a pixel-art canvas visualizer for AI coding agents (workstations, live agent sprites, holographic status rings, interactive minimap)",
-      "language": "JavaScript",
-      "stars": 0,
-      "topics": [],
-      "live": null,
-      "fork": false,
-      "archived": false,
-      "featured": true,
-      "tagline": "Turns VS Code agent activity into a pixel-art world"
-    },
-    {
       "name": "oss-agent",
       "full_name": "maharshi-coding/oss-agent",
       "url": "https://github.com/maharshi-coding/oss-agent",
@@ -298,6 +298,20 @@
       "archived": false,
       "featured": true,
       "tagline": "Human-approved AI agent for real open-source fixes"
+    },
+    {
+      "name": "agent-pixel-visualizer",
+      "full_name": "maharshi-coding/agent-pixel-visualizer",
+      "url": "https://github.com/maharshi-coding/agent-pixel-visualizer",
+      "description": "VS Code extension — a pixel-art canvas visualizer for AI coding agents (workstations, live agent sprites, holographic status rings, interactive minimap)",
+      "language": "JavaScript",
+      "stars": 0,
+      "topics": [],
+      "live": null,
+      "fork": false,
+      "archived": false,
+      "featured": true,
+      "tagline": "Turns VS Code agent activity into a pixel-art world"
     },
     {
       "name": "maharshi-os",
@@ -500,20 +514,6 @@
       "archived": false,
       "featured": false,
       "tagline": "Interactive 3D launcher — try Maharshi's AI-agent projects live or view the code"
-    },
-    {
-      "name": "seller-shield",
-      "full_name": "maharshi-coding/seller-shield",
-      "url": "https://github.com/maharshi-coding/seller-shield",
-      "description": "AI agent team that protects small Amazon sellers from account suspensions and return fraud (AWS Agents for Humans hackathon; Strands Agents + Amazon Bedrock).",
-      "language": "Python",
-      "stars": 0,
-      "topics": [],
-      "live": null,
-      "fork": false,
-      "archived": false,
-      "featured": true,
-      "tagline": "Multi-agent risk defense for independent sellers"
     },
     {
       "name": "natsort",
@@ -949,7 +949,7 @@
     "created_at": "2026-02-12",
     "public_repos": 45,
     "forks": 26,
-    "stars": 1,
+    "stars": 2,
     "annual_contributions": 307
   },
   "verified_upstream_integrations": [
