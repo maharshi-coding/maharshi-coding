@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-15T21:03:08+00:00",
+  "generated_at": "2026-11-16T06:30:45+00:00",
   "pinned": [],
   "repos": [
     {
@@ -768,6 +768,14 @@
     ],
     "open": [
       {
+        "title": "Fix use-after-free in servo_keyboard_input demo by joining the spin thread",
+        "url": "https://github.com/moveit/moveit2/pull/3850",
+        "repo": "moveit/moveit2",
+        "number": 3850,
+        "upstream": true,
+        "state": "open"
+      },
+      {
         "title": "fix(cni-metrics-helper): correct multi-node counter aggregation",
         "url": "https://github.com/aws/amazon-vpc-cni-k8s/pull/3952",
         "repo": "aws/amazon-vpc-cni-k8s",
@@ -869,14 +877,6 @@
         "repo": "maharshi-coding/maharshi-coding",
         "number": 1,
         "upstream": false,
-        "state": "open"
-      },
-      {
-        "title": "Fix use-after-free in servo_keyboard_input demo by joining the spin thread",
-        "url": "https://github.com/moveit/moveit2/pull/3850",
-        "repo": "moveit/moveit2",
-        "number": 3850,
-        "upstream": true,
         "state": "open"
       },
       {
