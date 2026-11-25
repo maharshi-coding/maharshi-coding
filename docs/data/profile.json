@@ -3,7 +3,7 @@
   "name": "Maharshi Kamleshkumar Barot",
   "avatar": "https://avatars.githubusercontent.com/u/261245761?v=4",
   "location": "Texas A&M University, Corpus Christi",
-  "generated_at": "2026-11-25T00:44:27+00:00",
+  "generated_at": "2026-11-25T18:39:18+00:00",
   "pinned": [],
   "repos": [
     {
@@ -776,18 +776,18 @@
     ],
     "open": [
       {
-        "title": "perf(cudf): Avoid single-batch groupby copy and synchronization",
-        "url": "https://github.com/facebookincubator/velox/pull/19928",
-        "repo": "facebookincubator/velox",
-        "number": 19928,
-        "upstream": true,
-        "state": "open"
-      },
-      {
         "title": "[Inductor] Prevent input mutation from buffer reuse across cond branches",
         "url": "https://github.com/pytorch/pytorch/pull/202710",
         "repo": "pytorch/pytorch",
         "number": 202710,
+        "upstream": true,
+        "state": "open"
+      },
+      {
+        "title": "perf(cudf): Avoid single-batch groupby copy and synchronization",
+        "url": "https://github.com/facebookincubator/velox/pull/19928",
+        "repo": "facebookincubator/velox",
+        "number": 19928,
         "upstream": true,
         "state": "open"
       },
