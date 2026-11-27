@@ -85,11 +85,12 @@ A curated view of original public work. Each project links to its real repositor
 </tr>
 </table>
 
-<details><summary><b>Browse 10 more original public repositories</b></summary>
+<details><summary><b>Browse 12 more original public repositories</b></summary>
 
 | Repository | Primary language | Stars | Links |
 | :-- | :-- | --: | :-- |
 | **ai-tutoring** —  | Unspecified | 0 | [Code](https://github.com/maharshi-coding/ai-tutoring) |
+| **cheme-offline** — Offline-first independent fork of ChemE-as-Code/core (AGPL-3.0-or-later) — local-LLM proce | Python | 0 | [Code](https://github.com/maharshi-coding/cheme-offline) |
 | **face-attendance-app** —  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/face-attendance-app) |
 | **insta-go-sdk** —  | Go | 0 | [Code](https://github.com/maharshi-coding/insta-go-sdk) |
 | **kinetic-darkroom** — A gesture-controlled photo puzzle and digital darkroom. Built on Hand-Puzzle with original | Unspecified | 0 | [Code](https://github.com/maharshi-coding/kinetic-darkroom) |
@@ -97,6 +98,7 @@ A curated view of original public work. Each project links to its real repositor
 | **maharshi-os** — Interactive neon-noir portfolio of Maharshi Barot — AI Solutions Developer &amp; Full-Stack En | TypeScript | 0 | [Code](https://github.com/maharshi-coding/maharshi-os) |
 | **my-library** —  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/my-library) |
 | **orlog-game** —  | JavaScript | 0 | [Code](https://github.com/maharshi-coding/orlog-game) |
+| **processforge-ai** — ProcessForge AI — offline-first, local-LLM process-engineering agent with deterministic va | Python | 0 | [Code](https://github.com/maharshi-coding/processforge-ai) |
 | **reinforcement-learning** —  | HTML | 0 | [Code](https://github.com/maharshi-coding/reinforcement-learning) |
 | **XAIFlow** — Visual machine learning workflows with SHAP/LIME explanations, experiment tracking, model  | TypeScript | 0 | [Code](https://github.com/maharshi-coding/XAIFlow) |
 
@@ -191,14 +193,14 @@ _GitHub merge and Meta CodeSync integration are labeled separately. These are pu
 <!--START_SECTION:hud-->
 | Public GitHub activity | Count |
 | :-- | --: |
-| Public repositories | 45 |
-| Original repositories | 19 |
+| Public repositories | 47 |
+| Original repositories | 21 |
 | Total public repository stars | 2 |
 | Integrated contributions to featured tech companies | 2 |
 | Open PRs to featured tech companies | 7 |
-| Contributions in last 365 days | 308 |
+| Contributions in last 365 days | 310 |
 
-**Primary repository languages:** TypeScript (7), Python (5), JavaScript (2), HTML (2), Go (1)
+**Primary repository languages:** Python (7), TypeScript (7), JavaScript (2), HTML (2), Go (1)
 <!--END_SECTION:hud-->
 
 <details>
